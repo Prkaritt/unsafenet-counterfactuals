@@ -1,0 +1,95 @@
+{
+  "_comment": "Exact file list for the CogVideoX-2b checkpoint, read from the Hugging Face API on 2026-11-03. sha256 is the LFS object id, which is the file's SHA-256; small non-LFS files have none and are checked by byte size only.",
+  "_repo_rename": "THUDM/CogVideoX-2b now 307-redirects to zai-org/CogVideoX-2b. The canonical id is used for downloads; both names refer to the same weights. configs/experiment.json still records THUDM/CogVideoX-2b, which is the name the literature uses.",
+  "repo_id": "zai-org/CogVideoX-2b",
+  "legacy_repo_id": "THUDM/CogVideoX-2b",
+  "revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+  "total_bytes": 13775571136,
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 11360,
+      "sha256": null
+    },
+    {
+      "path": "README.md",
+      "bytes": 16479,
+      "sha256": null
+    },
+    {
+      "path": "README_zh.md",
+      "bytes": 15478,
+      "sha256": null
+    },
+    {
+      "path": "model_index.json",
+      "bytes": 411,
+      "sha256": null
+    },
+    {
+      "path": "scheduler/scheduler_config.json",
+      "bytes": 482,
+      "sha256": null
+    },
+    {
+      "path": "text_encoder/config.json",
+      "bytes": 783,
+      "sha256": null
+    },
+    {
+      "path": "text_encoder/model-00001-of-00002.safetensors",
+      "bytes": 4994582104,
+      "sha256": "4f2751ceeb2a96edd693e539dc5d6bba0b8d3814f49a9b3798403a0cec4b2e3d"
+    },
+    {
+      "path": "text_encoder/model-00002-of-00002.safetensors",
+      "bytes": 4530066248,
+      "sha256": "f63154532130422309532ff56f11945fbea8266c958e3133e8e5aef85c6293c7"
+    },
+    {
+      "path": "text_encoder/model.safetensors.index.json",
+      "bytes": 19885,
+      "sha256": null
+    },
+    {
+      "path": "tokenizer/added_tokens.json",
+      "bytes": 2593,
+      "sha256": null
+    },
+    {
+      "path": "tokenizer/special_tokens_map.json",
+      "bytes": 2543,
+      "sha256": null
+    },
+    {
+      "path": "tokenizer/spiece.model",
+      "bytes": 791656,
+      "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+    },
+    {
+      "path": "tokenizer/tokenizer_config.json",
+      "bytes": 20617,
+      "sha256": null
+    },
+    {
+      "path": "transformer/config.json",
+      "bytes": 758,
+      "sha256": null
+    },
+    {
+      "path": "transformer/diffusion_pytorch_model.safetensors",
+      "bytes": 3387650264,
+      "sha256": "8fbb6a5e67c70885a8ed8e33df144ac61253e45977be5035fa18cfdf77d386c7"
+    },
+    {
+      "path": "vae/config.json",
+      "bytes": 879,
+      "sha256": null
+    },
+    {
+      "path": "vae/diffusion_pytorch_model.safetensors",
+      "bytes": 862388596,
+      "sha256": "a410e48d988c8224cef392b68db0654485cfd41f345f4a3a81d3e6b765bb995e"
+    }
+  ]
+}

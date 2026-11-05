@@ -1,0 +1,465 @@
+{
+  "_what_this_is": "Matched base-versus-LoRA prompt-guided video-to-video edits across several walkway-violation source clips. Not LD-ViCE: no target-model gradients. No training in this job. Candidate counterfactuals until human review.",
+  "classifier_gradient_guidance": "disabled in every run",
+  "checkpoint": "THUDM/CogVideoX-2b",
+  "checkpoint_local_dir": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+  "revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+  "scheduler": "CogVideoXDDIMScheduler",
+  "adapter": {
+    "dir": "outputs/lora/adapter",
+    "weight_name": "pytorch_lora_weights.safetensors",
+    "sha256": "57b4e3e43523980c87dab22febba3354c2d9e008aefc9e8161c7df64ca8f53e0",
+    "rank": 64,
+    "lora_alpha": 64,
+    "trained_by_job": "50230058",
+    "active_adapters": [
+      "cogvideox-lora"
+    ],
+    "lora_param_tensors_before": 0,
+    "lora_param_tensors_after": 240,
+    "scale_applied": 1.0,
+    "scaling_convention": "diffusers CogVideoXLoraLoaderMixin: set_adapters(names, weights) multiplies the adapter delta by this weight. The trainer used lora_alpha=64 with rank=64, and peft already folds alpha/rank into the stored layers, so the weight passed here is alpha/rank = 1.0, i.e. the adapter at the strength it was trained at."
+  },
+  "settings": {
+    "seed": 20261103,
+    "strength": 0.6,
+    "guidance_scale": 6.0,
+    "num_inference_steps": 50,
+    "negative_prompt": "inconsistent motion, blurry motion, worse quality, degenerate outputs, deformed outputs, camera movement, scene change",
+    "dtype": "torch.float16",
+    "width": 720,
+    "height": 480,
+    "num_frames": 49,
+    "fps": 8,
+    "_identical_within_each_pair": "source clip, seed, scheduler, dtype, prompt, negative prompt, strength, guidance, steps, resolution, frame count. The generator is re-seeded from the same value immediately before each call, so the initial noise is identical too."
+  },
+  "sources": [
+    {
+      "clip_id": "0_tr16",
+      "selection_reason": "NEAREST the lane of the candidates with full crop coverage: median foot-to-lane distance 186.8 px. Scene cluster 0_tr91, which contains 46 class-0 clips and ZERO class-4 clips, so no footage from this camera view entered LoRA training. Walking right. 0 detector misses.",
+      "scene_cluster": "0_tr91",
+      "crop": {
+        "x": 300,
+        "y": 0,
+        "width": 1620,
+        "height": 1080
+      },
+      "crop_coverage": {
+        "worker_frames_inside": 1.0,
+        "lane_pixels_inside": 0.996
+      },
+      "source_measurements_full_res": {
+        "dist_to_lane_px_min": 24.1,
+        "dist_to_lane_px_median": 186.8,
+        "dist_to_lane_px_max": 423.4,
+        "worker_height_px_median": 243.6,
+        "direction": "right",
+        "detector_misses": 0,
+        "lane_x": [
+          290,
+          1919
+        ],
+        "lane_y": [
+          483,
+          1079
+        ]
+      },
+      "preprocessed": "outputs/multi_walkway/preprocessed/0_tr16_720x480x49.mp4",
+      "preprocess_record": {
+        "spec": {
+          "source": "data/raw/class0_train/0_tr16.mp4",
+          "crop": {
+            "width": 1620,
+            "height": 1080,
+            "x": 300,
+            "y": 0
+          },
+          "start_frame": 0,
+          "frame_step": 3,
+          "num_frames": 49,
+          "width": 720,
+          "height": 480,
+          "out_fps": 8,
+          "crf": 8,
+          "latent_frames": 13,
+          "latent_height": 60,
+          "latent_width": 90,
+          "selected_frame_indices": [
+            0,
+            3,
+            6,
+            9,
+            12,
+            15,
+            18,
+            21,
+            24,
+            27,
+            30,
+            33,
+            36,
+            39,
+            42,
+            45,
+            48,
+            51,
+            54,
+            57,
+            60,
+            63,
+            66,
+            69,
+            72,
+            75,
+            78,
+            81,
+            84,
+            87,
+            90,
+            93,
+            96,
+            99,
+            102,
+            105,
+            108,
+            111,
+            114,
+            117,
+            120,
+            123,
+            126,
+            129,
+            132,
+            135,
+            138,
+            141,
+            144
+          ]
+        },
+        "ffmpeg_command": [
+          "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/lib/python3.12/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v9.0.2",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-i",
+          "data/raw/class0_train/0_tr16.mp4",
+          "-vf",
+          "select='gte(n\\,0)*lte(n\\,144)*not(mod(n-0\\,3))',crop=1620:1080:300:0,scale=720:480:flags=lanczos,setpts=N/8/TB",
+          "-frames:v",
+          "49",
+          "-r",
+          "8",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "8",
+          "-preset",
+          "slow",
+          "-pix_fmt",
+          "yuv420p",
+          "-y",
+          "outputs/multi_walkway/preprocessed/0_tr16_720x480x49.mp4"
+        ],
+        "source_probe": {
+          "width": 1920,
+          "height": 1080,
+          "fps": 24.8,
+          "frames": 421,
+          "codec": "h264",
+          "pix_fmt": "yuv420p",
+          "duration_s": 16.97,
+          "source": "data/raw/class0_train/0_tr16.mp4"
+        },
+        "output_probe": {
+          "width": 720,
+          "height": 480,
+          "fps": 8.0,
+          "frames": 49,
+          "codec": "h264",
+          "pix_fmt": "yuv420p",
+          "duration_s": 6.12,
+          "source": "outputs/multi_walkway/preprocessed/0_tr16_720x480x49.mp4"
+        },
+        "output_path": "outputs/multi_walkway/preprocessed/0_tr16_720x480x49.mp4",
+        "effective_source_fps": 8.266666666666667
+      },
+      "prompt": "A fixed overhead security camera looks down a wide factory aisle with blue press machines along the left and a corrugated metal wall at the far end. A green marked pedestrian walkway bordered by yellow lines runs along the right side of the aisle over a polished concrete floor. A worker in dark navy overalls walks along the green marked walkway on the right, staying inside the yellow boundary lines, instead of down the middle of the open aisle. Fixed overhead camera, unchanged machines, unchanged lighting.",
+      "role": "worker NEAR the lane: median foot-to-lane distance 186.8 px at full resolution"
+    },
+    {
+      "clip_id": "0_tr125",
+      "selection_reason": "FARTHEST from the lane of the candidates with full crop coverage: median 499.5 px. Scene cluster 4_tr45, the same scene family as the original source 0_tr143, so it is the closest comparison to the first experiment. Walking right. 0 detector misses.",
+      "scene_cluster": "4_tr45",
+      "crop": {
+        "x": 300,
+        "y": 0,
+        "width": 1620,
+        "height": 1080
+      },
+      "crop_coverage": {
+        "worker_frames_inside": 1.0,
+        "lane_pixels_inside": 1.0
+      },
+      "source_measurements_full_res": {
+        "dist_to_lane_px_min": 368.7,
+        "dist_to_lane_px_median": 499.5,
+        "dist_to_lane_px_max": 632.1,
+        "worker_height_px_median": 351.2,
+        "direction": "right",
+        "detector_misses": 0,
+        "lane_x": [
+          438,
+          1919
+        ],
+        "lane_y": [
+          235,
+          1079
+        ]
+      },
+      "preprocessed": "outputs/multi_walkway/preprocessed/0_tr125_720x480x49.mp4",
+      "preprocess_record": {
+        "spec": {
+          "source": "data/raw/class0_train/0_tr125.mp4",
+          "crop": {
+            "width": 1620,
+            "height": 1080,
+            "x": 300,
+            "y": 0
+          },
+          "start_frame": 0,
+          "frame_step": 3,
+          "num_frames": 49,
+          "width": 720,
+          "height": 480,
+          "out_fps": 8,
+          "crf": 8,
+          "latent_frames": 13,
+          "latent_height": 60,
+          "latent_width": 90,
+          "selected_frame_indices": [
+            0,
+            3,
+            6,
+            9,
+            12,
+            15,
+            18,
+            21,
+            24,
+            27,
+            30,
+            33,
+            36,
+            39,
+            42,
+            45,
+            48,
+            51,
+            54,
+            57,
+            60,
+            63,
+            66,
+            69,
+            72,
+            75,
+            78,
+            81,
+            84,
+            87,
+            90,
+            93,
+            96,
+            99,
+            102,
+            105,
+            108,
+            111,
+            114,
+            117,
+            120,
+            123,
+            126,
+            129,
+            132,
+            135,
+            138,
+            141,
+            144
+          ]
+        },
+        "ffmpeg_command": [
+          "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/lib/python3.12/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v9.0.2",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-i",
+          "data/raw/class0_train/0_tr125.mp4",
+          "-vf",
+          "select='gte(n\\,0)*lte(n\\,144)*not(mod(n-0\\,3))',crop=1620:1080:300:0,scale=720:480:flags=lanczos,setpts=N/8/TB",
+          "-frames:v",
+          "49",
+          "-r",
+          "8",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-crf",
+          "8",
+          "-preset",
+          "slow",
+          "-pix_fmt",
+          "yuv420p",
+          "-y",
+          "outputs/multi_walkway/preprocessed/0_tr125_720x480x49.mp4"
+        ],
+        "source_probe": {
+          "width": 1920,
+          "height": 1080,
+          "fps": 24.99,
+          "frames": 261,
+          "codec": "h264",
+          "pix_fmt": "yuvj420p",
+          "duration_s": 10.45,
+          "source": "data/raw/class0_train/0_tr125.mp4"
+        },
+        "output_probe": {
+          "width": 720,
+          "height": 480,
+          "fps": 8.0,
+          "frames": 49,
+          "codec": "h264",
+          "pix_fmt": "yuvj420p",
+          "duration_s": 6.12,
+          "source": "outputs/multi_walkway/preprocessed/0_tr125_720x480x49.mp4"
+        },
+        "output_path": "outputs/multi_walkway/preprocessed/0_tr125_720x480x49.mp4",
+        "effective_source_fps": 8.33
+      },
+      "prompt": "A fixed overhead security camera looks down a factory aisle. Industrial press machines stand along the left with operators working at them, and a green marked pedestrian walkway bordered by yellow lines runs along the right over a grey concrete floor. A worker in dark navy overalls walks along the green marked walkway on the right, staying inside the yellow boundary lines, instead of along the machines. Fixed overhead camera, unchanged machines, unchanged lighting.",
+      "role": "worker FAR from the lane: median 499.5 px, and the only eligible source from the second camera view, the same view as the original source 0_tr143"
+    },
+    {
+      "clip_id": "0_tr48",
+      "role": "DIFFERENT WALKING DIRECTION: walks left where the other two walk right. Median 206.1 px",
+      "prompt": "A fixed overhead security camera looks down a wide factory aisle with blue press machines along the left, a yellow forklift standing in the aisle and a corrugated metal wall at the far end. A green marked pedestrian walkway bordered by yellow lines runs along the right side over a polished concrete floor. A worker in dark navy overalls walks along the green marked walkway on the right, staying inside the yellow boundary lines, instead of crossing the open aisle. Fixed overhead camera, unchanged machines, unchanged lighting.",
+      "selection_reason": "Replaces 0_tr2 after a like-for-like camera check. Walks LEFT where the other two walk right. Full crop coverage, lane 99.3% inside the crop, 0 detector misses.",
+      "scene_cluster": "0_tr48",
+      "crop": {
+        "x": 300,
+        "y": 0,
+        "width": 1620,
+        "height": 1080
+      },
+      "crop_coverage": {
+        "worker_frames_inside": 1.0,
+        "lane_pixels_inside": 0.993
+      },
+      "source_measurements_full_res": {
+        "dist_to_lane_px_min": 42.0,
+        "dist_to_lane_px_median": 206.1,
+        "worker_height_px_median": 209.7,
+        "direction": "left",
+        "detector_misses": 0
+      },
+      "preprocessed": "outputs/multi_walkway/preprocessed/0_tr48_720x480x49.mp4"
+    }
+  ],
+  "runs": {
+    "0_tr16": {
+      "base": {
+        "arm": "base",
+        "path": "outputs/multi_walkway/videos/0_tr16_base.mp4",
+        "generation_s": 79.2,
+        "peak_gpu_gib": 27.84,
+        "psnr_vs_source_db": 19.660368784790702,
+        "mean_abs_diff_vs_source": 17.73025712947216,
+        "lora_param_tensors_present": 0
+      },
+      "lora": {
+        "arm": "lora",
+        "path": "outputs/multi_walkway/videos/0_tr16_lora.mp4",
+        "generation_s": 78.2,
+        "peak_gpu_gib": 27.953,
+        "psnr_vs_source_db": 20.111495207756647,
+        "mean_abs_diff_vs_source": 16.632081522423785,
+        "lora_param_tensors_present": 240
+      }
+    },
+    "0_tr125": {
+      "base": {
+        "arm": "base",
+        "path": "outputs/multi_walkway/videos/0_tr125_base.mp4",
+        "generation_s": 72.1,
+        "peak_gpu_gib": 27.84,
+        "psnr_vs_source_db": 20.31251671739367,
+        "mean_abs_diff_vs_source": 16.40511538643235,
+        "lora_param_tensors_present": 0
+      },
+      "lora": {
+        "arm": "lora",
+        "path": "outputs/multi_walkway/videos/0_tr125_lora.mp4",
+        "generation_s": 78.2,
+        "peak_gpu_gib": 27.953,
+        "psnr_vs_source_db": 21.366878470928377,
+        "mean_abs_diff_vs_source": 14.331646195515242,
+        "lora_param_tensors_present": 240
+      }
+    },
+    "0_tr48": {
+      "base": {
+        "arm": "base",
+        "path": "outputs/multi_walkway/videos/0_tr48_base.mp4",
+        "generation_s": 73.5,
+        "peak_gpu_gib": 27.84,
+        "psnr_vs_source_db": 19.516946260836928,
+        "mean_abs_diff_vs_source": 17.95896516361174,
+        "lora_param_tensors_present": 0
+      },
+      "lora": {
+        "arm": "lora",
+        "path": "outputs/multi_walkway/videos/0_tr48_lora.mp4",
+        "generation_s": 78.1,
+        "peak_gpu_gib": 27.953,
+        "psnr_vs_source_db": 19.74002458966804,
+        "mean_abs_diff_vs_source": 17.376609839537668,
+        "lora_param_tensors_present": 240
+      }
+    }
+  },
+  "environment": {
+    "captured_at": "2026-11-05T04:30:17+00:00",
+    "python": {
+      "python_version": "3.12.13",
+      "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+      "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+      "machine": "x86_64"
+    },
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "diffusers": "0.36.0",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "huggingface_hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.3.4",
+      "PIL": "11.3.0",
+      "imageio": "2.37.0",
+      "imageio_ffmpeg": "0.8.1",
+      "sentencepiece": "0.2.2"
+    },
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA L40S",
+      "capability": "8.9",
+      "total_vram_gb": 44.42,
+      "free_vram_gb": 15.95,
+      "torch_cuda_version": "12.8",
+      "supports_bf16": true
+    },
+    "system_ram_gb": 1006.85,
+    "nvidia_smi": "Wed Nov  4 23:30:18 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000000:B4:00.0 Off |                    0 |\n| N/A   69C    P0            120W /  350W |   29151MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            2080      C   ...y/envs/cogvx-cu128/bin/python      29142MiB |\n+-----------------------------------------------------------------------------------------+"
+  }
+}

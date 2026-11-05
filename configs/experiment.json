@@ -1,0 +1,25 @@
+{
+  "_comment": "Generation settings for the prompt-guided editing baseline. This is NOT LD-ViCE: it uses a pretrained CogVideoX-2b checkpoint with no dataset fine-tuning and no classifier gradients.",
+  "checkpoint": "THUDM/CogVideoX-2b",
+  "revision": "main",
+  "_revision_note": "Pin this to a commit SHA after the first successful run; record the resolved SHA in the manifest.",
+  "dtype": "float16",
+  "_dtype_note": "CogVideoX-2b is documented with torch.float16. A free-tier Colab T4 (sm75) has no bfloat16 support, so float16 is also the only workable choice there.",
+  "scheduler": "CogVideoXDDIMScheduler",
+  "_scheduler_note": "Checkpoint default, v_prediction with rescale_betas_zero_snr. CogVideoXDPMScheduler is the documented alternative for the video-to-video pipeline.",
+  "seed": 20261103,
+  "num_inference_steps": 50,
+  "strength": 0.8,
+  "guidance_scale": 6.0,
+  "prompt": "A worker in dark navy overalls walks along the green marked pedestrian walkway at the right side of a factory aisle, staying inside the yellow boundary lines. Fixed overhead security camera, industrial press machines on the left, concrete floor, unchanged lighting.",
+  "negative_prompt": "inconsistent motion, blurry motion, worse quality, degenerate outputs, deformed outputs, camera movement, scene change",
+  "context_that_must_not_change": [
+    "camera pose and framing (fixed overhead security camera)",
+    "worker identity, clothing type and build",
+    "the press machines and the left-hand machine zone",
+    "the position and shape of the green walkway and yellow boundary lines",
+    "lighting and time of day"
+  ],
+  "intended_change": "The worker's walking path moves from the bare grey concrete aisle onto the green marked pedestrian walkway.",
+  "spurious_change_to_reject": "The green walkway is repainted, widened or extended underneath the worker instead of the worker moving onto it. That flips the visual label by changing the environment, not the behaviour, and is not a valid counterfactual."
+}

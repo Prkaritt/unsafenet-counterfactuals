@@ -1,0 +1,5 @@
+# Local (MacBook M1) preparation only. No GPU stack, no model weights.
+pytest>=8.0
+numpy>=1.26
+pillow>=10.0
+imageio-ffmpeg>=0.8.1

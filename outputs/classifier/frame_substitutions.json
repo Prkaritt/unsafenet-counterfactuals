@@ -1,0 +1,145 @@
+[
+  {
+    "clip_id": "0_tr122",
+    "declared_frame_count": 260,
+    "frames_actually_decoded": 15,
+    "last_real_index": 242,
+    "substitutions": [
+      {
+        "wanted_index": 259,
+        "used_index": 242,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "0_tr125",
+    "declared_frame_count": 260,
+    "frames_actually_decoded": 15,
+    "last_real_index": 242,
+    "substitutions": [
+      {
+        "wanted_index": 259,
+        "used_index": 242,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "0_tr130",
+    "declared_frame_count": 261,
+    "frames_actually_decoded": 15,
+    "last_real_index": 243,
+    "substitutions": [
+      {
+        "wanted_index": 260,
+        "used_index": 243,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "0_tr137",
+    "declared_frame_count": 261,
+    "frames_actually_decoded": 15,
+    "last_real_index": 243,
+    "substitutions": [
+      {
+        "wanted_index": 260,
+        "used_index": 243,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "0_tr139",
+    "declared_frame_count": 259,
+    "frames_actually_decoded": 15,
+    "last_real_index": 241,
+    "substitutions": [
+      {
+        "wanted_index": 258,
+        "used_index": 241,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "0_tr127",
+    "declared_frame_count": 260,
+    "frames_actually_decoded": 15,
+    "last_real_index": 242,
+    "substitutions": [
+      {
+        "wanted_index": 259,
+        "used_index": 242,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "0_tr131",
+    "declared_frame_count": 261,
+    "frames_actually_decoded": 15,
+    "last_real_index": 243,
+    "substitutions": [
+      {
+        "wanted_index": 260,
+        "used_index": 243,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "0_tr134",
+    "declared_frame_count": 261,
+    "frames_actually_decoded": 15,
+    "last_real_index": 243,
+    "substitutions": [
+      {
+        "wanted_index": 260,
+        "used_index": 243,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "0_tr135",
+    "declared_frame_count": 261,
+    "frames_actually_decoded": 15,
+    "last_real_index": 243,
+    "substitutions": [
+      {
+        "wanted_index": 260,
+        "used_index": 243,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "0_tr141",
+    "declared_frame_count": 261,
+    "frames_actually_decoded": 15,
+    "last_real_index": 243,
+    "substitutions": [
+      {
+        "wanted_index": 260,
+        "used_index": 243,
+        "distance_frames": 17
+      }
+    ]
+  },
+  {
+    "clip_id": "4_tr14",
+    "declared_frame_count": 260,
+    "frames_actually_decoded": 15,
+    "last_real_index": 242,
+    "substitutions": [
+      {
+        "wanted_index": 259,
+        "used_index": 242,
+        "distance_frames": 17
+      }
+    ]
+  }
+]

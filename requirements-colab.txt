@@ -1,0 +1,22 @@
+# Dependency pins for the Colab notebook.
+#
+# torch is deliberately absent: Colab ships a build matched to its CUDA driver, and
+# replacing it is the most common way to break a runtime.
+#
+# STATUS: installed and verified on free Colab on 2026-11-03. Every pin resolved exactly as
+# requested on a Tesla T4 runtime with Python 3.13.16 and torch 2.11.0+cu130. Resolved set:
+#   torch 2.11.0+cu130, torchvision 0.26.0+cu130, diffusers 0.36.0, transformers 4.57.6,
+#   accelerate 1.15.0, huggingface_hub 0.36.2, safetensors 0.8.0, numpy 2.4.6, PIL 11.3.0,
+#   imageio 2.37.0, imageio_ffmpeg 0.8.1, sentencepiece 0.2.2
+# pip reports a conflict against Colab's preinstalled gradio 6.31.0 and gradio-client 2.7.2,
+# which want huggingface-hub>=1.16.0. Neither package is imported here, so the conflict is
+# inert. Loosening the hub bound to satisfy gradio would change the dependency set under
+# transformers 4.57.6 for no benefit to this experiment.
+# Model loading and generation remain unverified.
+diffusers==0.36.0
+transformers==4.57.6
+accelerate==1.15.0
+huggingface_hub>=0.34,<1.0
+sentencepiece==0.2.2
+imageio-ffmpeg==0.8.1
+imageio==2.37.0

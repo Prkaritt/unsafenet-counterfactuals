@@ -1,0 +1,98 @@
+[
+  {
+    "order": [
+      "4_tr1",
+      "4_tr2",
+      "4_tr6"
+    ],
+    "frame_indices": [
+      0,
+      10,
+      19,
+      29,
+      38,
+      48
+    ],
+    "path": "outputs/lora/contact_sheets/sheet_01.png"
+  },
+  {
+    "order": [
+      "4_tr7",
+      "4_tr8",
+      "4_tr9"
+    ],
+    "frame_indices": [
+      0,
+      10,
+      19,
+      29,
+      38,
+      48
+    ],
+    "path": "outputs/lora/contact_sheets/sheet_02.png"
+  },
+  {
+    "order": [
+      "4_tr15",
+      "4_tr16",
+      "4_tr26"
+    ],
+    "frame_indices": [
+      0,
+      10,
+      19,
+      29,
+      38,
+      48
+    ],
+    "path": "outputs/lora/contact_sheets/sheet_03.png"
+  },
+  {
+    "order": [
+      "4_tr27",
+      "4_tr28",
+      "4_tr29"
+    ],
+    "frame_indices": [
+      0,
+      10,
+      19,
+      29,
+      38,
+      48
+    ],
+    "path": "outputs/lora/contact_sheets/sheet_04.png"
+  },
+  {
+    "order": [
+      "4_tr30",
+      "4_tr34",
+      "4_tr35"
+    ],
+    "frame_indices": [
+      0,
+      10,
+      19,
+      29,
+      38,
+      48
+    ],
+    "path": "outputs/lora/contact_sheets/sheet_05.png"
+  },
+  {
+    "order": [
+      "4_tr36",
+      "4_tr47",
+      "4_tr48"
+    ],
+    "frame_indices": [
+      0,
+      10,
+      19,
+      29,
+      38,
+      48
+    ],
+    "path": "outputs/lora/contact_sheets/sheet_06.png"
+  }
+]

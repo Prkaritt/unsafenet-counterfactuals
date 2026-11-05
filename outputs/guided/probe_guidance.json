@@ -1,0 +1,59 @@
+{
+  "gates": {
+    "D1_gradient_finite": true,
+    "D2_gradient_nonzero_and_coverage_rotates": true,
+    "D3_update_direction_correct": true,
+    "D4_peak_gpu_gib": 33.383
+  },
+  "gradient_diagnostics": {
+    "finite": true,
+    "norm": 0.4115750193595886,
+    "nonzero": true,
+    "max_abs": 0.0261077880859375,
+    "fraction_nonzero": 0.3846091628074646,
+    "shape": [
+      1,
+      16,
+      13,
+      60,
+      90
+    ],
+    "dtype": "torch.float32"
+  },
+  "grad_scale_used": 1024.0,
+  "latent_window": {
+    "frames": 5,
+    "offset0_window": [
+      0,
+      5
+    ],
+    "offset_half_window": [
+      8,
+      5
+    ],
+    "total_latent_frames": 13
+  },
+  "vae_gradient_checkpointing": true,
+  "recommended_classifier_scale": 0.02,
+  "recommended_scale_rationale": "A guided step moves the latent by this fraction of its own norm, along the normalised gradient. 0.02 over roughly 30 executed steps is a conservative starting point: it is small enough that no single step dominates, and the normalisation makes the step size mean the same thing at every timestep regardless of how steep the classifier happens to be there.",
+  "frame_coverage": {
+    "offset_0": 5,
+    "offset_half": 5,
+    "latent_frames": 13,
+    "changes_with_offset": true
+  },
+  "direction_check": {
+    "log_p_before": -0.7013662457466125,
+    "log_p_after": -0.02624529041349888,
+    "delta": 0.6751209497451782,
+    "step_size": 50.0
+  },
+  "timing": {
+    "s_per_guided_step": 18.76912021636963
+  },
+  "memory_note": "Peak measured with the VAE decoder and classifier in the backward graph and no transformer loaded. A full guided generation also holds the transformer and its activations, so this is a lower bound on that run's peak, not a prediction of it.",
+  "target": {
+    "index": 1,
+    "name": "safe_walkway"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "_what": "Record of the LoRA training run that produced outputs/lora/adapter.",
+  "_not_ld_vice": "LD-ViCE fine-tunes CogVideoX per dataset AND denoises with target-model gradients. This run did the first half only. Classifier guidance was not used in training and was disabled in both arms of the generation comparison.",
+  "job_id": "50230058",
+  "sacct": "50230058       01:04:46  COMPLETED billing=24,cpu=24,gres/gpu:l40s-48=1,gres/gpu=1,mem=125G,no+",
+  "elapsed": "01:04:46",
+  "su_charged": 1.0794,
+  "node": "gl003",
+  "gpu": "NVIDIA L40S 46068 MiB",
+  "driver": "610.57.04",
+  "trainer": {
+    "script": "third_party/diffusers_v0.36.0/train_cogvideox_lora.py",
+    "source": "diffusers examples/cogvideo at tag v0.36.0",
+    "why_this_tag": "the main-branch copy calls check_min_version('0.42.0.dev0') and refuses to run against the pinned diffusers 0.36.0; the v0.36.0 copy checks '0.36.0'",
+    "local_patch": "skips upstream's post-save pipeline reload when no --validation_prompt is set. Upstream calls pipe.load_lora_weights(output_dir) with no weight_name, which raises under HF_HUB_OFFLINE=1 and made job 50229034 exit 1 after a successful save. Unpatched original kept as train_cogvideox_lora.py.orig"
+  },
+  "base_checkpoint": {
+    "repo": "THUDM/CogVideoX-2b (canonical zai-org/CogVideoX-2b)",
+    "revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+    "local_dir": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+    "modified": false,
+    "note": "base weights untouched; only the adapter was learned"
+  },
+  "hyperparameters": {
+    "rank": 64,
+    "lora_alpha": 64,
+    "adapter_scale_at_inference": 1.0,
+    "learning_rate": 0.0001,
+    "lr_scheduler": "constant_with_warmup",
+    "lr_warmup_steps": 100,
+    "optimizer": "adamw",
+    "adam_beta2": 0.95,
+    "max_grad_norm": 1.0,
+    "max_train_steps": 1000,
+    "train_batch_size": 1,
+    "gradient_accumulation_steps": 1,
+    "mixed_precision": "fp16",
+    "gradient_checkpointing": true,
+    "vae_slicing": true,
+    "vae_tiling": true,
+    "height": 480,
+    "width": 720,
+    "max_num_frames": 49,
+    "fps": 8,
+    "video_reshape_mode": "center",
+    "random_flip": false,
+    "seed": 20261103,
+    "dataloader_num_workers": 0
+  },
+  "_random_flip_note": "left unset deliberately: a horizontal flip would mirror the marked walkway to the wrong side of the aisle",
+  "dataset": {
+    "dir": "data/lora_safe_walkway",
+    "n_clips": 16,
+    "manifest": "data/lora_safe_walkway/dataset_manifest.json",
+    "captions": "configs/lora_captions.json",
+    "interval_verification": "outputs/lora/interval_verification.json",
+    "excluded": "6 clips: 4 by the recording/ambiguity audit, 2 after verifying the window"
+  },
+  "measured": {
+    "steps": 1000,
+    "wall": "1:01:55",
+    "seconds_per_step": 3.72,
+    "probe": "outputs/lora/probe_result.json"
+  },
+  "loss": "outputs/lora/train_loss_summary.json",
+  "adapter": {
+    "path": "outputs/lora/adapter/pytorch_lora_weights.safetensors",
+    "bytes": 59013712,
+    "sha256": "57b4e3e43523980c87dab22febba3354c2d9e008aefc9e8161c7df64ca8f53e0",
+    "checkpoints_kept_on_ocean": [
+      "outputs/lora/adapter/checkpoint-750",
+      "outputs/lora/adapter/checkpoint-1000"
+    ],
+    "checkpoints_note": "each holds a 225 MB optimizer.bin for resuming training. They are deliberately NOT in the review package: they are resume state, not review material."
+  },
+  "outcome": "see outputs/lora/FINDINGS.md - negative, the worker did not move"
+}

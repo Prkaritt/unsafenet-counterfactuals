@@ -1,0 +1,173 @@
+{
+  "rows_top_to_bottom": [
+    "worker",
+    "lane",
+    "control"
+  ],
+  "box_colours_rgb": {
+    "worker": [
+      255,
+      60,
+      60
+    ],
+    "lane": [
+      60,
+      220,
+      90
+    ],
+    "control": [
+      90,
+      160,
+      255
+    ]
+  },
+  "mask_area_fraction": 0.06,
+  "clips": [
+    {
+      "clip_id": "0_tr10",
+      "dataset_class": 0,
+      "frames_with_no_person_detected": 0,
+      "frames_total": 16,
+      "detector_scores_sampled": [
+        0.944,
+        0.883,
+        0.963,
+        0.92,
+        0.76
+      ],
+      "worker_energy_removed": 0.06086802095010636,
+      "lane_energy_removed": 0.055443998015608134,
+      "control_energy_removed": 0.048344475535072276,
+      "sheet": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/classifier/mask_overlays/0_tr10_class0.png",
+      "frames_shown": [
+        0,
+        4,
+        8,
+        11,
+        15
+      ]
+    },
+    {
+      "clip_id": "0_tr108",
+      "dataset_class": 0,
+      "frames_with_no_person_detected": 0,
+      "frames_total": 16,
+      "detector_scores_sampled": [
+        0.81,
+        0.982,
+        0.966,
+        0.771,
+        0.982
+      ],
+      "worker_energy_removed": 0.06560286522482983,
+      "lane_energy_removed": 0.05006561234654061,
+      "control_energy_removed": 0.06156368891845159,
+      "sheet": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/classifier/mask_overlays/0_tr108_class0.png",
+      "frames_shown": [
+        0,
+        4,
+        8,
+        11,
+        15
+      ]
+    },
+    {
+      "clip_id": "0_tr11",
+      "dataset_class": 0,
+      "frames_with_no_person_detected": 0,
+      "frames_total": 16,
+      "detector_scores_sampled": [
+        0.992,
+        0.993,
+        0.972,
+        0.938,
+        0.947
+      ],
+      "worker_energy_removed": 0.05865604777578007,
+      "lane_energy_removed": 0.05659448774414069,
+      "control_energy_removed": 0.042889496517549794,
+      "sheet": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/classifier/mask_overlays/0_tr11_class0.png",
+      "frames_shown": [
+        0,
+        4,
+        8,
+        11,
+        15
+      ]
+    },
+    {
+      "clip_id": "4_tr10",
+      "dataset_class": 4,
+      "frames_with_no_person_detected": 1,
+      "frames_total": 16,
+      "detector_scores_sampled": [
+        0.0,
+        0.999,
+        0.598,
+        0.991,
+        0.962
+      ],
+      "worker_energy_removed": 0.07199801959448883,
+      "lane_energy_removed": 0.05399756124545427,
+      "control_energy_removed": 0.03381725724013241,
+      "sheet": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/classifier/mask_overlays/4_tr10_class4.png",
+      "frames_shown": [
+        0,
+        4,
+        8,
+        11,
+        15
+      ]
+    },
+    {
+      "clip_id": "4_tr11",
+      "dataset_class": 4,
+      "frames_with_no_person_detected": 0,
+      "frames_total": 16,
+      "detector_scores_sampled": [
+        0.964,
+        0.982,
+        0.995,
+        0.993,
+        0.989
+      ],
+      "worker_energy_removed": 0.08601700661196192,
+      "lane_energy_removed": 0.04877077100091653,
+      "control_energy_removed": 0.03725448964303937,
+      "sheet": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/classifier/mask_overlays/4_tr11_class4.png",
+      "frames_shown": [
+        0,
+        4,
+        8,
+        11,
+        15
+      ]
+    },
+    {
+      "clip_id": "4_tr12",
+      "dataset_class": 4,
+      "frames_with_no_person_detected": 0,
+      "frames_total": 16,
+      "detector_scores_sampled": [
+        0.998,
+        0.78,
+        0.91,
+        0.863,
+        0.854
+      ],
+      "worker_energy_removed": 0.059575782060344716,
+      "lane_energy_removed": 0.05342187476584201,
+      "control_energy_removed": 0.04007203052239601,
+      "sheet": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/classifier/mask_overlays/4_tr12_class4.png",
+      "frames_shown": [
+        0,
+        4,
+        8,
+        11,
+        15
+      ]
+    }
+  ],
+  "worker_localisation": "COCO person detector (fasterrcnn_mobilenet_v3_large_fpn)",
+  "note": "Motion-energy coverage is supporting evidence about where a mask sits, not proof that the mask covers the worker. These frames are the check that settles it."
+}

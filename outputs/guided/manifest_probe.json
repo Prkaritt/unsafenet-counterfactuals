@@ -1,0 +1,82 @@
+{
+  "schema": "unsafenet-cf/run-manifest/1",
+  "stage": "guided_step_probe",
+  "created_at": "2026-11-04T21:24:09+00:00",
+  "environment": {
+    "captured_at": "2026-11-04T21:24:09+00:00",
+    "python": {
+      "python_version": "3.12.13",
+      "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+      "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+      "machine": "x86_64"
+    },
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "diffusers": "0.36.0",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "huggingface_hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.3.4",
+      "PIL": "11.3.0",
+      "imageio": "2.37.0",
+      "imageio_ffmpeg": "0.8.1",
+      "sentencepiece": "0.2.2"
+    },
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA L40S",
+      "capability": "8.9",
+      "total_vram_gb": 44.42,
+      "free_vram_gb": 10.2,
+      "torch_cuda_version": "12.8",
+      "supports_bf16": true
+    },
+    "system_ram_gb": 1006.85,
+    "nvidia_smi": "Wed Nov  4 16:24:09 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000000:B4:00.0 Off |                    0 |\n| N/A   50C    P0            225W /  350W |   35045MiB /  46068MiB |     62%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           99786      C   ...y/envs/cogvx-cu128/bin/python      35036MiB |\n+-----------------------------------------------------------------------------------------+"
+  },
+  "settings": {
+    "classifier_checkpoint": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/classifier/classifier_best.pt",
+    "cogvideox_checkpoint": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+    "preprocess": [
+      16,
+      240,
+      320
+    ],
+    "target_index": 1,
+    "step_size": 50.0,
+    "vae_tiling": true,
+    "transformer_loaded": false,
+    "backward_graph": "VAE decoder and classifier only"
+  },
+  "inputs": {
+    "source_latent_from": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/preprocessed/0_tr143_720x480x49.mp4",
+    "latent_shape": [
+      1,
+      16,
+      13,
+      60,
+      90
+    ]
+  },
+  "outputs": {
+    "D1_gradient_finite": true,
+    "D2_gradient_nonzero_and_coverage_rotates": true,
+    "D3_update_direction_correct": true,
+    "D4_peak_gpu_gib": 33.383
+  },
+  "timing": {
+    "s_per_guided_step": 18.76912021636963
+  },
+  "memory": {
+    "peak_gpu_gib": 33.383
+  },
+  "notes": "Stage D probe. One guided step, nothing generated. CogVideoX weights are frozen and the transformer is not loaded.",
+  "claims": {
+    "is_ld_vice_reproduction": false,
+    "safety_verified": false,
+    "classifier_evaluated": false,
+    "status": "candidate counterfactual, pending human review"
+  }
+}

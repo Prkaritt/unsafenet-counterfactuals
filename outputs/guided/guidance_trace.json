@@ -1,0 +1,394 @@
+{
+  "guided": [
+    {
+      "step": 0,
+      "timestep": 599,
+      "grad_norm": 0.577402651309967,
+      "log_p_target": -0.5756580233573914,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        0,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 1,
+      "timestep": 579,
+      "grad_norm": 0.42042118310928345,
+      "log_p_target": -0.44606614112854004,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        1,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 2,
+      "timestep": 559,
+      "grad_norm": 0.2921876311302185,
+      "log_p_target": -0.2757791578769684,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        2,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 3,
+      "timestep": 539,
+      "grad_norm": 0.22629700601100922,
+      "log_p_target": -0.1985609233379364,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        3,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 4,
+      "timestep": 519,
+      "grad_norm": 0.1556556671857834,
+      "log_p_target": -0.13758423924446106,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        4,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 5,
+      "timestep": 499,
+      "grad_norm": 0.15891264379024506,
+      "log_p_target": -0.09644562005996704,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        5,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 6,
+      "timestep": 479,
+      "grad_norm": 0.09471181780099869,
+      "log_p_target": -0.08180775493383408,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        6,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 7,
+      "timestep": 459,
+      "grad_norm": 0.07787484675645828,
+      "log_p_target": -0.06519315391778946,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        7,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 8,
+      "timestep": 439,
+      "grad_norm": 0.057973504066467285,
+      "log_p_target": -0.042844485491514206,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        8,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 9,
+      "timestep": 419,
+      "grad_norm": 0.10109169781208038,
+      "log_p_target": -0.07901125401258469,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        0,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 10,
+      "timestep": 399,
+      "grad_norm": 0.020396310836076736,
+      "log_p_target": -0.015010149218142033,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        1,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 11,
+      "timestep": 379,
+      "grad_norm": 0.007574989926069975,
+      "log_p_target": -0.005524486768990755,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        2,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 12,
+      "timestep": 359,
+      "grad_norm": 0.0033730834256857634,
+      "log_p_target": -0.0027001372072845697,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        3,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 13,
+      "timestep": 339,
+      "grad_norm": 0.0013255146332085133,
+      "log_p_target": -0.001086717238649726,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        4,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 14,
+      "timestep": 319,
+      "grad_norm": 0.0004738873685710132,
+      "log_p_target": -0.00043466180795803666,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        5,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 15,
+      "timestep": 299,
+      "grad_norm": 0.00021199283946771175,
+      "log_p_target": -0.0002150304353563115,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        6,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 16,
+      "timestep": 279,
+      "grad_norm": 0.00012104646157240495,
+      "log_p_target": -0.00013052565918769687,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        7,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 17,
+      "timestep": 259,
+      "grad_norm": 7.639178511453792e-05,
+      "log_p_target": -7.60526381782256e-05,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        8,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 18,
+      "timestep": 239,
+      "grad_norm": 0.00014215837290976197,
+      "log_p_target": -0.00014256415306590497,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        0,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 19,
+      "timestep": 219,
+      "grad_norm": 1.5606041415594518e-05,
+      "log_p_target": -1.9192511899746023e-05,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        1,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 20,
+      "timestep": 199,
+      "grad_norm": 6.107354693085654e-06,
+      "log_p_target": -7.629365427419543e-06,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        2,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 21,
+      "timestep": 179,
+      "grad_norm": 4.321786946093198e-06,
+      "log_p_target": -5.602820692729438e-06,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        3,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 22,
+      "timestep": 159,
+      "grad_norm": 2.1832381662534317e-06,
+      "log_p_target": -2.9802276912960224e-06,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        4,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 23,
+      "timestep": 139,
+      "grad_norm": 1.2286629953450756e-06,
+      "log_p_target": -1.9073468138230965e-06,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        5,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 24,
+      "timestep": 119,
+      "grad_norm": 1.1921540590265067e-06,
+      "log_p_target": -1.7881377516459906e-06,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        6,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 25,
+      "timestep": 99,
+      "grad_norm": 1.1030249424948124e-06,
+      "log_p_target": -1.6689286894688848e-06,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        7,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 26,
+      "timestep": 79,
+      "grad_norm": 1.4829903420832125e-06,
+      "log_p_target": -2.145764938177308e-06,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        8,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 27,
+      "timestep": 59,
+      "grad_norm": 2.9719685699092224e-06,
+      "log_p_target": -3.099436753473128e-06,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        0,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 28,
+      "timestep": 39,
+      "grad_norm": 5.321219873621885e-07,
+      "log_p_target": -8.344646857949556e-07,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        1,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    },
+    {
+      "step": 29,
+      "timestep": 19,
+      "grad_norm": 3.851101553209446e-07,
+      "log_p_target": -7.152555099310121e-07,
+      "grad_scale_used": 1024.0,
+      "latent_window": [
+        2,
+        5
+      ],
+      "finite": true,
+      "applied": true
+    }
+  ]
+}

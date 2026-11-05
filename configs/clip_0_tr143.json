@@ -1,0 +1,17 @@
+{
+  "_comment": "Selected source clip and preprocessing spec for the first feasibility run. Crop x=300 keeps both the violating worker (centre-left) and the green marked walkway (right edge); a centred crop at x=150 would clip the walkway.",
+  "clip_id": "0_tr143",
+  "source": "data/raw/0_tr143.mp4",
+  "source_sha256": "7a7c0d10204bca0e4cfdf7bdb699ab16383b37800471fd6f3a03b7a1780903f3",
+  "source_download_url": "https://data.mendeley.com/public-files/datasets/xjmtb22pff/files/f48e2cbc-bd0e-42b4-bb7e-9ca3980143be/file_downloaded",
+  "unsafe_label": {"class_id": 0, "name": "Safe Walkway Violation"},
+  "target_safe_label": {"class_id": 4, "name": "Safe Walkway"},
+  "crop": {"width": 1620, "height": 1080, "x": 300, "y": 0},
+  "start_frame": 0,
+  "frame_step": 3,
+  "num_frames": 49,
+  "width": 720,
+  "height": 480,
+  "out_fps": 8,
+  "crf": 8
+}

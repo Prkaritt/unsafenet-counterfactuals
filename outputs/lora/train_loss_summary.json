@@ -1,0 +1,70 @@
+{
+  "_what": "Diffusion training loss per 100-step bucket, parsed from the tqdm postfix in logs/loratrain-50230058.err.",
+  "_caveat": "This is the denoising MSE at a randomly sampled timestep per step. It is noisy, it falls as the adapter fits 16 clips, and it says NOTHING about whether the edit moves the worker. It is not a quality metric and not evidence for any claim about the counterfactual.",
+  "job": "50230058",
+  "total_steps": 1000,
+  "buckets": [
+    {
+      "steps": "1-100",
+      "n": 199,
+      "mean_loss": 0.2506,
+      "median_loss": 0.229
+    },
+    {
+      "steps": "101-200",
+      "n": 200,
+      "mean_loss": 0.2469,
+      "median_loss": 0.2125
+    },
+    {
+      "steps": "201-300",
+      "n": 200,
+      "mean_loss": 0.259,
+      "median_loss": 0.221
+    },
+    {
+      "steps": "301-400",
+      "n": 200,
+      "mean_loss": 0.2376,
+      "median_loss": 0.209
+    },
+    {
+      "steps": "401-500",
+      "n": 200,
+      "mean_loss": 0.2527,
+      "median_loss": 0.2165
+    },
+    {
+      "steps": "501-600",
+      "n": 200,
+      "mean_loss": 0.2543,
+      "median_loss": 0.234
+    },
+    {
+      "steps": "601-700",
+      "n": 200,
+      "mean_loss": 0.2464,
+      "median_loss": 0.22
+    },
+    {
+      "steps": "701-800",
+      "n": 200,
+      "mean_loss": 0.2488,
+      "median_loss": 0.226
+    },
+    {
+      "steps": "801-900",
+      "n": 200,
+      "mean_loss": 0.2442,
+      "median_loss": 0.213
+    },
+    {
+      "steps": "901-1000",
+      "n": 201,
+      "mean_loss": 0.2249,
+      "median_loss": 0.206
+    }
+  ],
+  "steps_1_100_mean": 0.2506,
+  "steps_901_1000_mean": 0.2249
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "unsafenet-cf/run-manifest/1",
+  "stage": "classifier_train_probe",
+  "created_at": "2026-11-04T19:27:07+00:00",
+  "environment": {
+    "captured_at": "2026-11-04T19:27:06+00:00",
+    "python": {
+      "python_version": "3.12.13",
+      "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+      "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+      "machine": "x86_64"
+    },
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "diffusers": "0.36.0",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "huggingface_hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.3.4",
+      "PIL": "11.3.0",
+      "imageio": "2.37.0",
+      "imageio_ffmpeg": "0.8.1",
+      "sentencepiece": "0.2.2"
+    },
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA L40S",
+      "capability": "8.9",
+      "total_vram_gb": 44.42,
+      "free_vram_gb": 38.51,
+      "torch_cuda_version": "12.8",
+      "supports_bf16": true
+    },
+    "system_ram_gb": 1006.85,
+    "nvidia_smi": "Wed Nov  4 14:27:07 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000000:B4:00.0 Off |                    0 |\n| N/A   27C    P0             84W /  350W |    6057MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           49436      C   ...y/envs/cogvx-cu128/bin/python       6048MiB |\n+-----------------------------------------------------------------------------------------+"
+  },
+  "settings": {
+    "batch_size": 8,
+    "frames": 16,
+    "height": 240,
+    "width": 320,
+    "model": "r3d_18",
+    "weights": "KINETICS400_V1",
+    "optimizer": "AdamW",
+    "lr": 0.0001
+  },
+  "inputs": {
+    "note": "random tensors of the real shape; no clips decoded"
+  },
+  "outputs": {
+    "numeric_check": {
+      "amp_enabled": true,
+      "amp_dtype": "torch.bfloat16",
+      "logits_dtype": "torch.bfloat16",
+      "loss_value": 0.008843421936035156,
+      "loss_finite": true,
+      "params_with_grad": 62,
+      "params_total": 62,
+      "all_grads_finite": true,
+      "grad_global_norm": 0.16813994944095612,
+      "grad_norm_nonzero": true,
+      "device": "NVIDIA L40S",
+      "capability": "8.9",
+      "bf16_native": true
+    }
+  },
+  "timing": {
+    "s_per_training_step": 1.276160192489624
+  },
+  "memory": {
+    "peak_gpu_gib": 5.934
+  },
+  "notes": "Memory and time probe only. Measures a real forward, backward and optimiser step at the real shape. No training was performed and no checkpoint was written.",
+  "claims": {
+    "is_ld_vice_reproduction": false,
+    "safety_verified": false,
+    "classifier_evaluated": false,
+    "status": "candidate counterfactual, pending human review"
+  }
+}

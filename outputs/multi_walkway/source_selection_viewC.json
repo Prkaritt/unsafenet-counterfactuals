@@ -1,0 +1,1333 @@
+{
+ "_method": "COCO person detector, tallest detection per frame as the foreground worker; lane = green paint with G - max(R,B) > 15; distance is the minimum Euclidean pixel distance from the worker's feet to a lane pixel, at full source resolution 1920x1080.",
+ "_why_distance_not_x": "A fixed x threshold cannot be compared across different crops and camera views. Distance to that clip's own lane pixels is defined per source.",
+ "_not_safety": "Distance from paint is geometry, not a safety judgement.",
+ "clips": {
+  "0_tr48": {
+   "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class0_train/0_tr48.mp4",
+   "frames_sampled": [
+    0,
+    12,
+    24,
+    36,
+    48,
+    60,
+    72,
+    84,
+    96,
+    108,
+    120,
+    132
+   ],
+   "detector_misses": 0,
+   "lane": {
+    "pixels": 32574,
+    "x_min": 104,
+    "x_max": 1919,
+    "x_median": 1708
+   },
+   "crop_proposed": {
+    "x": 300,
+    "y": 0,
+    "width": 1620,
+    "height": 1080,
+    "worker_frames_inside": 1.0,
+    "lane_pixels_inside": 0.993
+   },
+   "foot_x_first": 1538.5,
+   "foot_x_last": 672.2,
+   "direction": "left",
+   "dist_to_lane_px_min": 42.0,
+   "dist_to_lane_px_median": 206.1,
+   "worker_height_px_median": 209.7,
+   "per_frame": [
+    {
+     "frame": 0,
+     "foot_xy": [
+      1538.5,
+      767.9
+     ],
+     "height_px": 201.2,
+     "score": 0.998,
+     "dist_to_lane_px": 90.6,
+     "nearest_lane_xy": [
+      1625,
+      741
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 12,
+     "foot_xy": [
+      1519.0,
+      789.2
+     ],
+     "height_px": 209.2,
+     "score": 0.998,
+     "dist_to_lane_px": 117.3,
+     "nearest_lane_xy": [
+      1636,
+      781
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 24,
+     "foot_xy": [
+      1473.3,
+      799.0
+     ],
+     "height_px": 216.3,
+     "score": 0.996,
+     "dist_to_lane_px": 162.0,
+     "nearest_lane_xy": [
+      1631,
+      762
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 36,
+     "foot_xy": [
+      1392.5,
+      810.0
+     ],
+     "height_px": 223.7,
+     "score": 0.99,
+     "dist_to_lane_px": 243.5,
+     "nearest_lane_xy": [
+      1626,
+      741
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 48,
+     "foot_xy": [
+      1348.2,
+      804.0
+     ],
+     "height_px": 224.1,
+     "score": 0.828,
+     "dist_to_lane_px": 284.6,
+     "nearest_lane_xy": [
+      1626,
+      742
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 60,
+     "foot_xy": [
+      1378.5,
+      446.3
+     ],
+     "height_px": 167.1,
+     "score": 0.662,
+     "dist_to_lane_px": 244.8,
+     "nearest_lane_xy": [
+      1592,
+      566
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 72,
+     "foot_xy": [
+      1755.8,
+      819.3
+     ],
+     "height_px": 240.1,
+     "score": 0.59,
+     "dist_to_lane_px": 49.9,
+     "nearest_lane_xy": [
+      1710,
+      839
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 84,
+     "foot_xy": [
+      1758.1,
+      826.5
+     ],
+     "height_px": 247.2,
+     "score": 0.748,
+     "dist_to_lane_px": 42.0,
+     "nearest_lane_xy": [
+      1752,
+      868
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 96,
+     "foot_xy": [
+      1249.7,
+      710.9
+     ],
+     "height_px": 210.2,
+     "score": 0.53,
+     "dist_to_lane_px": 379.0,
+     "nearest_lane_xy": [
+      1628,
+      687
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 108,
+     "foot_xy": [
+      495.5,
+      527.5
+     ],
+     "height_px": 77.3,
+     "score": 0.89,
+     "dist_to_lane_px": 383.5,
+     "nearest_lane_xy": [
+      112,
+      528
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 120,
+     "foot_xy": [
+      362.1,
+      547.5
+     ],
+     "height_px": 128.0,
+     "score": 0.573,
+     "dist_to_lane_px": 447.7,
+     "nearest_lane_xy": [
+      301,
+      991
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 132,
+     "foot_xy": [
+      672.2,
+      1067.3
+     ],
+     "height_px": 156.1,
+     "score": 0.633,
+     "dist_to_lane_px": 168.7,
+     "nearest_lane_xy": [
+      507,
+      1033
+     ],
+     "n_people": 2
+    }
+   ],
+   "scene_cluster": "viewC"
+  },
+  "0_tr46": {
+   "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class0_train/0_tr46.mp4",
+   "frames_sampled": [
+    0,
+    12,
+    24,
+    36,
+    48,
+    60,
+    72,
+    84,
+    96,
+    108,
+    120,
+    132
+   ],
+   "detector_misses": 0,
+   "lane": {
+    "pixels": 32747,
+    "x_min": 110,
+    "x_max": 1919,
+    "x_median": 1709
+   },
+   "crop_proposed": {
+    "x": 300,
+    "y": 0,
+    "width": 1620,
+    "height": 1080,
+    "worker_frames_inside": 0.917,
+    "lane_pixels_inside": 0.996
+   },
+   "foot_x_first": 759.0,
+   "foot_x_last": 1383.4,
+   "direction": "right",
+   "dist_to_lane_px_min": 73.4,
+   "dist_to_lane_px_median": 210.8,
+   "worker_height_px_median": 196.9,
+   "per_frame": [
+    {
+     "frame": 0,
+     "foot_xy": [
+      759.0,
+      1074.7
+     ],
+     "height_px": 198.4,
+     "score": 0.937,
+     "dist_to_lane_px": 73.4,
+     "nearest_lane_xy": [
+      827,
+      1047
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 12,
+     "foot_xy": [
+      757.7,
+      1077.4
+     ],
+     "height_px": 205.5,
+     "score": 0.95,
+     "dist_to_lane_px": 75.1,
+     "nearest_lane_xy": [
+      828,
+      1051
+     ],
+     "n_people": 2
+    },
+    {
+     "frame": 24,
+     "foot_xy": [
+      733.0,
+      1075.4
+     ],
+     "height_px": 190.3,
+     "score": 0.504,
+     "dist_to_lane_px": 229.1,
+     "nearest_lane_xy": [
+      508,
+      1032
+     ],
+     "n_people": 4
+    },
+    {
+     "frame": 36,
+     "foot_xy": [
+      702.4,
+      1078.6
+     ],
+     "height_px": 195.5,
+     "score": 0.88,
+     "dist_to_lane_px": 200.7,
+     "nearest_lane_xy": [
+      507,
+      1033
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 48,
+     "foot_xy": [
+      32.4,
+      832.4
+     ],
+     "height_px": 130.8,
+     "score": 0.583,
+     "dist_to_lane_px": 307.4,
+     "nearest_lane_xy": [
+      294,
+      994
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 60,
+     "foot_xy": [
+      698.1,
+      1073.9
+     ],
+     "height_px": 192.3,
+     "score": 0.55,
+     "dist_to_lane_px": 196.6,
+     "nearest_lane_xy": [
+      506,
+      1032
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 72,
+     "foot_xy": [
+      699.1,
+      1076.4
+     ],
+     "height_px": 199.9,
+     "score": 0.83,
+     "dist_to_lane_px": 198.9,
+     "nearest_lane_xy": [
+      505,
+      1033
+     ],
+     "n_people": 2
+    },
+    {
+     "frame": 84,
+     "foot_xy": [
+      716.3,
+      1075.9
+     ],
+     "height_px": 194.8,
+     "score": 0.815,
+     "dist_to_lane_px": 417.5,
+     "nearest_lane_xy": [
+      306,
+      999
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 96,
+     "foot_xy": [
+      707.0,
+      1074.1
+     ],
+     "height_px": 189.1,
+     "score": 0.551,
+     "dist_to_lane_px": 206.1,
+     "nearest_lane_xy": [
+      505,
+      1033
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 108,
+     "foot_xy": [
+      1359.4,
+      1075.4
+     ],
+     "height_px": 230.0,
+     "score": 0.955,
+     "dist_to_lane_px": 343.7,
+     "nearest_lane_xy": [
+      1691,
+      985
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 120,
+     "foot_xy": [
+      1352.1,
+      1071.2
+     ],
+     "height_px": 280.8,
+     "score": 0.999,
+     "dist_to_lane_px": 349.6,
+     "nearest_lane_xy": [
+      1691,
+      985
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 132,
+     "foot_xy": [
+      1383.4,
+      1016.6
+     ],
+     "height_px": 272.3,
+     "score": 0.995,
+     "dist_to_lane_px": 215.5,
+     "nearest_lane_xy": [
+      1248,
+      849
+     ],
+     "n_people": 5
+    }
+   ],
+   "scene_cluster": "viewC"
+  },
+  "0_tr61": {
+   "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class0_train/0_tr61.mp4",
+   "frames_sampled": [
+    0,
+    12,
+    24,
+    36,
+    48,
+    60,
+    72,
+    84,
+    96,
+    108,
+    120,
+    132
+   ],
+   "detector_misses": 0,
+   "lane": {
+    "pixels": 33449,
+    "x_min": 162,
+    "x_max": 1919,
+    "x_median": 1710
+   },
+   "crop_proposed": {
+    "x": 300,
+    "y": 0,
+    "width": 1620,
+    "height": 1080,
+    "worker_frames_inside": 1.0,
+    "lane_pixels_inside": 0.994
+   },
+   "foot_x_first": 746.9,
+   "foot_x_last": 739.5,
+   "direction": "little lateral motion",
+   "dist_to_lane_px_min": 92.1,
+   "dist_to_lane_px_median": 232.6,
+   "worker_height_px_median": 287.0,
+   "per_frame": [
+    {
+     "frame": 0,
+     "foot_xy": [
+      746.9,
+      1073.9
+     ],
+     "height_px": 283.6,
+     "score": 0.991,
+     "dist_to_lane_px": 245.2,
+     "nearest_lane_xy": [
+      505,
+      1034
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 12,
+     "foot_xy": [
+      737.8,
+      1076.1
+     ],
+     "height_px": 292.5,
+     "score": 0.982,
+     "dist_to_lane_px": 236.0,
+     "nearest_lane_xy": [
+      506,
+      1032
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 24,
+     "foot_xy": [
+      735.2,
+      1072.0
+     ],
+     "height_px": 286.9,
+     "score": 0.992,
+     "dist_to_lane_px": 230.7,
+     "nearest_lane_xy": [
+      508,
+      1032
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 36,
+     "foot_xy": [
+      734.9,
+      1070.9
+     ],
+     "height_px": 289.9,
+     "score": 0.995,
+     "dist_to_lane_px": 234.8,
+     "nearest_lane_xy": [
+      503,
+      1034
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 48,
+     "foot_xy": [
+      733.4,
+      1073.5
+     ],
+     "height_px": 290.4,
+     "score": 0.995,
+     "dist_to_lane_px": 231.8,
+     "nearest_lane_xy": [
+      505,
+      1034
+     ],
+     "n_people": 7
+    },
+    {
+     "frame": 60,
+     "foot_xy": [
+      735.4,
+      1078.2
+     ],
+     "height_px": 293.6,
+     "score": 0.995,
+     "dist_to_lane_px": 235.0,
+     "nearest_lane_xy": [
+      505,
+      1032
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 72,
+     "foot_xy": [
+      734.1,
+      1076.9
+     ],
+     "height_px": 289.7,
+     "score": 0.992,
+     "dist_to_lane_px": 230.5,
+     "nearest_lane_xy": [
+      508,
+      1032
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 84,
+     "foot_xy": [
+      733.4,
+      1071.6
+     ],
+     "height_px": 286.2,
+     "score": 0.994,
+     "dist_to_lane_px": 231.7,
+     "nearest_lane_xy": [
+      505,
+      1033
+     ],
+     "n_people": 11
+    },
+    {
+     "frame": 96,
+     "foot_xy": [
+      738.9,
+      1071.6
+     ],
+     "height_px": 283.4,
+     "score": 0.909,
+     "dist_to_lane_px": 233.4,
+     "nearest_lane_xy": [
+      509,
+      1031
+     ],
+     "n_people": 10
+    },
+    {
+     "frame": 108,
+     "foot_xy": [
+      738.3,
+      1078.4
+     ],
+     "height_px": 286.7,
+     "score": 0.887,
+     "dist_to_lane_px": 93.4,
+     "nearest_lane_xy": [
+      827,
+      1049
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 120,
+     "foot_xy": [
+      736.7,
+      1076.5
+     ],
+     "height_px": 287.1,
+     "score": 0.98,
+     "dist_to_lane_px": 233.8,
+     "nearest_lane_xy": [
+      507,
+      1033
+     ],
+     "n_people": 9
+    },
+    {
+     "frame": 132,
+     "foot_xy": [
+      739.5,
+      1074.4
+     ],
+     "height_px": 284.5,
+     "score": 0.963,
+     "dist_to_lane_px": 92.1,
+     "nearest_lane_xy": [
+      828,
+      1049
+     ],
+     "n_people": 9
+    }
+   ],
+   "scene_cluster": "viewC"
+  },
+  "0_tr62": {
+   "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class0_train/0_tr62.mp4",
+   "frames_sampled": [
+    0,
+    12,
+    24,
+    36,
+    48,
+    60,
+    72,
+    84,
+    96,
+    108,
+    120,
+    132
+   ],
+   "detector_misses": 0,
+   "lane": {
+    "pixels": 32463,
+    "x_min": 215,
+    "x_max": 1919,
+    "x_median": 1709
+   },
+   "crop_proposed": {
+    "x": 300,
+    "y": 0,
+    "width": 1620,
+    "height": 1080,
+    "worker_frames_inside": 0.833,
+    "lane_pixels_inside": 0.996
+   },
+   "foot_x_first": 741.0,
+   "foot_x_last": 742.7,
+   "direction": "little lateral motion",
+   "dist_to_lane_px_min": 77.5,
+   "dist_to_lane_px_median": 250.1,
+   "worker_height_px_median": 199.1,
+   "per_frame": [
+    {
+     "frame": 0,
+     "foot_xy": [
+      741.0,
+      1075.9
+     ],
+     "height_px": 264.0,
+     "score": 0.599,
+     "dist_to_lane_px": 238.0,
+     "nearest_lane_xy": [
+      507,
+      1032
+     ],
+     "n_people": 7
+    },
+    {
+     "frame": 12,
+     "foot_xy": [
+      468.9,
+      525.0
+     ],
+     "height_px": 125.0,
+     "score": 0.912,
+     "dist_to_lane_px": 496.2,
+     "nearest_lane_xy": [
+      301,
+      992
+     ],
+     "n_people": 2
+    },
+    {
+     "frame": 24,
+     "foot_xy": [
+      753.5,
+      1078.5
+     ],
+     "height_px": 275.8,
+     "score": 0.727,
+     "dist_to_lane_px": 251.4,
+     "nearest_lane_xy": [
+      506,
+      1034
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 36,
+     "foot_xy": [
+      31.2,
+      834.2
+     ],
+     "height_px": 134.1,
+     "score": 0.583,
+     "dist_to_lane_px": 306.2,
+     "nearest_lane_xy": [
+      293,
+      993
+     ],
+     "n_people": 7
+    },
+    {
+     "frame": 48,
+     "foot_xy": [
+      754.0,
+      1077.8
+     ],
+     "height_px": 276.4,
+     "score": 0.708,
+     "dist_to_lane_px": 77.5,
+     "nearest_lane_xy": [
+      826,
+      1049
+     ],
+     "n_people": 4
+    },
+    {
+     "frame": 60,
+     "foot_xy": [
+      466.6,
+      525.9
+     ],
+     "height_px": 126.2,
+     "score": 0.894,
+     "dist_to_lane_px": 102.0,
+     "nearest_lane_xy": [
+      368,
+      500
+     ],
+     "n_people": 7
+    },
+    {
+     "frame": 72,
+     "foot_xy": [
+      31.8,
+      827.0
+     ],
+     "height_px": 126.2,
+     "score": 0.514,
+     "dist_to_lane_px": 312.3,
+     "nearest_lane_xy": [
+      295,
+      995
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 84,
+     "foot_xy": [
+      746.0,
+      1076.1
+     ],
+     "height_px": 264.3,
+     "score": 0.848,
+     "dist_to_lane_px": 243.1,
+     "nearest_lane_xy": [
+      507,
+      1032
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 96,
+     "foot_xy": [
+      749.8,
+      1076.6
+     ],
+     "height_px": 269.2,
+     "score": 0.599,
+     "dist_to_lane_px": 248.7,
+     "nearest_lane_xy": [
+      505,
+      1033
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 108,
+     "foot_xy": [
+      467.7,
+      528.7
+     ],
+     "height_px": 125.5,
+     "score": 0.949,
+     "dist_to_lane_px": 364.4,
+     "nearest_lane_xy": [
+      477,
+      893
+     ],
+     "n_people": 9
+    },
+    {
+     "frame": 120,
+     "foot_xy": [
+      470.9,
+      526.4
+     ],
+     "height_px": 119.8,
+     "score": 0.93,
+     "dist_to_lane_px": 496.3,
+     "nearest_lane_xy": [
+      302,
+      993
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 132,
+     "foot_xy": [
+      742.7,
+      1074.2
+     ],
+     "height_px": 273.8,
+     "score": 0.687,
+     "dist_to_lane_px": 239.6,
+     "nearest_lane_xy": [
+      507,
+      1031
+     ],
+     "n_people": 7
+    }
+   ],
+   "scene_cluster": "viewC"
+  },
+  "0_tr17": {
+   "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class0_train/0_tr17.mp4",
+   "frames_sampled": [
+    0,
+    12,
+    24,
+    36,
+    48,
+    60,
+    72,
+    84,
+    96,
+    108,
+    120,
+    132
+   ],
+   "detector_misses": 0,
+   "lane": {
+    "pixels": 30189,
+    "x_min": 160,
+    "x_max": 1919,
+    "x_median": 1712
+   },
+   "crop_proposed": {
+    "x": 300,
+    "y": 0,
+    "width": 1620,
+    "height": 1080,
+    "worker_frames_inside": 1.0,
+    "lane_pixels_inside": 0.993
+   },
+   "foot_x_first": 421.7,
+   "foot_x_last": 424.8,
+   "direction": "little lateral motion",
+   "dist_to_lane_px_min": 167.5,
+   "dist_to_lane_px_median": 455.8,
+   "worker_height_px_median": 171.7,
+   "per_frame": [
+    {
+     "frame": 0,
+     "foot_xy": [
+      421.7,
+      552.9
+     ],
+     "height_px": 179.6,
+     "score": 0.832,
+     "dist_to_lane_px": 455.6,
+     "nearest_lane_xy": [
+      300,
+      992
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 12,
+     "foot_xy": [
+      425.4,
+      532.3
+     ],
+     "height_px": 155.9,
+     "score": 0.878,
+     "dist_to_lane_px": 476.7,
+     "nearest_lane_xy": [
+      299,
+      992
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 24,
+     "foot_xy": [
+      425.1,
+      533.1
+     ],
+     "height_px": 162.7,
+     "score": 0.71,
+     "dist_to_lane_px": 476.2,
+     "nearest_lane_xy": [
+      298,
+      992
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 36,
+     "foot_xy": [
+      423.7,
+      540.6
+     ],
+     "height_px": 170.9,
+     "score": 0.61,
+     "dist_to_lane_px": 167.5,
+     "nearest_lane_xy": [
+      544,
+      424
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 48,
+     "foot_xy": [
+      428.1,
+      538.3
+     ],
+     "height_px": 166.0,
+     "score": 0.644,
+     "dist_to_lane_px": 470.5,
+     "nearest_lane_xy": [
+      300,
+      991
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 60,
+     "foot_xy": [
+      421.9,
+      552.7
+     ],
+     "height_px": 172.5,
+     "score": 0.688,
+     "dist_to_lane_px": 455.9,
+     "nearest_lane_xy": [
+      300,
+      992
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 72,
+     "foot_xy": [
+      419.5,
+      584.2
+     ],
+     "height_px": 235.0,
+     "score": 0.622,
+     "dist_to_lane_px": 424.0,
+     "nearest_lane_xy": [
+      300,
+      991
+     ],
+     "n_people": 7
+    },
+    {
+     "frame": 84,
+     "foot_xy": [
+      428.2,
+      530.0
+     ],
+     "height_px": 149.6,
+     "score": 0.536,
+     "dist_to_lane_px": 264.7,
+     "nearest_lane_xy": [
+      168,
+      481
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 96,
+     "foot_xy": [
+      426.9,
+      535.3
+     ],
+     "height_px": 157.3,
+     "score": 0.712,
+     "dist_to_lane_px": 474.5,
+     "nearest_lane_xy": [
+      298,
+      992
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 108,
+     "foot_xy": [
+      1163.8,
+      651.5
+     ],
+     "height_px": 183.5,
+     "score": 0.547,
+     "dist_to_lane_px": 452.4,
+     "nearest_lane_xy": [
+      1616,
+      663
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 120,
+     "foot_xy": [
+      424.8,
+      547.7
+     ],
+     "height_px": 172.8,
+     "score": 0.904,
+     "dist_to_lane_px": 460.3,
+     "nearest_lane_xy": [
+      301,
+      991
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 132,
+     "foot_xy": [
+      424.8,
+      552.0
+     ],
+     "height_px": 176.3,
+     "score": 0.819,
+     "dist_to_lane_px": 455.4,
+     "nearest_lane_xy": [
+      300,
+      990
+     ],
+     "n_people": 7
+    }
+   ],
+   "scene_cluster": "viewC"
+  },
+  "0_tr119": {
+   "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class0_train/0_tr119.mp4",
+   "frames_sampled": [
+    0,
+    12,
+    24,
+    36,
+    48,
+    60,
+    72,
+    84,
+    96,
+    108,
+    120,
+    132
+   ],
+   "detector_misses": 0,
+   "lane": {
+    "pixels": 30669,
+    "x_min": 291,
+    "x_max": 1919,
+    "x_median": 1710
+   },
+   "crop_proposed": {
+    "x": 300,
+    "y": 0,
+    "width": 1620,
+    "height": 1080,
+    "worker_frames_inside": 1.0,
+    "lane_pixels_inside": 0.997
+   },
+   "foot_x_first": 909.5,
+   "foot_x_last": 1014.4,
+   "direction": "right",
+   "dist_to_lane_px_min": 405.3,
+   "dist_to_lane_px_median": 506.0,
+   "worker_height_px_median": 321.8,
+   "per_frame": [
+    {
+     "frame": 0,
+     "foot_xy": [
+      909.5,
+      983.3
+     ],
+     "height_px": 380.3,
+     "score": 0.536,
+     "dist_to_lane_px": 405.3,
+     "nearest_lane_xy": [
+      507,
+      1031
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 12,
+     "foot_xy": [
+      1014.3,
+      1063.8
+     ],
+     "height_px": 318.8,
+     "score": 0.992,
+     "dist_to_lane_px": 510.1,
+     "nearest_lane_xy": [
+      505,
+      1034
+     ],
+     "n_people": 12
+    },
+    {
+     "frame": 24,
+     "foot_xy": [
+      1007.9,
+      1065.2
+     ],
+     "height_px": 322.1,
+     "score": 0.993,
+     "dist_to_lane_px": 502.8,
+     "nearest_lane_xy": [
+      506,
+      1035
+     ],
+     "n_people": 10
+    },
+    {
+     "frame": 36,
+     "foot_xy": [
+      1006.6,
+      1064.7
+     ],
+     "height_px": 321.4,
+     "score": 0.992,
+     "dist_to_lane_px": 500.7,
+     "nearest_lane_xy": [
+      507,
+      1031
+     ],
+     "n_people": 9
+    },
+    {
+     "frame": 48,
+     "foot_xy": [
+      1012.5,
+      1061.9
+     ],
+     "height_px": 317.0,
+     "score": 0.994,
+     "dist_to_lane_px": 507.4,
+     "nearest_lane_xy": [
+      506,
+      1032
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 60,
+     "foot_xy": [
+      1010.4,
+      1063.4
+     ],
+     "height_px": 340.3,
+     "score": 0.955,
+     "dist_to_lane_px": 504.4,
+     "nearest_lane_xy": [
+      507,
+      1032
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 72,
+     "foot_xy": [
+      1001.1,
+      1064.6
+     ],
+     "height_px": 317.6,
+     "score": 0.94,
+     "dist_to_lane_px": 495.2,
+     "nearest_lane_xy": [
+      507,
+      1032
+     ],
+     "n_people": 8
+    },
+    {
+     "frame": 84,
+     "foot_xy": [
+      1011.0,
+      1067.4
+     ],
+     "height_px": 329.0,
+     "score": 0.975,
+     "dist_to_lane_px": 506.2,
+     "nearest_lane_xy": [
+      506,
+      1033
+     ],
+     "n_people": 3
+    },
+    {
+     "frame": 96,
+     "foot_xy": [
+      1011.1,
+      1060.5
+     ],
+     "height_px": 319.6,
+     "score": 0.975,
+     "dist_to_lane_px": 505.8,
+     "nearest_lane_xy": [
+      506,
+      1034
+     ],
+     "n_people": 4
+    },
+    {
+     "frame": 108,
+     "foot_xy": [
+      1018.0,
+      1063.3
+     ],
+     "height_px": 327.0,
+     "score": 0.982,
+     "dist_to_lane_px": 511.9,
+     "nearest_lane_xy": [
+      507,
+      1032
+     ],
+     "n_people": 6
+    },
+    {
+     "frame": 120,
+     "foot_xy": [
+      1015.3,
+      1066.8
+     ],
+     "height_px": 322.4,
+     "score": 0.977,
+     "dist_to_lane_px": 510.2,
+     "nearest_lane_xy": [
+      506,
+      1035
+     ],
+     "n_people": 5
+    },
+    {
+     "frame": 132,
+     "foot_xy": [
+      1014.4,
+      1066.4
+     ],
+     "height_px": 316.8,
+     "score": 0.978,
+     "dist_to_lane_px": 509.6,
+     "nearest_lane_xy": [
+      506,
+      1032
+     ],
+     "n_people": 7
+    }
+   ],
+   "scene_cluster": "viewC"
+  }
+ }
+}

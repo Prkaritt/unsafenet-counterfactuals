@@ -1,0 +1,141 @@
+{
+  "schema": "unsafenet-cf/run-manifest/1",
+  "stage": "classifier_guided_edit",
+  "created_at": "2026-11-04T21:37:01+00:00",
+  "environment": {
+    "captured_at": "2026-11-04T21:37:01+00:00",
+    "python": {
+      "python_version": "3.12.13",
+      "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+      "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+      "machine": "x86_64"
+    },
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "diffusers": "0.36.0",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "huggingface_hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.3.4",
+      "PIL": "11.3.0",
+      "imageio": "2.37.0",
+      "imageio_ffmpeg": "0.8.1",
+      "sentencepiece": "0.2.2"
+    },
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA L40S",
+      "capability": "8.9",
+      "total_vram_gb": 44.42,
+      "free_vram_gb": 39.18,
+      "torch_cuda_version": "12.8",
+      "supports_bf16": true
+    },
+    "system_ram_gb": 1006.85,
+    "nvidia_smi": "Wed Nov  4 16:37:01 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000000:B4:00.0 Off |                    0 |\n| N/A   56C    P0             99W /  350W |    5365MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A          101055      C   ...y/envs/cogvx-cu128/bin/python       5356MiB |\n+-----------------------------------------------------------------------------------------+"
+  },
+  "settings": {
+    "checkpoint": "THUDM/CogVideoX-2b",
+    "checkpoint_path": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+    "classifier_checkpoint": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/classifier/classifier_best.pt",
+    "label_map": {
+      "dataset_class_to_binary_index": {
+        "0": 0,
+        "4": 1
+      },
+      "binary_index_to_name": {
+        "0": "walkway_violation",
+        "1": "safe_walkway"
+      },
+      "dataset_class_names": {
+        "0": "Safe Walkway Violation",
+        "4": "Safe Walkway"
+      },
+      "excluded_dataset_classes": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "note": "Binary index 1 is the counterfactual target (Safe Walkway). Guidance maximises the logit at index 1. A transposed map would silently guide toward the violation class."
+    },
+    "seed": 20261103,
+    "num_inference_steps": 50,
+    "executed_steps": 30,
+    "strength": 0.6,
+    "guidance_scale": 6.0,
+    "classifier_scale": 0.02,
+    "guidance_every": 1,
+    "target_index": 1,
+    "latent_window_frames": 5,
+    "vae_gradient_checkpointing": true,
+    "transformer_offloaded_during_guidance": true,
+    "prompt": "A worker in dark navy overalls walks along the green marked pedestrian walkway at the right side of a factory aisle, staying inside the yellow boundary lines. Fixed overhead security camera, industrial press machines on the left, concrete floor, unchanged lighting.",
+    "negative_prompt": "inconsistent motion, blurry motion, worse quality, degenerate outputs, deformed outputs, camera movement, scene change",
+    "dtype": "torch.float16",
+    "preprocess": [
+      16,
+      240,
+      320
+    ],
+    "cogvideox_frozen": true,
+    "lora_training": false,
+    "identical_between_runs": [
+      "source",
+      "seed",
+      "checkpoint",
+      "prompt",
+      "negative_prompt",
+      "scheduler",
+      "dtype",
+      "strength",
+      "guidance_scale",
+      "steps",
+      "resolution",
+      "frames",
+      "denoising loop"
+    ]
+  },
+  "inputs": {
+    "preprocessed_clip": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/preprocessed/0_tr143_720x480x49.mp4"
+  },
+  "outputs": {
+    "guided_clip": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/guided/guided_seed20261103_s0.6_cs0.02.mp4",
+    "unguided_control_clip": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/guided/unguided_control_seed20261103_s0.6_cs0.0.mp4",
+    "comparison_sheet": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/guided/comparison_guided_vs_unguided.png",
+    "classifier_probabilities_p_safe": {
+      "source": 0.4851630926132202,
+      "vae_reconstruction": 0.5315043926239014,
+      "unguided_control": 0.5037022233009338,
+      "guided": 0.9999984502792358
+    },
+    "psnr_vs_source_db": {
+      "unguided_control": 20.087814392275636,
+      "guided": 19.514043714044213
+    },
+    "mean_abs_diff_vs_source": {
+      "unguided_control": 16.71400313366087,
+      "guided": 18.01895065665155
+    }
+  },
+  "timing": {
+    "unguided_control": 46.708919048309326,
+    "guided": 648.6065583229065,
+    "pipeline_load_s": 8.50313425064087
+  },
+  "memory": {
+    "unguided_control": 20.461,
+    "guided": 33.795
+  },
+  "notes": "Classifier-guided candidate and matched unguided control from one custom denoising loop. CogVideoX weights frozen; gradients taken only at the predicted clean latent, through the VAE decoder and the classifier. A prediction flip is not proof of corrected behaviour. Official test-split evaluation is PENDING by user decision.",
+  "claims": {
+    "is_ld_vice_reproduction": false,
+    "safety_verified": false,
+    "classifier_evaluated": false,
+    "status": "candidate counterfactual, pending human review"
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "_what_this_is": "Matched base-versus-LoRA prompt-guided video-to-video edit. Not LD-ViCE: LD-ViCE fine-tunes CogVideoX per dataset AND uses target-model gradients; this run fine-tunes a LoRA adapter and uses NO classifier gradient. Candidate counterfactuals until human review.",
+  "classifier_guidance": "disabled in both runs",
+  "checkpoint": "THUDM/CogVideoX-2b",
+  "checkpoint_local_dir": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+  "revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+  "lora": {
+    "dir": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/lora/adapter",
+    "weight_name": "pytorch_lora_weights.safetensors",
+    "sha256": "57b4e3e43523980c87dab22febba3354c2d9e008aefc9e8161c7df64ca8f53e0",
+    "rank": 64,
+    "lora_alpha": 64,
+    "scale_applied": 1.0,
+    "adapter_verified": {
+      "method": "get_active_adapters",
+      "active": [
+        "cogvideox-lora"
+      ]
+    },
+    "training_manifest": "outputs/lora/train_manifest.json"
+  },
+  "settings": {
+    "seed": 20261103,
+    "num_inference_steps": 50,
+    "strength": 0.6,
+    "guidance_scale": 6.0,
+    "scheduler": "CogVideoXDDIMScheduler",
+    "dtype": "torch.float16",
+    "width": 720,
+    "height": 480,
+    "num_frames": 49,
+    "fps": 8,
+    "prompt": "A worker in dark navy overalls walks along the green marked pedestrian walkway at the right side of a factory aisle, staying inside the yellow boundary lines. Fixed overhead security camera, industrial press machines on the left, concrete floor, unchanged lighting.",
+    "negative_prompt": "inconsistent motion, blurry motion, worse quality, degenerate outputs, deformed outputs, camera movement, scene change"
+  },
+  "source": {
+    "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/preprocessed/0_tr143_720x480x49.mp4",
+    "sha256": "9ccc289c1ba4f1e3bc644aa91c9f1ec3c8465459eed73f3f23181ff1008bc5a2"
+  },
+  "runs": {
+    "base": {
+      "tag": "base",
+      "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/lora_edit/base_seed20261103_s0.6_g6.0.mp4",
+      "generation_s": 82.18858528137207,
+      "peak_gpu_gib": 27.84,
+      "psnr_vs_source_db": 20.08822141633879,
+      "mean_abs_diff_vs_source": 16.712927630542957,
+      "per_frame_psnr_db": [
+        21.47739565612492,
+        21.359812463566115,
+        21.31413215673906,
+        20.242863845629586,
+        20.195379611216996,
+        20.13140284621503,
+        20.114344438056058,
+        20.095304633963668,
+        20.092403327735468,
+        20.077518806771128,
+        20.072622369430913,
+        20.074119831387144,
+        20.07846695101675,
+        20.067415427168804,
+        20.055995543550722,
+        20.045550969693167,
+        20.03444344093208,
+        20.009633404583212,
+        19.995456934714465,
+        20.032774835360925,
+        20.018832667760712,
+        20.001838132264012,
+        19.994516554498677,
+        19.99083625095458,
+        19.99285776879143,
+        19.995310809138953,
+        19.962400253614504,
+        19.93752517556769,
+        19.918400778859223,
+        19.927515533744163,
+        19.948999575536135,
+        19.96231712400592,
+        19.970867751109772,
+        19.997707199472536,
+        20.00088888896149,
+        19.9982548800481,
+        20.03822788257647,
+        20.029950852437764,
+        20.026685935182496,
+        20.020325602494147,
+        20.011256733956152,
+        19.99595426054325,
+        19.976678042545583,
+        19.967078338603258,
+        19.958926834232408,
+        19.957305561763988,
+        19.928073187752045,
+        19.915425861332533,
+        19.89171153082407
+      ]
+    },
+    "lora": {
+      "tag": "lora",
+      "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/lora_edit/lora_seed20261103_s0.6_g6.0.mp4",
+      "generation_s": 75.10263299942017,
+      "peak_gpu_gib": 27.953,
+      "psnr_vs_source_db": 20.966996332926673,
+      "mean_abs_diff_vs_source": 15.145806051587302,
+      "per_frame_psnr_db": [
+        22.156871864207428,
+        22.075239536379023,
+        22.043521802830263,
+        21.11943704593031,
+        21.11222565301435,
+        21.069751961076033,
+        21.070071199304344,
+        21.066845233584047,
+        21.06452693925202,
+        21.055858344630117,
+        21.043594923717656,
+        21.036136585383346,
+        21.034801872691848,
+        21.037919638493445,
+        21.030929307740102,
+        21.029513048419734,
+        21.00615582042507,
+        20.99162836063199,
+        20.944841372155523,
+        20.972679257539696,
+        20.942413901931964,
+        20.894945887640525,
+        20.861990298873337,
+        20.84446092850949,
+        20.834852542422084,
+        20.829216005718763,
+        20.7997242852991,
+        20.753703601659716,
+        20.70313399659497,
+        20.70825068222537,
+        20.73987154744259,
+        20.758126799681097,
+        20.781778307243762,
+        20.837452572945278,
+        20.860386878420986,
+        20.85362568591588,
+        20.887553989690346,
+        20.894572088383168,
+        20.904688743646812,
+        20.90457902144091,
+        20.90375217963711,
+        20.88513544801359,
+        20.860351272076834,
+        20.83641742231569,
+        20.804369158071374,
+        20.788631832579718,
+        20.7684751613495,
+        20.752314990291122,
+        20.724811456799088
+      ]
+    }
+  },
+  "classifier_probabilities": {
+    "source": [
+      0.5148369669914246,
+      0.4851630926132202
+    ],
+    "vae_reconstruction": [
+      0.46849560737609863,
+      0.5315043926239014
+    ],
+    "base": [
+      0.49749767780303955,
+      0.5025023221969604
+    ],
+    "lora": [
+      0.5252204537391663,
+      0.47477954626083374
+    ],
+    "_label_map": {
+      "dataset_class_to_binary_index": {
+        "0": 0,
+        "4": 1
+      },
+      "binary_index_to_name": {
+        "0": "walkway_violation",
+        "1": "safe_walkway"
+      },
+      "dataset_class_names": {
+        "0": "Safe Walkway Violation",
+        "4": "Safe Walkway"
+      },
+      "excluded_dataset_classes": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "note": "Binary index 1 is the counterfactual target (Safe Walkway). Guidance maximises the logit at index 1. A transposed map would silently guide toward the violation class."
+    },
+    "_caveat": "Informational only. Gate C FAILED: the classifier showed no measurable dependence on the worker, so these probabilities are not evidence about the worker's position and no label flip is claimed. The VAE round trip alone already moves the source across the decision boundary."
+  },
+  "comparison_sheet": {
+    "order": [
+      "source",
+      "base",
+      "lora"
+    ],
+    "frame_indices": [
+      0,
+      10,
+      19,
+      29,
+      38,
+      48
+    ],
+    "path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/lora_edit/comparison_base_vs_lora.png"
+  },
+  "intended_change": "The worker's walking path moves from the bare grey concrete aisle onto the green marked pedestrian walkway.",
+  "spurious_change_to_reject": "The green walkway is repainted, widened or extended underneath the worker instead of the worker moving onto it. That flips the visual label by changing the environment, not the behaviour, and is not a valid counterfactual.",
+  "context_that_must_not_change": [
+    "camera pose and framing (fixed overhead security camera)",
+    "worker identity, clothing type and build",
+    "the press machines and the left-hand machine zone",
+    "the position and shape of the green walkway and yellow boundary lines",
+    "lighting and time of day"
+  ],
+  "environment": {
+    "captured_at": "2026-11-05T01:08:08+00:00",
+    "python": {
+      "python_version": "3.12.13",
+      "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+      "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+      "machine": "x86_64"
+    },
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "diffusers": "0.36.0",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "huggingface_hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.3.4",
+      "PIL": "11.3.0",
+      "imageio": "2.37.0",
+      "imageio_ffmpeg": "0.8.1",
+      "sentencepiece": "0.2.2"
+    },
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA L40S",
+      "capability": "8.9",
+      "total_vram_gb": 44.42,
+      "free_vram_gb": 15.95,
+      "torch_cuda_version": "12.8",
+      "supports_bf16": true
+    },
+    "system_ram_gb": 1006.85,
+    "nvidia_smi": "Wed Nov  4 20:08:08 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000001:B2:00.0 Off |                    0 |\n| N/A   58C    P0             98W /  350W |   29153MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           68904      C   ...y/envs/cogvx-cu128/bin/python      29144MiB |\n+-----------------------------------------------------------------------------------------+"
+  }
+}

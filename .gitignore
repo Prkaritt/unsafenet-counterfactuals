@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# Media and datasets are never tracked.
+#
+# The source clips and every frame derived from them show identifiable factory
+# workers who consented to the original study and not to redistribution. Keep
+# them in Ocean. The written record is tracked; the pixels are not.
+# ---------------------------------------------------------------------------
+
+# Everything under data/ and outputs/ is excluded by default.
+data/**
+outputs/**
+
+# Re-enter those directories so the records below can be matched.
+!data/**/
+!outputs/**/
+
+# Keep the written record: manifests, measurements, audits, findings, prompts.
+!data/**/*.json
+!data/**/*.md
+!data/**/*.txt
+!outputs/**/*.json
+!outputs/**/*.md
+!outputs/**/*.csv
+
+# Regenerable decode cache, 5.3 MB. Rebuilt by scripts/audit_splits.py.
+outputs/classifier/audit_cache.json
+
+# Review pages reference media that is not in the repository, so they would not
+# render for anyone who cloned it.
+outputs/**/*.html
+
+# Blanket media guard, for anything that lands outside data/ and outputs/.
+# A diagram that genuinely belongs in the repository needs `git add -f`.
+*.mp4
+*.mkv
+*.webm
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Model weights, checkpoints and caches
+checkpoints/
+*.safetensors
+*.ckpt
+*.pt
+*.bin
+.cache/
+
+# Slurm job stdout and stderr: run artefacts, kept in Ocean only.
+logs/
+
+# The staged checkpoint revision is written per machine by the fetch script.
+bridges2/checkpoint_revision.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Notebook execution state
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+
+# Transfer bundles
+unsafenet_cf_bundle.zip
+unsafenet_cf_outputs/

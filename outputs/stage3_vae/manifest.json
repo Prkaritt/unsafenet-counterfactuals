@@ -1,0 +1,138 @@
+{
+  "schema": "unsafenet-cf/run-manifest/1",
+  "stage": "vae_reconstruction",
+  "created_at": "2026-11-04T05:11:52+00:00",
+  "environment": {
+    "captured_at": "2026-11-04T05:11:50+00:00",
+    "python": {
+      "python_version": "3.12.13",
+      "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+      "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+      "machine": "x86_64"
+    },
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "diffusers": "0.36.0",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "huggingface_hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.3.4",
+      "PIL": "11.3.0",
+      "imageio": "2.37.0",
+      "imageio_ffmpeg": "0.8.1",
+      "sentencepiece": "0.2.2"
+    },
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA L40S",
+      "capability": "8.9",
+      "total_vram_gb": 44.42,
+      "free_vram_gb": 22.3,
+      "torch_cuda_version": "12.8",
+      "supports_bf16": true
+    },
+    "system_ram_gb": 1006.85,
+    "nvidia_smi": "Wed Nov  4 00:11:52 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000000:B2:00.0 Off |                    0 |\n| N/A   35C    P0             83W /  350W |   22657MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           88910      C   ...y/envs/cogvx-cu128/bin/python      22648MiB |\n+-----------------------------------------------------------------------------------------+",
+    "slurm": {
+      "SLURM_JOB_ID": "50198591",
+      "SLURM_JOB_NAME": "cfbase",
+      "SLURM_JOB_PARTITION": "GPU-shared",
+      "SLURM_JOB_NODELIST": "gl002",
+      "SLURM_JOB_GPUS": "0",
+      "SLURM_GPUS_ON_NODE": "1",
+      "SLURM_CPUS_ON_NODE": "24",
+      "SLURM_MEM_PER_NODE": null,
+      "SLURM_JOB_ACCOUNT": "cis260288p",
+      "SLURM_JOB_QOS": "gpu",
+      "CUDA_VISIBLE_DEVICES": "0"
+    },
+    "driver": "610.57.04, NVIDIA L40S, 46068 MiB"
+  },
+  "settings": {
+    "checkpoint": "THUDM/CogVideoX-2b",
+    "subfolder": "vae",
+    "checkpoint_path": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+    "revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+    "dtype": "torch.float16",
+    "tiling": true,
+    "slicing": true,
+    "latent_mode": "latent_dist.mode()",
+    "scaling_factor": 1.15258426
+  },
+  "inputs": {
+    "preprocessed_clip": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/preprocessed/0_tr143_720x480x49.mp4"
+  },
+  "outputs": {
+    "reconstruction": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/stage3_vae/reconstruction.mp4",
+    "comparison_sheet": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/stage3_vae/source_vs_reconstruction.png",
+    "psnr_db": 32.60214657458899,
+    "mean_abs_diff": 3.5187824389014866,
+    "per_frame_psnr_db": [
+      32.98506746037876,
+      33.018211794369805,
+      32.66590203327098,
+      31.43114979231978,
+      31.464512379440848,
+      32.156297912938776,
+      32.29772123257359,
+      32.42649181661402,
+      32.28313992382087,
+      32.37174552778473,
+      32.31273862515822,
+      32.2603350839975,
+      31.98997133666066,
+      32.18589965672972,
+      32.3465298548256,
+      32.48054608533161,
+      32.32782023744374,
+      32.28154973922563,
+      32.22473723340596,
+      32.84138417005383,
+      32.77983305538141,
+      33.02106017318551,
+      33.109788904366155,
+      33.14087994162074,
+      32.97890966739835,
+      32.8785066092864,
+      32.83646590119575,
+      32.85943177856984,
+      32.581449523443894,
+      32.70781000440327,
+      32.77119671421948,
+      32.863776704234944,
+      32.657756958053305,
+      32.684920565290966,
+      32.752365222431095,
+      32.76475795270758,
+      32.32178957435547,
+      32.79360843323947,
+      32.99585579173046,
+      33.106997284812465,
+      32.95787673022772,
+      32.95315019950674,
+      32.87741212422495,
+      32.93865591732953,
+      32.692909010158445,
+      32.70500329908805,
+      32.726385635841254,
+      32.85267136276921,
+      32.67480222951229
+    ]
+  },
+  "timing": {
+    "vae_load_s": 24.903634548187256,
+    "roundtrip_s": 42.78784775733948
+  },
+  "memory": {
+    "peak_gpu_gib": 21.611
+  },
+  "notes": "VAE only. No diffusion, no editing, no safety claim.",
+  "claims": {
+    "is_ld_vice_reproduction": false,
+    "safety_verified": false,
+    "classifier_evaluated": false,
+    "status": "candidate counterfactual, pending human review"
+  }
+}

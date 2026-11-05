@@ -1,0 +1,42 @@
+{
+  "label": "LoRA training memory and timing probe, 2-clip subset, 8 steps",
+  "log": "logs/loraprobe-50229034.err",
+  "sacct": {
+    "job_id": "50229034",
+    "job_name": "cflora-pr+",
+    "elapsed": "00:11:19",
+    "elapsed_s": 679,
+    "state": "FAILED",
+    "su_charged": 0.1886,
+    "alloc_tres": "billing=24,cpu=24,gres/gpu:l40s-48=1,gres/gpu=1,mem=125G,no+"
+  },
+  "gpu": "NVIDIA L40S",
+  "driver": "610.57.04",
+  "gpu_total_mib": 46068,
+  "steps_completed": 8,
+  "train_wall_s": 43,
+  "seconds_per_step": 5.48,
+  "max_rss_kb": 23670364,
+  "time_v_wall": "11:15.22",
+  "trainable_params": null,
+  "_note": "seconds_per_step is tqdm's rate over the optimiser steps only. It excludes pipeline load and the one-off VAE pre-encode of the whole dataset, which the job pays once; budget a real run as load + pre-encode + steps x rate.",
+  "node": "gl003",
+  "clips_in_probe": 2,
+  "first_step_s": 14,
+  "steps_1_to_8_wall_s": 43,
+  "seconds_per_step_steady": 4.143,
+  "seconds_per_step_tqdm_final": 5.48,
+  "peak_gpu_mib_sampled": 20647,
+  "peak_gpu_gib_sampled": 20.163,
+  "gpu_headroom_gib": 24.825,
+  "fixed_overhead_s_2clips": 614,
+  "_phases": {
+    "job_start": "18:22:30",
+    "accelerate_ready": "18:24:34",
+    "step_loop_start": "18:32:44",
+    "note": "614 s from job start to the first optimiser step with 2 clips. Dominated by loading the 13.8 GB checkpoint (T5-XXL in 2 shards) from Ocean, not by the VAE pre-encode. A 16-clip run pays the same load plus 8x the per-clip encode."
+  },
+  "_measurement_note": "seconds_per_step_steady excludes the first step (14 s, warmup/allocator) and the final save. seconds_per_step_tqdm_final is tqdm's average over all 8 steps including the save, so it is the pessimistic figure. The schedule below is budgeted at 4.0 s.",
+  "_outcome": "Training itself succeeded and the adapter was written. The job still exited 1, in the post-save block, where upstream calls pipe.load_lora_weights(output_dir) with no weight_name, invalid under HF_HUB_OFFLINE=1. Patched locally; see the LOCAL PATCH comment in third_party/diffusers_v0.36.0/train_cogvideox_lora.py.",
+  "memory_verdict": "Peak 20.16 GiB of 45.0 GiB usable. Fits with large headroom; gradient checkpointing and VAE tiling/slicing were both on."
+}

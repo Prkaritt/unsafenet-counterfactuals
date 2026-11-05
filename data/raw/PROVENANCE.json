@@ -1,0 +1,84 @@
+{
+  "_comment": "RECONSTRUCTED 2026-11-03 after the original file was lost in the transfer to PSC Bridges-2, which excluded data/. Every field here is either verified against a file on disk today or carried over from a surviving document. Nothing is reconstructed from memory. See bridges2/MISSING_FILES.md.",
+  "_reconstruction": {
+    "date": "2026-11-03",
+    "verified_today": [
+      "0_tr143.mp4 re-downloaded from the Mendeley URL in configs/clip_0_tr143.json; sha256 and byte size computed from the file on disk"
+    ],
+    "carried_over_from": [
+      "README.md: DOI, licence, class table, clip count, train/test split, paper citation",
+      "configs/clip_0_tr143.json: download URL and expected sha256",
+      "STATUS.md: the probed media metadata of 0_tr143.mp4"
+    ],
+    "lost_and_not_reconstructed": "The original file recorded three class-0 clips downloaded during Stage 1 selection. Only 0_tr143.mp4 is recoverable: its sha256 survived in configs/clip_0_tr143.json. The filenames and sha256 of the other two are lost, and are NOT guessed here. The Stage 1 claim that 0_tr143.mp4 was the best of three cannot currently be re-checked."
+  },
+  "dataset": {
+    "title": "Video Dataset for Safe and Unsafe Behaviours",
+    "authors": ["Onur Önal", "Emre Dandıl"],
+    "institution": "Bilecik Şeyh Edebali University",
+    "repository": "Mendeley Data",
+    "version": "V1",
+    "year": 2024,
+    "doi": "10.17632/xjmtb22pff.1",
+    "url": "https://data.mendeley.com/datasets/xjmtb22pff/1",
+    "licence": "CC BY 4.0",
+    "total_clips": 691,
+    "total_size": "10.0 GB",
+    "split": {"train": 566, "test": 125},
+    "filename_convention": "<classID>_<tr|te><index>.mp4",
+    "classes": {
+      "0": {"name": "Safe Walkway Violation", "type": "unsafe", "safe_counterpart": 4},
+      "1": {"name": "Unauthorized Intervention", "type": "unsafe", "safe_counterpart": 5},
+      "2": {"name": "Opened Panel Cover", "type": "unsafe", "safe_counterpart": 6},
+      "3": {"name": "Carrying Overload with Forklift", "type": "unsafe", "safe_counterpart": 7},
+      "4": {"name": "Safe Walkway", "type": "safe"},
+      "5": {"name": "Authorized Intervention", "type": "safe"},
+      "6": {"name": "Closed Panel Cover", "type": "safe"},
+      "7": {"name": "Safe Carrying", "type": "safe"}
+    }
+  },
+  "paper": {
+    "title": "Unsafe-Net: YOLO v4 and ConvLSTM based computer vision system for real-time detection of unsafe behaviours in workplace",
+    "authors": ["Onur Önal", "Emre Dandıl"],
+    "journal": "Multimedia Tools and Applications",
+    "year": 2025,
+    "volume": 84,
+    "pages": "34967-34993",
+    "doi": "10.1007/s11042-024-19276-8",
+    "code_released": false,
+    "weights_released": false,
+    "_availability_note": "The data-availability statement covers the dataset only. The Mendeley record contains 691 .mp4 files and no model artefacts. This is why Stage 5, the classifier-guided gate, is blocked."
+  },
+  "privacy": {
+    "note": "The clips show identifiable factory workers who consented to the authors' research study, not to redistribution by third parties. CC BY 4.0 permits redistribution legally; this project chooses not to.",
+    "controls": ["data/ and outputs/ are gitignored", "the clip is fetched from Mendeley rather than carried in the repository"]
+  },
+  "downloaded": [
+    {
+      "filename": "0_tr143.mp4",
+      "class_id": 0,
+      "class_name": "Safe Walkway Violation",
+      "sha256": "7a7c0d10204bca0e4cfdf7bdb699ab16383b37800471fd6f3a03b7a1780903f3",
+      "bytes": 3120796,
+      "url": "https://data.mendeley.com/public-files/datasets/xjmtb22pff/files/f48e2cbc-bd0e-42b4-bb7e-9ca3980143be/file_downloaded",
+      "media": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 25,
+        "frames": 262,
+        "duration_s": 10.44,
+        "codec": "h264",
+        "pix_fmt": "yuvj420p"
+      },
+      "selected_for_experiment": true,
+      "_selection_reason": "The violating worker is large, about 40% of frame height, unoccluded and centre-frame, with the empty green walkway visible in the same shot.",
+      "sha256_verified_on": "2026-11-03",
+      "sha256_verified_against": "configs/clip_0_tr143.json"
+    }
+  ],
+  "downloaded_but_lost_from_this_record": {
+    "count": 2,
+    "class_id": 0,
+    "_note": "Two further class-0 clips were downloaded and inspected during Stage 1 selection. Their filenames and sha256 were only ever recorded in this file and did not survive the transfer. Recovering them means re-downloading from the Mendeley record and re-identifying which two were compared. No placeholder entries are written here, because a fabricated hash is worse than a missing one."
+  }
+}

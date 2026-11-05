@@ -1,0 +1,117 @@
+{
+  "schema": "unsafenet-cf/run-manifest/1",
+  "stage": "prompt_guided_edit",
+  "created_at": "2026-11-04T16:34:49+00:00",
+  "environment": {
+    "captured_at": "2026-11-04T16:34:49+00:00",
+    "python": {
+      "python_version": "3.12.13",
+      "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+      "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+      "machine": "x86_64"
+    },
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "diffusers": "0.36.0",
+      "transformers": "4.57.6",
+      "accelerate": "1.15.0",
+      "huggingface_hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.3.4",
+      "PIL": "11.3.0",
+      "imageio": "2.37.0",
+      "imageio_ffmpeg": "0.8.1",
+      "sentencepiece": "0.2.2"
+    },
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA L40S",
+      "capability": "8.9",
+      "total_vram_gb": 44.42,
+      "free_vram_gb": 7.69,
+      "torch_cuda_version": "12.8",
+      "supports_bf16": true
+    },
+    "system_ram_gb": 1006.85,
+    "nvidia_smi": "Wed Nov  4 11:34:49 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000001:DA:00.0 Off |                    0 |\n| N/A   45C    P0             88W /  350W |   37615MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           46649      C   ...y/envs/cogvx-cu128/bin/python      37606MiB |\n+-----------------------------------------------------------------------------------------+",
+    "slurm": {
+      "SLURM_JOB_ID": "50213456",
+      "SLURM_JOB_NAME": "cfsweep",
+      "SLURM_JOB_PARTITION": "GPU-shared",
+      "SLURM_JOB_NODELIST": "gl001",
+      "SLURM_JOB_GPUS": "7",
+      "SLURM_GPUS_ON_NODE": "1",
+      "SLURM_CPUS_ON_NODE": "24",
+      "SLURM_MEM_PER_NODE": null,
+      "SLURM_JOB_ACCOUNT": "cis260288p",
+      "SLURM_JOB_QOS": "gpu",
+      "CUDA_VISIBLE_DEVICES": "0"
+    },
+    "driver": "610.57.04, NVIDIA L40S, 46068 MiB"
+  },
+  "settings": {
+    "checkpoint": "THUDM/CogVideoX-2b",
+    "checkpoint_path": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+    "revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+    "dtype": "torch.float16",
+    "scheduler": "CogVideoXDDIMScheduler",
+    "prediction_type": "v_prediction",
+    "seed": 20261103,
+    "generator_device": "cpu",
+    "num_inference_steps": 50,
+    "denoising_steps_executed": 25,
+    "strength": 0.5,
+    "guidance_scale": 6.0,
+    "prompt": "A worker in dark navy overalls walks along the green marked pedestrian walkway at the right side of a factory aisle, staying inside the yellow boundary lines. Fixed overhead security camera, industrial press machines on the left, concrete floor, unchanged lighting.",
+    "negative_prompt": "inconsistent motion, blurry motion, worse quality, degenerate outputs, deformed outputs, camera movement, scene change",
+    "num_frames": 49,
+    "height": 480,
+    "width": 720,
+    "offload": "none",
+    "vae_tiling": true,
+    "max_sequence_length": 226
+  },
+  "inputs": {
+    "preprocessed_clip": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/preprocessed/0_tr143_720x480x49.mp4",
+    "source_sha256": "7a7c0d10204bca0e4cfdf7bdb699ab16383b37800471fd6f3a03b7a1780903f3",
+    "unsafe_label": {
+      "class_id": 0,
+      "name": "Safe Walkway Violation"
+    },
+    "target_safe_label": {
+      "class_id": 4,
+      "name": "Safe Walkway"
+    },
+    "context_that_must_not_change": [
+      "camera pose and framing (fixed overhead security camera)",
+      "worker identity, clothing type and build",
+      "the press machines and the left-hand machine zone",
+      "the position and shape of the green walkway and yellow boundary lines",
+      "lighting and time of day"
+    ],
+    "spurious_change_to_reject": "The green walkway is repainted, widened or extended underneath the worker instead of the worker moving onto it. That flips the visual label by changing the environment, not the behaviour, and is not a valid counterfactual."
+  },
+  "outputs": {
+    "edited_clip": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/stage4_edit/edit_seed20261103_s0.5_g6.0_n50.mp4",
+    "comparison_sheet": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/stage4_edit/comparison_seed20261103_s0.5_g6.0_n50.png",
+    "psnr_source_vs_edit_db": 21.76756180990822,
+    "mean_abs_diff_source_vs_edit": 13.376873326877048,
+    "vae_ceiling_psnr_db": 32.60214657458899
+  },
+  "timing": {
+    "pipeline_load_s": 141.19509148597717,
+    "generation_s": 84.67747330665588,
+    "s_per_denoising_step": 3.3870989322662353
+  },
+  "memory": {
+    "peak_gpu_gib": 36.219
+  },
+  "notes": "Prompt-guided editing baseline using a pretrained CogVideoX-2b. Not LD-ViCE: no per-dataset fine-tuning, no classifier gradients, no SmoothGrad, no artifact refinement. Output is a candidate counterfactual pending human review. generation_s covers the whole pipeline call, which includes VAE encode, text encode and VAE decode as well as the denoising loop.",
+  "claims": {
+    "is_ld_vice_reproduction": false,
+    "safety_verified": false,
+    "classifier_evaluated": false,
+    "status": "candidate counterfactual, pending human review"
+  }
+}
