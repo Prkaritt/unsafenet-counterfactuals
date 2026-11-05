@@ -1,0 +1,43 @@
+{
+  "_comment": "Sources for the agent-specified relocation experiment, frozen 2026-11-05 before any composite or edit existed. Selection evidence and the rejection of 0_tr48 are in DECISIONS.md D3.",
+  "_tracks": "Worker tracks are read from measurements written by earlier GPU jobs. No detector runs in the annotation stage.",
+  "sources": [
+    {
+      "clip_id": "0_tr143",
+      "camera_view": "B",
+      "preprocessed": "outputs/preprocessed/0_tr143_720x480x49.mp4",
+      "track_source": "outputs/lora_edit/worker_position.json",
+      "track_format": "worker_position",
+      "min_component_area": 60,
+      "selection_reason": "Source of all four earlier attempts, so a result is directly comparable with four recorded negatives. Worker fully inside the frame with feet near row 297, the best case for segmenting a whole body. 49 of 49 frames detected."
+    },
+    {
+      "clip_id": "0_tr16",
+      "camera_view": "A",
+      "preprocessed": "outputs/multi_walkway/preprocessed/0_tr16_720x480x49.mp4",
+      "track_source": "outputs/multi_walkway/evaluation.json",
+      "track_format": "evaluation",
+      "min_component_area": 60,
+      "selection_reason": "Camera view A, which no LoRA training footage came from. Worker closest to the lane of the three at 262.4 px median, so the shortest plausible transition. Zero detector misses."
+    },
+    {
+      "clip_id": "0_tr125",
+      "camera_view": "B",
+      "preprocessed": "outputs/multi_walkway/preprocessed/0_tr125_720x480x49.mp4",
+      "track_source": "outputs/multi_walkway/evaluation.json",
+      "track_format": "evaluation",
+      "min_component_area": 60,
+      "selection_reason": "Hardest case: worker farthest from the lane at 394.6 px median, with the largest and clearest lane marking at 13537 px. Different recording from 0_tr143 despite sharing camera view B."
+    }
+  ],
+  "rejected": [
+    {
+      "clip_id": "0_tr48",
+      "reason": "The detector misses the worker in 24 of 49 source frames. A method that cuts out a worker and moves him cannot run on footage where he is located in half the frames: the masks would have 24 holes and any failure would be unattributable. Rejected for tracking quality, not for its result."
+    },
+    {
+      "clip_id": "0_tr123",
+      "reason": "Already recorded in outputs/multi_walkway/selection_record.json: its worker is on the marked lane for essentially the whole clip at 0.4 px median despite the class-0 label. There is no violation to relocate."
+    }
+  ]
+}

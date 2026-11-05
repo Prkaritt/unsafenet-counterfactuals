@@ -1,0 +1,1138 @@
+{
+ "clip_id": "0_tr125",
+ "segmentation": {
+  "backend_requested": "sam2",
+  "backend_used": "sam2",
+  "error_if_any": null,
+  "seed_frame": 41,
+  "seed_box": [
+   268.1708068847656,
+   248.13333129882812,
+   342.65509033203125,
+   450.1539001464844
+  ],
+  "checkpoint": "sam2.1_hiera_small.pt sha256 6d1aa6f30de5c92224f8172114de081d104bbd23dd9dc5c58996f0cad5dc4d38",
+  "frames": 49,
+  "frames_with_mask": 49,
+  "empty_mask_frames": [],
+  "frames_tracked_but_unsegmented": [],
+  "area_px_min": 6261,
+  "area_px_median": 7707,
+  "area_px_max": 9205,
+  "_reading": "An empty mask is a segmentation failure, counted and never filled. A sudden area change between neighbouring frames usually means the mask lost a limb or grabbed a second person; the overlay sheet is the evidence for that, not this number."
+ },
+ "background": {
+  "method": "per-pixel temporal median over frames where no person box and no dilated worker mask covered the pixel",
+  "person_box_pad_px": 6,
+  "erase_dilate_px": 7,
+  "pixels_with_no_evidence": 0,
+  "pixels_with_no_evidence_fraction": 0.0,
+  "_fallback": "pixels with no evidence fall back to the whole-clip median, flagged",
+  "_machinery_caveat": "Presses and arms move. A median over the clip returns whichever state held for more than half the frames, so the estimate is a plausible still rather than a true empty room, and machinery caught mid-stroke may be flattened to its resting position.",
+  "_inpainting": "none; no generative fill was used at this stage"
+ },
+ "composite": {
+  "frames_relocated": 47,
+  "frames_untouched": 2,
+  "silhouette_rescaled": false,
+  "per_frame": [
+   {
+    "frame": 0,
+    "relocated": false,
+    "reason": "before intervention"
+   },
+   {
+    "frame": 1,
+    "relocated": false,
+    "reason": "before intervention"
+   },
+   {
+    "frame": 2,
+    "relocated": true,
+    "source_foot_xy": [
+     84.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     99.0,
+     478.5
+    ],
+    "shift_px": 14.6,
+    "mask_area_px": 7229,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     38,
+     346,
+     161,
+     479
+    ]
+   },
+   {
+    "frame": 3,
+    "relocated": true,
+    "source_foot_xy": [
+     86.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     113.5,
+     477.4
+    ],
+    "shift_px": 27.6,
+    "mask_area_px": 7416,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     50,
+     343,
+     176,
+     477
+    ]
+   },
+   {
+    "frame": 4,
+    "relocated": true,
+    "source_foot_xy": [
+     86.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     128.0,
+     479.4
+    ],
+    "shift_px": 41.5,
+    "mask_area_px": 7490,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     64,
+     343,
+     193,
+     479
+    ]
+   },
+   {
+    "frame": 5,
+    "relocated": true,
+    "source_foot_xy": [
+     86.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     142.5,
+     477.5
+    ],
+    "shift_px": 56.1,
+    "mask_area_px": 7614,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     78,
+     340,
+     207,
+     478
+    ]
+   },
+   {
+    "frame": 6,
+    "relocated": true,
+    "source_foot_xy": [
+     86.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     157.0,
+     478.9
+    ],
+    "shift_px": 71.0,
+    "mask_area_px": 7786,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     93,
+     337,
+     221,
+     479
+    ]
+   },
+   {
+    "frame": 7,
+    "relocated": true,
+    "source_foot_xy": [
+     87.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     171.5,
+     476.8
+    ],
+    "shift_px": 84.1,
+    "mask_area_px": 7656,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     111,
+     332,
+     232,
+     477
+    ]
+   },
+   {
+    "frame": 8,
+    "relocated": true,
+    "source_foot_xy": [
+     94.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     186.0,
+     478.0
+    ],
+    "shift_px": 92.0,
+    "mask_area_px": 7899,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     132,
+     330,
+     240,
+     478
+    ]
+   },
+   {
+    "frame": 9,
+    "relocated": true,
+    "source_foot_xy": [
+     105.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     200.5,
+     473.5
+    ],
+    "shift_px": 95.2,
+    "mask_area_px": 8366,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     154,
+     320,
+     247,
+     473
+    ]
+   },
+   {
+    "frame": 10,
+    "relocated": true,
+    "source_foot_xy": [
+     109.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     215.0,
+     473.7
+    ],
+    "shift_px": 105.7,
+    "mask_area_px": 8299,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     170,
+     319,
+     259,
+     474
+    ]
+   },
+   {
+    "frame": 11,
+    "relocated": true,
+    "source_foot_xy": [
+     115.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     229.5,
+     477.0
+    ],
+    "shift_px": 114.5,
+    "mask_area_px": 8409,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     184,
+     322,
+     276,
+     477
+    ]
+   },
+   {
+    "frame": 12,
+    "relocated": true,
+    "source_foot_xy": [
+     119.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     244.0,
+     478.7
+    ],
+    "shift_px": 124.5,
+    "mask_area_px": 8277,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     200,
+     325,
+     289,
+     479
+    ]
+   },
+   {
+    "frame": 13,
+    "relocated": true,
+    "source_foot_xy": [
+     131.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     258.5,
+     478.0
+    ],
+    "shift_px": 127.0,
+    "mask_area_px": 7507,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     220,
+     330,
+     297,
+     478
+    ]
+   },
+   {
+    "frame": 14,
+    "relocated": true,
+    "source_foot_xy": [
+     144.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     273.0,
+     477.6
+    ],
+    "shift_px": 128.5,
+    "mask_area_px": 7581,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     234,
+     333,
+     311,
+     478
+    ]
+   },
+   {
+    "frame": 15,
+    "relocated": true,
+    "source_foot_xy": [
+     163.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     287.5,
+     477.9
+    ],
+    "shift_px": 124.0,
+    "mask_area_px": 7343,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     245,
+     335,
+     330,
+     478
+    ]
+   },
+   {
+    "frame": 16,
+    "relocated": true,
+    "source_foot_xy": [
+     171.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     302.0,
+     479.7
+    ],
+    "shift_px": 130.5,
+    "mask_area_px": 7219,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     260,
+     336,
+     345,
+     480
+    ]
+   },
+   {
+    "frame": 17,
+    "relocated": true,
+    "source_foot_xy": [
+     191.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     316.5,
+     478.2
+    ],
+    "shift_px": 125.0,
+    "mask_area_px": 7035,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     267,
+     336,
+     366,
+     478
+    ]
+   },
+   {
+    "frame": 18,
+    "relocated": true,
+    "source_foot_xy": [
+     196.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     331.0,
+     476.6
+    ],
+    "shift_px": 135.0,
+    "mask_area_px": 6822,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     286,
+     334,
+     376,
+     477
+    ]
+   },
+   {
+    "frame": 19,
+    "relocated": true,
+    "source_foot_xy": [
+     198.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     345.5,
+     479.4
+    ],
+    "shift_px": 147.5,
+    "mask_area_px": 6735,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     306,
+     334,
+     386,
+     479
+    ]
+   },
+   {
+    "frame": 20,
+    "relocated": true,
+    "source_foot_xy": [
+     202.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     360.0,
+     474.7
+    ],
+    "shift_px": 158.1,
+    "mask_area_px": 6767,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     326,
+     328,
+     394,
+     475
+    ]
+   },
+   {
+    "frame": 21,
+    "relocated": true,
+    "source_foot_xy": [
+     209.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     374.5,
+     475.8
+    ],
+    "shift_px": 165.6,
+    "mask_area_px": 6261,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     344,
+     325,
+     404,
+     476
+    ]
+   },
+   {
+    "frame": 22,
+    "relocated": true,
+    "source_foot_xy": [
+     217.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     389.0,
+     476.3
+    ],
+    "shift_px": 171.5,
+    "mask_area_px": 6335,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     362,
+     323,
+     417,
+     476
+    ]
+   },
+   {
+    "frame": 23,
+    "relocated": true,
+    "source_foot_xy": [
+     229.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     403.5,
+     475.1
+    ],
+    "shift_px": 174.6,
+    "mask_area_px": 6743,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     376,
+     312,
+     432,
+     475
+    ]
+   },
+   {
+    "frame": 24,
+    "relocated": true,
+    "source_foot_xy": [
+     238.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     418.0,
+     476.9
+    ],
+    "shift_px": 180.0,
+    "mask_area_px": 6758,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     388,
+     308,
+     448,
+     477
+    ]
+   },
+   {
+    "frame": 25,
+    "relocated": true,
+    "source_foot_xy": [
+     243.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     432.5,
+     476.0
+    ],
+    "shift_px": 189.0,
+    "mask_area_px": 7070,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     403,
+     306,
+     462,
+     476
+    ]
+   },
+   {
+    "frame": 26,
+    "relocated": true,
+    "source_foot_xy": [
+     251.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     447.0,
+     476.3
+    ],
+    "shift_px": 195.5,
+    "mask_area_px": 7547,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     414,
+     304,
+     481,
+     476
+    ]
+   },
+   {
+    "frame": 27,
+    "relocated": true,
+    "source_foot_xy": [
+     271.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     461.5,
+     476.5
+    ],
+    "shift_px": 190.5,
+    "mask_area_px": 7707,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     416,
+     304,
+     506,
+     477
+    ]
+   },
+   {
+    "frame": 28,
+    "relocated": true,
+    "source_foot_xy": [
+     279.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     476.0,
+     476.5
+    ],
+    "shift_px": 197.0,
+    "mask_area_px": 7990,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     430,
+     302,
+     522,
+     477
+    ]
+   },
+   {
+    "frame": 29,
+    "relocated": true,
+    "source_foot_xy": [
+     279.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     490.5,
+     474.7
+    ],
+    "shift_px": 211.1,
+    "mask_area_px": 8395,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     448,
+     299,
+     533,
+     475
+    ]
+   },
+   {
+    "frame": 30,
+    "relocated": true,
+    "source_foot_xy": [
+     282.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     505.0,
+     478.9
+    ],
+    "shift_px": 223.0,
+    "mask_area_px": 8201,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     464,
+     300,
+     546,
+     479
+    ]
+   },
+   {
+    "frame": 31,
+    "relocated": true,
+    "source_foot_xy": [
+     287.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     519.5,
+     477.5
+    ],
+    "shift_px": 232.0,
+    "mask_area_px": 9052,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     480,
+     294,
+     559,
+     478
+    ]
+   },
+   {
+    "frame": 32,
+    "relocated": true,
+    "source_foot_xy": [
+     298.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     534.0,
+     478.5
+    ],
+    "shift_px": 235.5,
+    "mask_area_px": 9021,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     490,
+     290,
+     577,
+     478
+    ]
+   },
+   {
+    "frame": 33,
+    "relocated": true,
+    "source_foot_xy": [
+     306.0,
+     480.0
+    ],
+    "target_foot_xy": [
+     548.5,
+     472.5
+    ],
+    "shift_px": 242.6,
+    "mask_area_px": 9154,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     502,
+     280,
+     596,
+     472
+    ]
+   },
+   {
+    "frame": 34,
+    "relocated": true,
+    "source_foot_xy": [
+     310.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     563.0,
+     475.0
+    ],
+    "shift_px": 252.5,
+    "mask_area_px": 8925,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     516,
+     279,
+     611,
+     475
+    ]
+   },
+   {
+    "frame": 35,
+    "relocated": true,
+    "source_foot_xy": [
+     309.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     577.5,
+     468.7
+    ],
+    "shift_px": 268.2,
+    "mask_area_px": 8966,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     532,
+     268,
+     623,
+     469
+    ]
+   },
+   {
+    "frame": 36,
+    "relocated": true,
+    "source_foot_xy": [
+     307.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     592.0,
+     466.9
+    ],
+    "shift_px": 284.8,
+    "mask_area_px": 9012,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     550,
+     261,
+     633,
+     467
+    ]
+   },
+   {
+    "frame": 37,
+    "relocated": true,
+    "source_foot_xy": [
+     305.5,
+     480.0
+    ],
+    "target_foot_xy": [
+     606.5,
+     442.7
+    ],
+    "shift_px": 303.3,
+    "mask_area_px": 9205,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     567,
+     231,
+     646,
+     443
+    ]
+   },
+   {
+    "frame": 38,
+    "relocated": true,
+    "source_foot_xy": [
+     305.0,
+     465.0
+    ],
+    "target_foot_xy": [
+     621.0,
+     458.9
+    ],
+    "shift_px": 316.1,
+    "mask_area_px": 8965,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     582,
+     257,
+     660,
+     459
+    ]
+   },
+   {
+    "frame": 39,
+    "relocated": true,
+    "source_foot_xy": [
+     305.5,
+     449.0
+    ],
+    "target_foot_xy": [
+     635.5,
+     445.5
+    ],
+    "shift_px": 330.0,
+    "mask_area_px": 8636,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     596,
+     256,
+     675,
+     446
+    ]
+   },
+   {
+    "frame": 40,
+    "relocated": true,
+    "source_foot_xy": [
+     306.5,
+     443.0
+    ],
+    "target_foot_xy": [
+     650.0,
+     453.9
+    ],
+    "shift_px": 343.7,
+    "mask_area_px": 8520,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     610,
+     267,
+     691,
+     454
+    ]
+   },
+   {
+    "frame": 41,
+    "relocated": true,
+    "source_foot_xy": [
+     307.0,
+     441.0
+    ],
+    "target_foot_xy": [
+     650.6,
+     450.2
+    ],
+    "shift_px": 343.7,
+    "mask_area_px": 8577,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     611,
+     262,
+     691,
+     450
+    ]
+   },
+   {
+    "frame": 42,
+    "relocated": true,
+    "source_foot_xy": [
+     307.5,
+     439.0
+    ],
+    "target_foot_xy": [
+     651.2,
+     447.4
+    ],
+    "shift_px": 343.9,
+    "mask_area_px": 8259,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     612,
+     259,
+     691,
+     447
+    ]
+   },
+   {
+    "frame": 43,
+    "relocated": true,
+    "source_foot_xy": [
+     310.0,
+     439.0
+    ],
+    "target_foot_xy": [
+     651.9,
+     443.5
+    ],
+    "shift_px": 341.9,
+    "mask_area_px": 8254,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     613,
+     252,
+     691,
+     443
+    ]
+   },
+   {
+    "frame": 44,
+    "relocated": true,
+    "source_foot_xy": [
+     314.0,
+     438.0
+    ],
+    "target_foot_xy": [
+     652.5,
+     436.4
+    ],
+    "shift_px": 338.5,
+    "mask_area_px": 8147,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     614,
+     242,
+     690,
+     436
+    ]
+   },
+   {
+    "frame": 45,
+    "relocated": true,
+    "source_foot_xy": [
+     319.0,
+     434.0
+    ],
+    "target_foot_xy": [
+     653.1,
+     436.8
+    ],
+    "shift_px": 334.1,
+    "mask_area_px": 8017,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     616,
+     243,
+     690,
+     437
+    ]
+   },
+   {
+    "frame": 46,
+    "relocated": true,
+    "source_foot_xy": [
+     323.0,
+     423.0
+    ],
+    "target_foot_xy": [
+     653.8,
+     418.0
+    ],
+    "shift_px": 330.8,
+    "mask_area_px": 7632,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     619,
+     232,
+     689,
+     418
+    ]
+   },
+   {
+    "frame": 47,
+    "relocated": true,
+    "source_foot_xy": [
+     324.5,
+     417.0
+    ],
+    "target_foot_xy": [
+     654.4,
+     413.4
+    ],
+    "shift_px": 329.9,
+    "mask_area_px": 7422,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     621,
+     230,
+     688,
+     413
+    ]
+   },
+   {
+    "frame": 48,
+    "relocated": true,
+    "source_foot_xy": [
+     324.5,
+     415.0
+    ],
+    "target_foot_xy": [
+     655.0,
+     398.4
+    ],
+    "shift_px": 330.9,
+    "mask_area_px": 7222,
+    "pasted": true,
+    "scale": 1.0,
+    "clipped": false,
+    "dest_bbox": [
+     622,
+     215,
+     689,
+     398
+    ]
+   }
+  ],
+  "_limits": [
+   "Translating a photographed silhouette does not synthesise a body turn, a new gait, or a different viewing angle. The worker arrives at the lane facing the way he was photographed walking elsewhere.",
+   "No cast shadow is drawn at the destination. The original contact shadow is removed only as far as the 7 px erase dilation reaches.",
+   "No occluder is modelled. All three paths were drawn over open floor, so nothing in the scene should pass in front of the relocated worker; if something does, the composite will show him in front of it."
+  ]
+ },
+ "runtime_s": 14.7
+}

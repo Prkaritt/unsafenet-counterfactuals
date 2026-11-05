@@ -368,3 +368,53 @@ Three clips support no claim about generalisation.
 Full write-up `outputs/multi_walkway/FINDINGS.md`. Package
 `/ocean/projects/cis260288p/puprety/transfer/multi-walkway-review/`, 54 files, 99 MB,
 checksums verified. Session narrative in `SESSION_LOG_2026-11-04.md`.
+
+---
+
+## 7. Agent-specified relocation, then frozen CogVideoX refinement, 2026-11-05
+
+Branch `experiment/manual-path-refinement`, **uncommitted by instruction**. Three sources:
+`0_tr143`, `0_tr16`, `0_tr125`. `0_tr48` rejected before any result because the detector
+misses the worker in 24 of its 49 source frames.
+
+**Outcome: the compositing worked on all three; the refinement preserved it and improved
+nothing.** This is the first time in this project that a worker has reached the marked
+pedestrian lane in any clip, and it happened because the relocation was done explicitly in
+pixels rather than asked for in a prompt.
+
+| Clip | Source foot-to-lane | Composite | Refined | Frames on lane, source → composite → refined |
+|---|---|---|---|---|
+| `0_tr143` | 291.0 px | 123.3 px | 123.5 px | 0/49 → 11/49 → 11/49 |
+| `0_tr16` | 263.4 px | 91.0 px | 90.4 px | 0/49 → 11/49 → 10/49 |
+| `0_tr125` | 387.1 px | 214.4 px | 162.6 px | 0/49 → 9/49 → 9/49 |
+
+Settings, identical across clips: frozen CogVideoX-2b, **no LoRA adapter loaded** (verified:
+0 LoRA parameter tensors before and after every generation) and **no classifier gradient**
+(the module is never imported). Seed 20261103, strength 0.2, 10 of 50 steps executed,
+guidance 6.0, `CogVideoXDDIMScheduler`, float16, peak 27.84 GiB. Segmentation by SAM 2.1
+`hiera_small` from Meta's own repository, 49 of 49 frames on every clip, peak 1.707 GiB.
+
+**Worker identity is preserved exactly,** because the composited pixels are the worker's own.
+That is the sharpest contrast with the LoRA run, where identity was lost in both arms.
+
+**What the refinement cost.** Lane IoU against the source falls from 0.92-0.95 to 0.25, 0.29
+and 0.013. That is **not** a repainting: the best uniform scale aligning refined to composite
+is exactly 1.000, so there is no geometric drift, and mean RGB on the lane moves by 4 to 6
+units of 255. The paint test `G - max(R,B) > 15` simply stops firing over most of a lane that
+was only 1.6 to 3.3 units above the threshold. Recorded in `scale_drift.json` and
+`lane_colour.json`, and corrected in `DECISIONS.md` D9 after a first reading that attributed
+it to a zoom.
+
+That finding puts a caveat on earlier work here: the multi-source LoRA comparison read base
+lane IoUs of 0.0000-0.0120 as the marking being erased or relocated. Those edits were six
+times stronger, so erasure is plausible there, but desaturation would drive the same number.
+That reading is unconfirmed on this point until re-measured.
+
+**Still not a counterfactual.** Paths are agent-specified interventions, labelled as such
+everywhere. Image-plane geometry carries no real-world distance. Full playback review has not
+been done and `templates/REVIEW_TEMPLATE.md` remains unsigned, so every clip is a candidate.
+
+Cost 0.2497 SU across six jobs; 4.1380 of 10 SU spent, 5.8620 remaining. Full write-up
+`outputs/manual_path/FINDINGS.md`, decisions in `DECISIONS.md`, review package at
+`/ocean/projects/cis260288p/puprety/transfer/manual-path-review/` (59 files, 30 MB, checksums
+verified).

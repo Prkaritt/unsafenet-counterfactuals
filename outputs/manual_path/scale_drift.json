@@ -1,0 +1,21 @@
+{
+ "_method": "Best uniform scale about the frame centre that minimises mean absolute difference between the composite and the refined clip at frame 8, searched over 0.90 to 1.15 in steps of 0.005. Nearest-neighbour resampling.",
+ "_reading": "A best scale above 1.0 means the refined frame is an enlarged version of the composite, so the whole scene drifted outward. mad_unscaled is the difference with no scale correction.",
+ "clips": {
+  "0_tr143": {
+   "best_scale": 1.0,
+   "mad_at_best": 7.458,
+   "mad_unscaled": 7.458
+  },
+  "0_tr16": {
+   "best_scale": 1.0,
+   "mad_at_best": 7.97,
+   "mad_unscaled": 7.97
+  },
+  "0_tr125": {
+   "best_scale": 1.0,
+   "mad_at_best": 6.537,
+   "mad_unscaled": 6.537
+  }
+ }
+}

@@ -1,0 +1,218 @@
+{
+  "_comment": "Agent-specified relocation plan, frozen 2026-11-05 before any composite or refined clip existed. Lane components were chosen by looking at outputs/manual_path/<clip>/overlays/01_green_components.png. Paths were drawn from the same images and from the recorded worker tracks.",
+  "_label": "These are agent-specified interventions. No model discovered them, and they are not present in the dataset.",
+  "_y_mode": "follow_source keeps each relocated frame on the foot row the worker actually occupied, so the silhouette is never rescaled and the weak height-versus-row fits are never relied on. The intervention is therefore horizontal only.",
+  "_speed_limits": "Each clip's limit is the largest frame-to-frame foot step the worker himself made in that clip, measured in survey.json. A path that needs a larger step is moving the worker faster than he ever moved.",
+  "clips": {
+    "0_tr143": {
+      "lane_components": [
+        0
+      ],
+      "lane_rationale": "One green component, 13761 px, spanning rows 105 to 479 down the right-hand side between two yellow boundary lines. The overlay shows it is the marked pedestrian lane and not a machine base: it is bounded by painted yellow lines on both sides, it runs the length of the aisle, and it is continuous with the walkway visible at the top of the frame.",
+      "y_mode": "follow_source",
+      "speed_limit_px": 20.01,
+      "path_keyframes": [
+        {
+          "frame": 6,
+          "x": 317.0,
+          "y": 299.0
+        },
+        {
+          "frame": 40,
+          "x": 640.0,
+          "y": 390.0
+        },
+        {
+          "frame": 48,
+          "x": 665.0,
+          "y": 441.0
+        }
+      ],
+      "path_rationale": "Frames 0 to 5 are left exactly as shot, so the violation is visible before anything changes. From frame 6 the worker is moved rightward across the open aisle, reaching the lane at frame 40 and then continuing along it to frame 48. Arriving well before the end is deliberate: a path that only touches the marking in its last two frames would be measured as lane contact without ever showing the worker walking there. Lateral speed is 9.5 px per frame and then 3.1, against the worker's own median step of 5.79 and maximum of 20.01. The route crosses bare concrete only.",
+      "obstacles": {
+        "machine_bank_left": [
+          [
+            0,
+            60
+          ],
+          [
+            270,
+            60
+          ],
+          [
+            270,
+            430
+          ],
+          [
+            0,
+            430
+          ]
+        ],
+        "aisle_trolley": [
+          [
+            318,
+            195
+          ],
+          [
+            425,
+            195
+          ],
+          [
+            425,
+            268
+          ],
+          [
+            318,
+            268
+          ]
+        ]
+      }
+    },
+    "0_tr16": {
+      "lane_components": [
+        0
+      ],
+      "lane_rationale": "Component 0, 4675 px at x 596 to 684 and rows 344 to 479, is the near end of the pedestrian lane in the lower right, bounded by yellow lines. Component 1 is 72 px at rows 290 to 297 and is the same marking much further away: too small to anchor a polygon and far above the worker's foot rows, so it is excluded and the lane is annotated only where the evidence is solid.",
+      "y_mode": "follow_source",
+      "speed_limit_px": 25.36,
+      "path_keyframes": [
+        {
+          "frame": 4,
+          "x": 413.0,
+          "y": 403.0
+        },
+        {
+          "frame": 40,
+          "x": 640.0,
+          "y": 480.0
+        },
+        {
+          "frame": 48,
+          "x": 645.0,
+          "y": 474.0
+        }
+      ],
+      "path_rationale": "Frames 0 to 3 stay as shot. The worker's own motion carries him left and away from the lane, so this intervention reverses his lateral direction: it is a return toward the marking, not a continuation, and his body stays turned the way it was photographed. Lateral speed is 6.3 px per frame and then 0.6, against his median 3.54 and maximum 25.36. He reaches the lane at frame 40 and stays on it, the lane spanning x 626 to 658 on row 474.",
+      "obstacles": {
+        "machine_bank_left": [
+          [
+            0,
+            90
+          ],
+          [
+            300,
+            90
+          ],
+          [
+            300,
+            420
+          ],
+          [
+            0,
+            420
+          ]
+        ],
+        "floor_equipment_bottom_left": [
+          [
+            185,
+            405
+          ],
+          [
+            300,
+            405
+          ],
+          [
+            300,
+            480
+          ],
+          [
+            185,
+            480
+          ]
+        ],
+        "steel_coil": [
+          [
+            322,
+            352
+          ],
+          [
+            404,
+            352
+          ],
+          [
+            404,
+            402
+          ],
+          [
+            322,
+            402
+          ]
+        ]
+      }
+    },
+    "0_tr125": {
+      "lane_components": [
+        0
+      ],
+      "lane_rationale": "One green component, 13537 px, rows 109 to 479 down the right-hand side. Same camera view and same marking as 0_tr143, which is independent corroboration that the component is the pedestrian lane rather than painted equipment.",
+      "y_mode": "follow_source",
+      "speed_limit_px": 24.5,
+      "path_keyframes": [
+        {
+          "frame": 2,
+          "x": 99.0,
+          "y": 479.0
+        },
+        {
+          "frame": 40,
+          "x": 650.0,
+          "y": 454.0
+        },
+        {
+          "frame": 48,
+          "x": 655.0,
+          "y": 398.0
+        }
+      ],
+      "path_rationale": "Frames 0 and 1 stay as shot, the shortest untouched run of the three because this worker starts farthest from the lane and the clip is only 49 frames long. He is already walking rightward toward the lane, so the intervention extends his own direction rather than reversing it. It is also the fastest of the three at 14.5 px per frame laterally, which is above his 90th-percentile step of 15.4 only marginally and below his maximum of 24.5. That speed is the price of a 551 px transition in six seconds, and it is recorded rather than hidden.",
+      "obstacles": {
+        "machine_bank_left": [
+          [
+            0,
+            60
+          ],
+          [
+            270,
+            60
+          ],
+          [
+            270,
+            430
+          ],
+          [
+            0,
+            430
+          ]
+        ],
+        "aisle_coil": [
+          [
+            318,
+            195
+          ],
+          [
+            425,
+            195
+          ],
+          [
+            425,
+            268
+          ],
+          [
+            318,
+            268
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "_comment": "Refinement settings for the agent-specified relocation experiment, frozen 2026-11-05 before any refined clip existed. Frozen CogVideoX-2b: no LoRA adapter is loaded and no classifier gradient is computed.",
+  "_strength": "0.2 of 50 requested steps executes 10. The project's own strength sweep showed 0.5 already preserves the scene while changing nothing, and 0.8 redraws the room. Here the relocation has already happened in pixels, so the generator is asked only to smooth composite seams, and a low strength is what keeps it from undoing the move.",
+  "_no_constraint": "The pipeline enforces no trajectory and no mask constraint. Whether refinement preserves the relocation is measured afterwards.",
+  "settings": {
+    "seed": 20261103,
+    "strength": 0.2,
+    "num_inference_steps": 50,
+    "guidance_scale": 6.0,
+    "negative_prompt": "inconsistent motion, blurry motion, worse quality, degenerate outputs, deformed outputs, camera movement, scene change"
+  },
+  "prompts": {
+    "0_tr143": "A worker in dark navy overalls walks along the green marked pedestrian walkway at the right side of a factory aisle, staying inside the yellow boundary lines. Fixed overhead security camera, industrial press machines on the left, concrete floor, unchanged lighting.",
+    "0_tr16": "A worker in dark overalls walks on the green marked pedestrian walkway at the right of a factory hall, inside the yellow boundary lines. Fixed overhead security camera, press machines and a steel coil on the left, concrete floor, unchanged lighting.",
+    "0_tr125": "A worker in dark overalls with red shoulder panels walks along the green marked pedestrian walkway at the right side of a factory aisle, inside the yellow boundary lines. Fixed overhead security camera, industrial press machines on the left, concrete floor, unchanged lighting."
+  },
+  "_prompts_note": "The prompts describe the state the composite already shows. They are not asking the model to relocate anyone; the relocation is already in the input frames. The same wording family was used in every earlier attempt in this project, which keeps the comparison readable."
+}

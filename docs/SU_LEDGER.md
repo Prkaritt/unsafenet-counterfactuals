@@ -99,3 +99,29 @@ anything measured so far.
 
 If substantial CPU work moves to a compute node — decoding several hundred clips, for
 instance — it is charged here at the partition's rate and deducted from the same 10 SU.
+
+## Agent-specified relocation experiment, 2026-11-05
+
+Branch `experiment/manual-path-refinement`, uncommitted. Read from `sacct`, not from
+requested wall time. Every job is 1 x `l40s-48` on `GPU-shared`, billed at 1 SU per GPU-hour
+of elapsed time.
+
+| Job | Name | Elapsed | SU | State | What it bought |
+|---|---|---|---|---|---|
+| 50275552 | `mprseg` | 00:03:40 | 0.0611 | COMPLETED | SAM 2.1 masks and composites; **superseded**, wrote colour-inverted video |
+| 50276648 | `mprseg` | 00:02:52 | 0.0478 | COMPLETED | same stage re-run after the video-writer fix |
+| 50276861 | `mprref` | 00:05:48 | 0.0967 | COMPLETED | single-clip pilot refinement, `0_tr143` |
+| 50276977 | `mprref` | 00:01:06 | 0.0183 | COMPLETED | refinement, `0_tr125` |
+| 50276958 | `mprref` | 00:01:04 | 0.0178 | COMPLETED | refinement, `0_tr16` only; `--export` split on the comma and dropped `0_tr125` |
+| 50277016 | `mprev` | 00:00:29 | 0.0081 | COMPLETED | evaluation of all nine clips |
+| | **Experiment total** | | **0.2497** | | |
+
+Two jobs bought less than they should have. 50275552 at 0.0611 SU produced correct masks and
+composites but inverted video, because `export_to_video` rescales numpy frames by 255 and
+uint8 wraps modulo 256. 50276958 at 0.0178 SU refined one clip instead of two, because
+`sbatch --export=ALL,CLIPS=a,b` treats the comma as a separator between exported variables.
+Neither is hidden; both are written up in `DECISIONS.md` D7 and in this table.
+
+**Budget position.** 3.8883 SU had been spent of the approved 10 before this experiment.
+With 0.2497 SU added, the total is **4.1380 SU spent, 5.8620 remaining**. Project total since
+2026-11-01 is 4.5030 SU.

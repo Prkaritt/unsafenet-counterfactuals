@@ -1,0 +1,429 @@
+{
+ "clip_id": "0_tr125",
+ "frames": 49,
+ "lane": {
+  "components_chosen": [
+   0
+  ],
+  "why": "One green component, 13537 px, rows 109 to 479 down the right-hand side. Same camera view and same marking as 0_tr143, which is independent corroboration that the component is the pedestrian lane rather than painted equipment.",
+  "mask_pixels": 13537,
+  "polygon_xy": [
+   [
+    541.0,
+    117.0
+   ],
+   [
+    542.0,
+    114.0
+   ],
+   [
+    544.0,
+    110.0
+   ],
+   [
+    546.0,
+    109.0
+   ],
+   [
+    548.0,
+    109.0
+   ],
+   [
+    553.0,
+    111.0
+   ],
+   [
+    558.0,
+    115.0
+   ],
+   [
+    645.0,
+    217.0
+   ],
+   [
+    648.0,
+    221.0
+   ],
+   [
+    718.0,
+    447.0
+   ],
+   [
+    718.0,
+    453.0
+   ],
+   [
+    717.0,
+    470.0
+   ],
+   [
+    713.0,
+    475.0
+   ],
+   [
+    712.0,
+    476.0
+   ],
+   [
+    677.0,
+    479.0
+   ],
+   [
+    656.0,
+    479.0
+   ],
+   [
+    653.0,
+    478.0
+   ],
+   [
+    649.0,
+    476.0
+   ],
+   [
+    646.0,
+    473.0
+   ],
+   [
+    645.0,
+    471.0
+   ],
+   [
+    642.0,
+    462.0
+   ],
+   [
+    546.0,
+    140.0
+   ],
+   [
+    541.0,
+    121.0
+   ]
+  ],
+  "polygon_pixels": 25425,
+  "_note": "The polygon is the convex hull of the chosen paint, so it spans gaps between dashes and is larger than the painted area. Foot placement is scored against the painted mask, not the hull."
+ },
+ "obstacles": {
+  "machine_bank_left": [
+   [
+    0.0,
+    60.0
+   ],
+   [
+    270.0,
+    60.0
+   ],
+   [
+    270.0,
+    430.0
+   ],
+   [
+    0.0,
+    430.0
+   ]
+  ],
+  "aisle_coil": [
+   [
+    318.0,
+    195.0
+   ],
+   [
+    425.0,
+    195.0
+   ],
+   [
+    425.0,
+    268.0
+   ],
+   [
+    318.0,
+    268.0
+   ]
+  ]
+ },
+ "intervention": {
+  "first_frame": 2,
+  "frames_untouched_before": 2,
+  "keyframes": [
+   {
+    "frame": 2,
+    "x": 99.0,
+    "y": 479.0
+   },
+   {
+    "frame": 40,
+    "x": 650.0,
+    "y": 454.0
+   },
+   {
+    "frame": 48,
+    "x": 655.0,
+    "y": 398.0
+   }
+  ],
+  "rationale": "Frames 0 and 1 stay as shot, the shortest untouched run of the three because this worker starts farthest from the lane and the clip is only 49 frames long. He is already walking rightward toward the lane, so the intervention extends his own direction rather than reversing it. It is also the fastest of the three at 14.5 px per frame laterally, which is above his 90th-percentile step of 15.4 only marginally and below his maximum of 24.5. That speed is the price of a 551 px transition in six seconds, and it is recorded rather than hidden.",
+  "_label": "Agent-specified intervention. I proposed this path from image evidence. It was not discovered as safe behaviour by any model and is not present in the dataset."
+ },
+ "path_checks": {
+  "max_lateral_step_px": 14.5,
+  "median_lateral_step_px": 14.5,
+  "max_total_step_px": 28.21,
+  "median_total_step_px": 14.58,
+  "_total_includes": "the worker's own vertical motion, copied from the source track",
+  "speed_limit_px": 24.5,
+  "steps_over_limit": [],
+  "teleports": false,
+  "frames_inside_obstacle": [],
+  "crosses_machinery": false,
+  "start_offset_from_source_foot_px": 1.1,
+  "ends_inside_lane_polygon": true,
+  "frames_with_foot_inside_lane_polygon": 9,
+  "frames_relocated": 47,
+  "y_mode": "follow_source"
+ },
+ "per_frame_path": [
+  null,
+  null,
+  {
+   "frame": 2,
+   "x": 99.0,
+   "y": 478.5
+  },
+  {
+   "frame": 3,
+   "x": 113.5,
+   "y": 477.4
+  },
+  {
+   "frame": 4,
+   "x": 128.0,
+   "y": 479.4
+  },
+  {
+   "frame": 5,
+   "x": 142.5,
+   "y": 477.5
+  },
+  {
+   "frame": 6,
+   "x": 157.0,
+   "y": 478.9
+  },
+  {
+   "frame": 7,
+   "x": 171.5,
+   "y": 476.8
+  },
+  {
+   "frame": 8,
+   "x": 186.0,
+   "y": 478.0
+  },
+  {
+   "frame": 9,
+   "x": 200.5,
+   "y": 473.5
+  },
+  {
+   "frame": 10,
+   "x": 215.0,
+   "y": 473.7368421052632
+  },
+  {
+   "frame": 11,
+   "x": 229.5,
+   "y": 477.0
+  },
+  {
+   "frame": 12,
+   "x": 244.0,
+   "y": 478.7
+  },
+  {
+   "frame": 13,
+   "x": 258.5,
+   "y": 478.0
+  },
+  {
+   "frame": 14,
+   "x": 273.0,
+   "y": 477.6
+  },
+  {
+   "frame": 15,
+   "x": 287.5,
+   "y": 477.9
+  },
+  {
+   "frame": 16,
+   "x": 302.0,
+   "y": 479.7
+  },
+  {
+   "frame": 17,
+   "x": 316.5,
+   "y": 478.2
+  },
+  {
+   "frame": 18,
+   "x": 331.0,
+   "y": 476.6
+  },
+  {
+   "frame": 19,
+   "x": 345.5,
+   "y": 479.4
+  },
+  {
+   "frame": 20,
+   "x": 360.0,
+   "y": 474.7
+  },
+  {
+   "frame": 21,
+   "x": 374.5,
+   "y": 475.8
+  },
+  {
+   "frame": 22,
+   "x": 389.0,
+   "y": 476.3
+  },
+  {
+   "frame": 23,
+   "x": 403.50000000000006,
+   "y": 475.1
+  },
+  {
+   "frame": 24,
+   "x": 418.0,
+   "y": 476.9
+  },
+  {
+   "frame": 25,
+   "x": 432.5,
+   "y": 476.0
+  },
+  {
+   "frame": 26,
+   "x": 447.0,
+   "y": 476.3
+  },
+  {
+   "frame": 27,
+   "x": 461.5,
+   "y": 476.5
+  },
+  {
+   "frame": 28,
+   "x": 476.0,
+   "y": 476.5
+  },
+  {
+   "frame": 29,
+   "x": 490.5,
+   "y": 474.7
+  },
+  {
+   "frame": 30,
+   "x": 505.0,
+   "y": 478.9
+  },
+  {
+   "frame": 31,
+   "x": 519.5,
+   "y": 477.5
+  },
+  {
+   "frame": 32,
+   "x": 534.0,
+   "y": 478.5
+  },
+  {
+   "frame": 33,
+   "x": 548.5,
+   "y": 472.5
+  },
+  {
+   "frame": 34,
+   "x": 563.0,
+   "y": 475.0
+  },
+  {
+   "frame": 35,
+   "x": 577.5,
+   "y": 468.7
+  },
+  {
+   "frame": 36,
+   "x": 592.0,
+   "y": 466.9
+  },
+  {
+   "frame": 37,
+   "x": 606.5,
+   "y": 442.7
+  },
+  {
+   "frame": 38,
+   "x": 621.0,
+   "y": 458.9
+  },
+  {
+   "frame": 39,
+   "x": 635.5,
+   "y": 445.5
+  },
+  {
+   "frame": 40,
+   "x": 650.0,
+   "y": 453.9
+  },
+  {
+   "frame": 41,
+   "x": 650.625,
+   "y": 450.2
+  },
+  {
+   "frame": 42,
+   "x": 651.25,
+   "y": 447.4
+  },
+  {
+   "frame": 43,
+   "x": 651.875,
+   "y": 443.5
+  },
+  {
+   "frame": 44,
+   "x": 652.5,
+   "y": 436.4
+  },
+  {
+   "frame": 45,
+   "x": 653.125,
+   "y": 436.8
+  },
+  {
+   "frame": 46,
+   "x": 653.75,
+   "y": 418.0
+  },
+  {
+   "frame": 47,
+   "x": 654.375,
+   "y": 413.4
+  },
+  {
+   "frame": 48,
+   "x": 655.0,
+   "y": 398.4
+  }
+ ],
+ "geometry_uncertainty": [
+  "The path is drawn in the image plane of a 720x480 frame. There is no camera calibration and no ground plane, so no step, distance or clearance here is a real-world measurement.",
+  "The only perspective evidence is the empirical fit of detector box height against foot row, recorded in survey.json. It holds across the foot rows the worker actually occupied and nowhere else.",
+  "Placing a silhouette inside the lane polygon says where the worker appears to stand. It does not establish that walking there is safe."
+ ]
+}

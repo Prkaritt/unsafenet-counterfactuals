@@ -157,3 +157,43 @@ Two rules out of that. Position, identity and pose are three different questions
 three checks. And every claimed adapter effect must be tested against the base arm, because
 anything present in all three arms belongs to the footage or the pipeline, not to the thing
 under test.
+
+---
+
+## Update 2026-11-05: explicit relocation works where generation did not
+
+Branch `experiment/manual-path-refinement`, **uncommitted**, nothing pushed or tagged.
+
+A fifth experiment ran: segment the worker with SAM 2.1, recover the background, composite
+him along a path I specified, then let a frozen CogVideoX-2b refine the result at strength
+0.2. Three sources, `0_tr143`, `0_tr16` and `0_tr125`.
+
+**The worker reaches the marked lane for the first time in this project.** Foot-to-lane
+median falls from 291.0, 263.4 and 387.1 px to 123.3, 91.0 and 214.4 px, and frames on the
+lane go from 0/49 in every earlier attempt to 11, 11 and 9. **Identity is preserved exactly**,
+because the pixels are the worker's own, which is the sharpest contrast with the LoRA run.
+
+**The refinement neither undid the relocation nor improved it.** Placement is unchanged to
+within 1 px on two clips and improves by 52 px on the third. The pipeline enforces no
+trajectory constraint, so that it held was an open question and is now a measurement.
+
+**Two corrections worth keeping.**
+
+1. `diffusers.utils.export_to_video` rescales a list of numpy frames by 255. For uint8 input
+   that wraps modulo 256 and writes a colour-inverted video. Pass PIL images. Cost 0.0611 SU
+   before it was caught by reading a written clip back.
+2. A refined clip's lane IoU of 0.25 is **not** evidence that the marking was repainted. Best
+   uniform scale aligning refined to composite is exactly 1.000, and mean RGB on the lane
+   moves 4 to 6 units of 255. The project's paint test is a channel-difference test sitting
+   1.6 to 3.3 units above its threshold, so a mild desaturation collapses it. This also puts
+   an unconfirmed caveat on the multi-source LoRA run's reading of lane IoU 0.0000-0.0120 as
+   erasure.
+
+**`sbatch --export=ALL,CLIPS=a,b` splits on the comma** and exports `CLIPS=a` plus a variable
+named `b`. One clip was silently skipped. Pass one value, or quote the comma.
+
+**What this does not change.** Gate C still FAILS and is not revised. The official test split
+is still untouched. The human review form is still unsigned, so every clip remains a
+candidate counterfactual. No safety claim is made anywhere.
+
+Budget: 4.1380 of 10 SU spent, 5.8620 remaining.

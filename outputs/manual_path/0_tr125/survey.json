@@ -1,0 +1,551 @@
+{
+ "clip_id": "0_tr125",
+ "frames": 49,
+ "shape_hw": [
+  480,
+  720
+ ],
+ "green_threshold": 15,
+ "green_pixels_total": 13537,
+ "components": [
+  {
+   "area": 13537,
+   "bbox": [
+    541,
+    109,
+    718,
+    479
+   ],
+   "centroid_xy": [
+    627.1,
+    324.6
+   ],
+   "y_span": 371,
+   "x_span": 178,
+   "component": 0,
+   "colour_rgb": [
+    255,
+    64,
+    64
+   ],
+   "fill_ratio_in_bbox": 0.205
+  }
+ ],
+ "_components_warning": "A green component is a candidate for the pedestrian lane and nothing more. This dataset paints machine bases green too, and this project has already been misled by one. Choose components by looking at 01_green_components.png.",
+ "perspective_fit": {
+  "usable": true,
+  "slope_px_height_per_px_row": -0.7273,
+  "intercept_px": 501.84,
+  "r_squared": 0.3239,
+  "n": 48,
+  "y_range": [
+   398.4,
+   479.7
+  ],
+  "height_range": [
+   130.0,
+   202.0
+  ],
+  "_meaning": "Empirical image-plane scale. Not a calibrated ground plane, and valid only across y_range."
+ },
+ "worker_track": {
+  "frames_with_worker": 48,
+  "detector_misses": 1,
+  "foot_x_range": [
+   98.1,
+   322.9
+  ],
+  "foot_y_range": [
+   398.4,
+   479.7
+  ],
+  "median_step_px": 7.2,
+  "p90_step_px": 15.4,
+  "max_step_px": 24.5,
+  "_source": "outputs/multi_walkway/evaluation.json",
+  "_note": "Recorded by an earlier GPU job. No detector was loaded in this stage."
+ },
+ "per_frame_track": [
+  {
+   "frame": 0,
+   "foot_xy": [
+    98.1,
+    479.5
+   ],
+   "height_px": 131.4,
+   "box": null,
+   "score": 0.994
+  },
+  {
+   "frame": 1,
+   "foot_xy": [
+    99.0,
+    479.7
+   ],
+   "height_px": 131.7,
+   "box": null,
+   "score": 0.991
+  },
+  {
+   "frame": 2,
+   "foot_xy": [
+    100.1,
+    478.5
+   ],
+   "height_px": 134.4,
+   "box": null,
+   "score": 0.982
+  },
+  {
+   "frame": 3,
+   "foot_xy": [
+    102.2,
+    477.4
+   ],
+   "height_px": 131.8,
+   "box": null,
+   "score": 0.991
+  },
+  {
+   "frame": 4,
+   "foot_xy": [
+    103.9,
+    479.4
+   ],
+   "height_px": 132.9,
+   "box": null,
+   "score": 0.983
+  },
+  {
+   "frame": 5,
+   "foot_xy": [
+    105.2,
+    477.5
+   ],
+   "height_px": 134.2,
+   "box": null,
+   "score": 0.979
+  },
+  {
+   "frame": 6,
+   "foot_xy": [
+    108.3,
+    478.9
+   ],
+   "height_px": 134.6,
+   "box": null,
+   "score": 0.992
+  },
+  {
+   "frame": 7,
+   "foot_xy": [
+    105.8,
+    476.8
+   ],
+   "height_px": 145.9,
+   "box": null,
+   "score": 0.985
+  },
+  {
+   "frame": 8,
+   "foot_xy": [
+    106.8,
+    478.0
+   ],
+   "height_px": 145.8,
+   "box": null,
+   "score": 0.981
+  },
+  {
+   "frame": 9,
+   "foot_xy": [
+    107.7,
+    473.5
+   ],
+   "height_px": 153.0,
+   "box": null,
+   "score": 0.909
+  },
+  null,
+  {
+   "frame": 11,
+   "foot_xy": [
+    123.3,
+    477.0
+   ],
+   "height_px": 130.0,
+   "box": null,
+   "score": 0.519
+  },
+  {
+   "frame": 12,
+   "foot_xy": [
+    123.8,
+    478.7
+   ],
+   "height_px": 146.1,
+   "box": null,
+   "score": 0.96
+  },
+  {
+   "frame": 13,
+   "foot_xy": [
+    133.9,
+    478.0
+   ],
+   "height_px": 138.9,
+   "box": null,
+   "score": 0.648
+  },
+  {
+   "frame": 14,
+   "foot_xy": [
+    145.4,
+    477.6
+   ],
+   "height_px": 134.5,
+   "box": null,
+   "score": 0.742
+  },
+  {
+   "frame": 15,
+   "foot_xy": [
+    156.3,
+    477.9
+   ],
+   "height_px": 138.5,
+   "box": null,
+   "score": 0.919
+  },
+  {
+   "frame": 16,
+   "foot_xy": [
+    172.1,
+    479.7
+   ],
+   "height_px": 142.8,
+   "box": null,
+   "score": 0.919
+  },
+  {
+   "frame": 17,
+   "foot_xy": [
+    178.7,
+    478.2
+   ],
+   "height_px": 136.2,
+   "box": null,
+   "score": 0.933
+  },
+  {
+   "frame": 18,
+   "foot_xy": [
+    186.1,
+    476.6
+   ],
+   "height_px": 135.4,
+   "box": null,
+   "score": 0.964
+  },
+  {
+   "frame": 19,
+   "foot_xy": [
+    193.1,
+    479.4
+   ],
+   "height_px": 141.9,
+   "box": null,
+   "score": 0.994
+  },
+  {
+   "frame": 20,
+   "foot_xy": [
+    201.1,
+    474.7
+   ],
+   "height_px": 136.6,
+   "box": null,
+   "score": 0.987
+  },
+  {
+   "frame": 21,
+   "foot_xy": [
+    209.4,
+    475.8
+   ],
+   "height_px": 144.2,
+   "box": null,
+   "score": 0.992
+  },
+  {
+   "frame": 22,
+   "foot_xy": [
+    222.1,
+    476.3
+   ],
+   "height_px": 148.3,
+   "box": null,
+   "score": 0.98
+  },
+  {
+   "frame": 23,
+   "foot_xy": [
+    227.0,
+    475.1
+   ],
+   "height_px": 152.3,
+   "box": null,
+   "score": 0.983
+  },
+  {
+   "frame": 24,
+   "foot_xy": [
+    235.2,
+    476.9
+   ],
+   "height_px": 158.1,
+   "box": null,
+   "score": 0.995
+  },
+  {
+   "frame": 25,
+   "foot_xy": [
+    244.0,
+    476.0
+   ],
+   "height_px": 156.4,
+   "box": null,
+   "score": 0.992
+  },
+  {
+   "frame": 26,
+   "foot_xy": [
+    250.6,
+    476.3
+   ],
+   "height_px": 166.9,
+   "box": null,
+   "score": 0.997
+  },
+  {
+   "frame": 27,
+   "foot_xy": [
+    259.1,
+    476.5
+   ],
+   "height_px": 169.3,
+   "box": null,
+   "score": 0.997
+  },
+  {
+   "frame": 28,
+   "foot_xy": [
+    266.3,
+    476.5
+   ],
+   "height_px": 170.6,
+   "box": null,
+   "score": 0.996
+  },
+  {
+   "frame": 29,
+   "foot_xy": [
+    269.6,
+    474.7
+   ],
+   "height_px": 171.2,
+   "box": null,
+   "score": 0.998
+  },
+  {
+   "frame": 30,
+   "foot_xy": [
+    275.0,
+    478.9
+   ],
+   "height_px": 179.4,
+   "box": null,
+   "score": 0.998
+  },
+  {
+   "frame": 31,
+   "foot_xy": [
+    285.5,
+    477.5
+   ],
+   "height_px": 179.3,
+   "box": null,
+   "score": 0.952
+  },
+  {
+   "frame": 32,
+   "foot_xy": [
+    295.3,
+    478.5
+   ],
+   "height_px": 187.8,
+   "box": null,
+   "score": 0.997
+  },
+  {
+   "frame": 33,
+   "foot_xy": [
+    304.7,
+    472.5
+   ],
+   "height_px": 185.4,
+   "box": null,
+   "score": 0.992
+  },
+  {
+   "frame": 34,
+   "foot_xy": [
+    310.0,
+    475.0
+   ],
+   "height_px": 190.2,
+   "box": null,
+   "score": 0.92
+  },
+  {
+   "frame": 35,
+   "foot_xy": [
+    309.2,
+    468.7
+   ],
+   "height_px": 190.3,
+   "box": null,
+   "score": 0.974
+  },
+  {
+   "frame": 36,
+   "foot_xy": [
+    306.9,
+    466.9
+   ],
+   "height_px": 197.1,
+   "box": null,
+   "score": 0.938
+  },
+  {
+   "frame": 37,
+   "foot_xy": [
+    303.1,
+    442.7
+   ],
+   "height_px": 173.0,
+   "box": null,
+   "score": 0.97
+  },
+  {
+   "frame": 38,
+   "foot_xy": [
+    301.6,
+    458.9
+   ],
+   "height_px": 197.6,
+   "box": null,
+   "score": 0.991
+  },
+  {
+   "frame": 39,
+   "foot_xy": [
+    301.4,
+    445.5
+   ],
+   "height_px": 190.2,
+   "box": null,
+   "score": 0.997
+  },
+  {
+   "frame": 40,
+   "foot_xy": [
+    302.8,
+    453.9
+   ],
+   "height_px": 199.9,
+   "box": null,
+   "score": 0.998
+  },
+  {
+   "frame": 41,
+   "foot_xy": [
+    305.4,
+    450.2
+   ],
+   "height_px": 202.0,
+   "box": null,
+   "score": 0.999
+  },
+  {
+   "frame": 42,
+   "foot_xy": [
+    306.8,
+    447.4
+   ],
+   "height_px": 199.2,
+   "box": null,
+   "score": 0.999
+  },
+  {
+   "frame": 43,
+   "foot_xy": [
+    308.7,
+    443.5
+   ],
+   "height_px": 196.9,
+   "box": null,
+   "score": 0.998
+  },
+  {
+   "frame": 44,
+   "foot_xy": [
+    313.1,
+    436.4
+   ],
+   "height_px": 195.9,
+   "box": null,
+   "score": 0.997
+  },
+  {
+   "frame": 45,
+   "foot_xy": [
+    318.5,
+    436.8
+   ],
+   "height_px": 199.3,
+   "box": null,
+   "score": 0.98
+  },
+  {
+   "frame": 46,
+   "foot_xy": [
+    322.9,
+    418.0
+   ],
+   "height_px": 185.3,
+   "box": null,
+   "score": 0.949
+  },
+  {
+   "frame": 47,
+   "foot_xy": [
+    322.8,
+    413.4
+   ],
+   "height_px": 183.7,
+   "box": null,
+   "score": 0.973
+  },
+  {
+   "frame": 48,
+   "foot_xy": [
+    321.4,
+    398.4
+   ],
+   "height_px": 166.4,
+   "box": null,
+   "score": 0.94
+  }
+ ]
+}
