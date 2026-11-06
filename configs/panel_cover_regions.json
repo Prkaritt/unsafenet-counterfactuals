@@ -1,0 +1,17 @@
+{
+  "_what": "The panel region, identified from the class populations and frozen before any clip was selected.",
+  "_identification": "An earlier version of this file named a wire-mesh guard on the front of the press, identified by eye from a single clip pair. Measuring that box over the whole folder disproved it: 96 of 120 aligned class-2 clips had the guard closed. See DECISIONS.md P5 and P6. The box below comes instead from a population difference: the mean of per-clip temporal medians for 100 aligned class-2 clips minus the same for 12 aligned class-6 clips, by scripts/pc_population.py. The strongest difference region is an electrical cabinet door on the press column, open in the class-2 mean and closed in the class-6 mean, and it separates the two classes clip by clip with balanced accuracy 0.935.",
+  "_identification_evidence": "outputs/panel_cover/population/population.json, region 0: box_full_res_xywh [218, 624, 110, 144], mean population difference 59.2 of 255, per-clip separation statistic -0.530 +- 0.486 for class 2 against +0.754 +- 0.007 for class 6. The 12 class-6 clips come from 11 distinct recording groups, so that consistency is not one recording counted twice.",
+  "bg_scale": [480, 270],
+  "alignment_min_ncc": 0.95,
+  "views": {
+    "press_front": {
+      "panel_box_full_res": [208, 614, 130, 164],
+      "panel_box_note": "x, y, w, h in the source 1920x1080 frame. The population difference bounding box [218, 624, 110, 144] padded by 10 px on each side, so that the door edge and its latch fall inside the region rather than on its boundary.",
+      "alignment_patch_full_res": [900, 150, 500, 400],
+      "alignment_patch_note": "Static scene well away from the press: the far wall, the coil stock and the orange machine. Used only to check that a clip is from this camera and pose.",
+      "alignment_reference_clip": "6_tr16",
+      "alignment_reference_note": "Supplies the alignment patch only. Panel state is scored against class means built from every aligned clip, not against one reference clip, because one reference clip is what produced the P5 error."
+    }
+  }
+}

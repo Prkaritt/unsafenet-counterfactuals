@@ -134,3 +134,55 @@ If supplying the three UUIDs is inconvenient, download in a browser and transfer
 
 Supplying three UUIDs keeps the checksum verification. Transferring a browser download does
 not. Either is workable; they are not equivalent.
+
+---
+
+## Update 2026-11-05: classes 2 and 6 are blocked the same way
+
+The panel-cover experiment needs the class-2 and class-6 **training** folders. Classes 0 and
+4 are already on disk; the official test split is deliberately left untouched.
+
+Expected volume, from Table 2 of the paper: class 2 has 129 training clips averaging 5.8 s,
+class 6 has 19 training clips averaging 4.6 s. Scaling from class 0, which is 178 clips at
+9.7 s for 2.80 GB, these two folders should be roughly 1.3 GB and 0.2 GB.
+
+### Everything tried today, and what it returned
+
+The root is still unlistable, and three further routes were tried and failed:
+
+| Attempt | Result |
+|---|---|
+| `files?version=1&include_folders=true` | `{"error":400}` |
+| `GET /public-api/datasets/xjmtb22pff?version=1` | 200, full dataset metadata, **no file or folder list**, `size: 0` |
+| `/public-api/datasets/xjmtb22pff/versions/1/files` | `Cannot GET` |
+| `api.data.mendeley.com/datasets/xjmtb22pff/versions/1/files` | `no Route matched with those values` |
+| `/public-api/datasets/xjmtb22pff/folders?version=1&folder_id=root` | `Cannot GET` |
+| Landing-page HTML fetched with a browser user agent | 128,943 bytes, **zero occurrences of `mp4`**, no `__NEXT_DATA__` payload |
+| Every UUID appearing in the metadata or page HTML, tried as both `folder_id` and file id | `{"error":404}` for all five; they are licence, institution and category ids |
+| `prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/xjmtb22pff-1.zip` | `403 Forbidden` from S3, so no ranged read of a cached archive either |
+
+The S3 route is worth noting because it would have solved this without any browser step: a
+cached zip that honoured HTTP range requests would let the central directory be read and only
+the wanted members fetched. That bucket does not serve this dataset publicly.
+
+### What is needed: two links
+
+Open <https://data.mendeley.com/datasets/xjmtb22pff/1>, enter the class-2 training folder and
+the class-6 training folder, and copy **any one file's download link from each**:
+
+- one `2_tr*.mp4` link, for Opened Panel Cover, training
+- one `6_tr*.mp4` link, for Closed Panel Cover, training
+
+A link looks like
+
+    https://data.mendeley.com/public-files/datasets/xjmtb22pff/files/<uuid>/file_downloaded
+
+The UUID is the only part needed. A `folder_id` copied from the address bar while inside the
+folder works just as well. Then:
+
+    python scripts/fetch_class_folder.py --from-file-id <uuid-of-a-2_tr-clip> --out data/raw/class2_train
+    python scripts/fetch_class_folder.py --from-file-id <uuid-of-a-6_tr-clip> --out data/raw/class6_train
+
+Each run lists the folder, downloads every file, verifies every published sha256 and writes
+`folder_manifest.json` beside the clips. Nothing about this step touches a GPU, so it runs on
+the login node without charge.

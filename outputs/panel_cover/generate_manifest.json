@@ -1,0 +1,337 @@
+{
+ "_what": "CogVideoX arms for the panel-cover cases: VAE round trips, a prompt-only control, and a low-strength refinement of the composite.",
+ "_not": [
+  "no LoRA adapter was loaded",
+  "no classifier-gradient guidance in this stage",
+  "no training",
+  "no mask conditioning: the pipeline enforces no mask or region constraint"
+ ],
+ "generated": "2026-11-05T23:43:08+00:00",
+ "environment": {
+  "captured_at": "2026-11-05T23:43:08+00:00",
+  "python": {
+   "python_version": "3.12.13",
+   "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+   "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+   "machine": "x86_64"
+  },
+  "packages": {
+   "torch": "2.9.1+cu128",
+   "torchvision": "0.24.1+cu128",
+   "diffusers": "0.36.0",
+   "transformers": "4.57.6",
+   "accelerate": "1.15.0",
+   "huggingface_hub": "0.36.2",
+   "safetensors": "0.8.0",
+   "numpy": "2.3.4",
+   "PIL": "11.3.0",
+   "imageio": "2.37.0",
+   "imageio_ffmpeg": "0.8.1",
+   "sentencepiece": "0.2.2"
+  },
+  "gpu": {
+   "available": true,
+   "name": "NVIDIA L40S",
+   "capability": "8.9",
+   "total_vram_gb": 44.42,
+   "free_vram_gb": 16.01,
+   "torch_cuda_version": "12.8",
+   "supports_bf16": true
+  },
+  "system_ram_gb": 1006.85,
+  "nvidia_smi": "Thu Nov  5 18:43:08 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000001:B2:00.0 Off |                    0 |\n| N/A   64C    P0             97W /  350W |   29095MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           64498      C   ...y/envs/cogvx-cu128/bin/python      29086MiB |\n+-----------------------------------------------------------------------------------------+"
+ },
+ "cases": {
+  "case1_2tr108_6tr17": {
+   "case_id": "case1_2tr108_6tr17",
+   "arms": {
+    "vae_source": {
+     "output": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_vae_source.mp4",
+     "input": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_source.mp4",
+     "latent_shape": [
+      1,
+      16,
+      13,
+      60,
+      90
+     ],
+     "scaling_factor": 1.15258426,
+     "latent_mode": "latent_dist.mode()",
+     "seconds": 41.3,
+     "peak_gpu_gib": 13.754,
+     "psnr_vs_input_db": 32.31393196352977,
+     "mean_abs_diff_vs_input": 3.6993982071995464,
+     "_what": "VAE encode and decode only. No diffusion, no prompt."
+    },
+    "vae_composite": {
+     "output": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_vae_composite.mp4",
+     "input": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_composite.mp4",
+     "latent_shape": [
+      1,
+      16,
+      13,
+      60,
+      90
+     ],
+     "scaling_factor": 1.15258426,
+     "latent_mode": "latent_dist.mode()",
+     "seconds": 24.1,
+     "peak_gpu_gib": 13.793,
+     "psnr_vs_input_db": 33.57078557258332,
+     "mean_abs_diff_vs_input": 3.091324286659108,
+     "_what": "VAE encode and decode only. No diffusion, no prompt."
+    },
+    "base_edit": {
+     "output": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_base_edit.mp4",
+     "input": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_source.mp4",
+     "prompt": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting.",
+     "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+     "seed": 20261105,
+     "strength": 0.6,
+     "num_inference_steps": 50,
+     "denoising_steps_executed": 30,
+     "_steps_note": "strength truncates the schedule: executed = int(steps * strength). Timing is per executed step.",
+     "guidance_scale": 6.0,
+     "scheduler": "CogVideoXDDIMScheduler",
+     "dtype": "torch.float16",
+     "checkpoint": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+     "checkpoint_revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+     "seconds": 77.8,
+     "s_per_denoising_step": 2.593,
+     "peak_gpu_gib": 27.898,
+     "lora_param_tensors_present": 0,
+     "psnr_vs_input_db": 20.291107705963984,
+     "mean_abs_diff_vs_input": 15.942692822499371,
+     "_psnr_warning": "Whole-frame PSNR is dominated by static background and is nearly blind to a panel occupying a small part of the frame. It is not evidence about the panel."
+    },
+    "refined": {
+     "output": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_refined.mp4",
+     "input": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_composite.mp4",
+     "prompt": "Fixed overhead security camera footage of a metal workshop. An eccentric press with a worker beside it, and the grey electrical cabinet on the press column with its door shut flat against the frame. Natural surveillance video, static camera, consistent lighting, no motion in the cabinet door.",
+     "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+     "seed": 20261105,
+     "strength": 0.2,
+     "num_inference_steps": 50,
+     "denoising_steps_executed": 10,
+     "_steps_note": "strength truncates the schedule: executed = int(steps * strength). Timing is per executed step.",
+     "guidance_scale": 6.0,
+     "scheduler": "CogVideoXDDIMScheduler",
+     "dtype": "torch.float16",
+     "checkpoint": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+     "checkpoint_revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+     "seconds": 40.4,
+     "s_per_denoising_step": 4.042,
+     "peak_gpu_gib": 27.898,
+     "lora_param_tensors_present": 0,
+     "psnr_vs_input_db": 27.495850698939513,
+     "mean_abs_diff_vs_input": 6.536934582860922,
+     "_psnr_warning": "Whole-frame PSNR is dominated by static background and is nearly blind to a panel occupying a small part of the frame. It is not evidence about the panel."
+    },
+    "refined_restricted": {
+     "output": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_refined_restricted.mp4",
+     "built_from": [
+      "composite (outside the region)",
+      "refined (inside the region)"
+     ],
+     "region_px": 7667,
+     "_what": "Output compositing applied AFTER generation. The model was not conditioned on the mask and was not constrained during denoising. The unrestricted refined output is kept at case1_2tr108_6tr17_refined.mp4 for comparison.",
+     "psnr_vs_composite_db": 45.0800177631175
+    }
+   }
+  },
+  "case2_2tr118_6tr18": {
+   "case_id": "case2_2tr118_6tr18",
+   "arms": {
+    "vae_source": {
+     "output": "outputs/panel_cover/case2_2tr118_6tr18/videos/case2_2tr118_6tr18_vae_source.mp4",
+     "input": "outputs/panel_cover/case2_2tr118_6tr18/videos/case2_2tr118_6tr18_source.mp4",
+     "latent_shape": [
+      1,
+      16,
+      13,
+      60,
+      90
+     ],
+     "scaling_factor": 1.15258426,
+     "latent_mode": "latent_dist.mode()",
+     "seconds": 24.1,
+     "peak_gpu_gib": 13.793,
+     "psnr_vs_input_db": 32.77646780538072,
+     "mean_abs_diff_vs_input": 3.456983851410935,
+     "_what": "VAE encode and decode only. No diffusion, no prompt."
+    },
+    "vae_composite": {
+     "output": "outputs/panel_cover/case2_2tr118_6tr18/videos/case2_2tr118_6tr18_vae_composite.mp4",
+     "input": "outputs/panel_cover/case2_2tr118_6tr18/videos/case2_2tr118_6tr18_composite.mp4",
+     "latent_shape": [
+      1,
+      16,
+      13,
+      60,
+      90
+     ],
+     "scaling_factor": 1.15258426,
+     "latent_mode": "latent_dist.mode()",
+     "seconds": 24.2,
+     "peak_gpu_gib": 13.793,
+     "psnr_vs_input_db": 33.9318148681537,
+     "mean_abs_diff_vs_input": 2.9610527486457547,
+     "_what": "VAE encode and decode only. No diffusion, no prompt."
+    },
+    "base_edit": {
+     "output": "outputs/panel_cover/case2_2tr118_6tr18/videos/case2_2tr118_6tr18_base_edit.mp4",
+     "input": "outputs/panel_cover/case2_2tr118_6tr18/videos/case2_2tr118_6tr18_source.mp4",
+     "prompt": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting.",
+     "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+     "seed": 20261105,
+     "strength": 0.6,
+     "num_inference_steps": 50,
+     "denoising_steps_executed": 30,
+     "_steps_note": "strength truncates the schedule: executed = int(steps * strength). Timing is per executed step.",
+     "guidance_scale": 6.0,
+     "scheduler": "CogVideoXDDIMScheduler",
+     "dtype": "torch.float16",
+     "checkpoint": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+     "checkpoint_revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+     "seconds": 72.7,
+     "s_per_denoising_step": 2.424,
+     "peak_gpu_gib": 27.898,
+     "lora_param_tensors_present": 0,
+     "psnr_vs_input_db": 20.425476951091078,
+     "mean_abs_diff_vs_input": 15.744811822877299,
+     "_psnr_warning": "Whole-frame PSNR is dominated by static background and is nearly blind to a panel occupying a small part of the frame. It is not evidence about the panel."
+    },
+    "refined": {
+     "output": "outputs/panel_cover/case2_2tr118_6tr18/videos/case2_2tr118_6tr18_refined.mp4",
+     "input": "outputs/panel_cover/case2_2tr118_6tr18/videos/case2_2tr118_6tr18_composite.mp4",
+     "prompt": "Fixed overhead security camera footage of a metal workshop. An eccentric press with a worker beside it, and the grey electrical cabinet on the press column with its door shut flat against the frame. Natural surveillance video, static camera, consistent lighting, no motion in the cabinet door.",
+     "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+     "seed": 20261105,
+     "strength": 0.2,
+     "num_inference_steps": 50,
+     "denoising_steps_executed": 10,
+     "_steps_note": "strength truncates the schedule: executed = int(steps * strength). Timing is per executed step.",
+     "guidance_scale": 6.0,
+     "scheduler": "CogVideoXDDIMScheduler",
+     "dtype": "torch.float16",
+     "checkpoint": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+     "checkpoint_revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+     "seconds": 40.7,
+     "s_per_denoising_step": 4.069,
+     "peak_gpu_gib": 27.898,
+     "lora_param_tensors_present": 0,
+     "psnr_vs_input_db": 27.6889940363941,
+     "mean_abs_diff_vs_input": 6.4133774840954905,
+     "_psnr_warning": "Whole-frame PSNR is dominated by static background and is nearly blind to a panel occupying a small part of the frame. It is not evidence about the panel."
+    },
+    "refined_restricted": {
+     "output": "outputs/panel_cover/case2_2tr118_6tr18/videos/case2_2tr118_6tr18_refined_restricted.mp4",
+     "built_from": [
+      "composite (outside the region)",
+      "refined (inside the region)"
+     ],
+     "region_px": 7667,
+     "_what": "Output compositing applied AFTER generation. The model was not conditioned on the mask and was not constrained during denoising. The unrestricted refined output is kept at case2_2tr118_6tr18_refined.mp4 for comparison.",
+     "psnr_vs_composite_db": 45.574406744201106
+    }
+   }
+  },
+  "case3_2tr92_6tr16": {
+   "case_id": "case3_2tr92_6tr16",
+   "arms": {
+    "vae_source": {
+     "output": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_vae_source.mp4",
+     "input": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_source.mp4",
+     "latent_shape": [
+      1,
+      16,
+      13,
+      60,
+      90
+     ],
+     "scaling_factor": 1.15258426,
+     "latent_mode": "latent_dist.mode()",
+     "seconds": 24.1,
+     "peak_gpu_gib": 13.793,
+     "psnr_vs_input_db": 32.80433127920185,
+     "mean_abs_diff_vs_input": 3.5109281698790626,
+     "_what": "VAE encode and decode only. No diffusion, no prompt."
+    },
+    "vae_composite": {
+     "output": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_vae_composite.mp4",
+     "input": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_composite.mp4",
+     "latent_shape": [
+      1,
+      16,
+      13,
+      60,
+      90
+     ],
+     "scaling_factor": 1.15258426,
+     "latent_mode": "latent_dist.mode()",
+     "seconds": 24.2,
+     "peak_gpu_gib": 13.793,
+     "psnr_vs_input_db": 34.008287602099756,
+     "mean_abs_diff_vs_input": 3.00175461388259,
+     "_what": "VAE encode and decode only. No diffusion, no prompt."
+    },
+    "base_edit": {
+     "output": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_base_edit.mp4",
+     "input": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_source.mp4",
+     "prompt": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting.",
+     "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+     "seed": 20261105,
+     "strength": 0.6,
+     "num_inference_steps": 50,
+     "denoising_steps_executed": 30,
+     "_steps_note": "strength truncates the schedule: executed = int(steps * strength). Timing is per executed step.",
+     "guidance_scale": 6.0,
+     "scheduler": "CogVideoXDDIMScheduler",
+     "dtype": "torch.float16",
+     "checkpoint": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+     "checkpoint_revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+     "seconds": 73.8,
+     "s_per_denoising_step": 2.459,
+     "peak_gpu_gib": 27.898,
+     "lora_param_tensors_present": 0,
+     "psnr_vs_input_db": 20.593035203322216,
+     "mean_abs_diff_vs_input": 15.646983123110354,
+     "_psnr_warning": "Whole-frame PSNR is dominated by static background and is nearly blind to a panel occupying a small part of the frame. It is not evidence about the panel."
+    },
+    "refined": {
+     "output": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_refined.mp4",
+     "input": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_composite.mp4",
+     "prompt": "Fixed overhead security camera footage of a metal workshop. An eccentric press with a worker beside it, and the grey electrical cabinet on the press column with its door shut flat against the frame. Natural surveillance video, static camera, consistent lighting, no motion in the cabinet door.",
+     "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+     "seed": 20261105,
+     "strength": 0.2,
+     "num_inference_steps": 50,
+     "denoising_steps_executed": 10,
+     "_steps_note": "strength truncates the schedule: executed = int(steps * strength). Timing is per executed step.",
+     "guidance_scale": 6.0,
+     "scheduler": "CogVideoXDDIMScheduler",
+     "dtype": "torch.float16",
+     "checkpoint": "/ocean/projects/cis260288p/puprety/checkpoints/CogVideoX-2b",
+     "checkpoint_revision": "1137dacfc2c9c012bed6a0793f4ecf2ca8e7ba01",
+     "seconds": 41.0,
+     "s_per_denoising_step": 4.104,
+     "peak_gpu_gib": 27.898,
+     "lora_param_tensors_present": 0,
+     "psnr_vs_input_db": 27.834839218625774,
+     "mean_abs_diff_vs_input": 6.466022967057193,
+     "_psnr_warning": "Whole-frame PSNR is dominated by static background and is nearly blind to a panel occupying a small part of the frame. It is not evidence about the panel."
+    },
+    "refined_restricted": {
+     "output": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_refined_restricted.mp4",
+     "built_from": [
+      "composite (outside the region)",
+      "refined (inside the region)"
+     ],
+     "region_px": 7667,
+     "_what": "Output compositing applied AFTER generation. The model was not conditioned on the mask and was not constrained during denoising. The unrestricted refined output is kept at case3_2tr92_6tr16_refined.mp4 for comparison.",
+     "psnr_vs_composite_db": 45.12538193691525
+    }
+   }
+  }
+ }
+}

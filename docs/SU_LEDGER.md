@@ -125,3 +125,52 @@ Neither is hidden; both are written up in `DECISIONS.md` D7 and in this table.
 **Budget position.** 3.8883 SU had been spent of the approved 10 before this experiment.
 With 0.2497 SU added, the total is **4.1380 SU spent, 5.8620 remaining**. Project total since
 2026-11-01 is 4.5030 SU.
+
+## Panel-cover counterfactual experiment, 2026-11-05
+
+Branch `experiment/panel-cover-counterfactual`, uncommitted. Every job is 1 x `l40s-48` on
+`GPU-shared`, billed at 1 SU per GPU-hour of elapsed time. Elapsed times are read from
+`sacct`, never from requested wall time.
+
+The grant carries one resource only, Bridges-2 GPU, with 223 of 300 SU remaining on
+2026-11-05. There is no CPU-only RM allocation, so CPU-bound media work is charged at the
+same rate as a generation, which is why every stage asks for the shortest wall time that
+fits its measured throughput. Downloading and hash-verifying the two dataset folders was
+done on the login node and cost nothing.
+
+| Job | Name | Elapsed | SU | State | What it bought |
+|---|---|---|---|---|---|
+| 50280101 | `pcaudit` | 00:16:04 | 0.2678 | COMPLETED | audit of 148 class-2 and class-6 clips: camera views, recording groups, measured panel-candidate regions, contact sheets |
+| 50282082 | `pcsel` | 00:10:54 | 0.1817 | COMPLETED | scored all 148 clips against the press-guard box of DECISIONS P5 and **disproved it**: 96 of 120 aligned class-2 clips had that guard closed |
+| 50282294 | `pcpop` | 00:03:41 | 0.0614 | COMPLETED | population difference between the two classes; found the cabinet door that separates them clip by clip at balanced accuracy 0.935 (DECISIONS P7) |
+| 50283251 | `pcsel` | 00:13:20 | 0.2222 | COMPLETED | rescore against the corrected cabinet-door box: class 2 reads open 0.81 / closed 0.09, class 6 reads closed 0.998, and only 12 of 100 class-2 clips read closed |
+| 50284349 | `pccomp` | 00:00:44 | 0.0122 | COMPLETED | all three composites: donor coverage 1.0000, 0 px changed outside the region, landmark residual 0.0 px |
+| 50284466 | `pcgen` | 00:13:07 | 0.2185 | COMPLETED | 15 CogVideoX arms, 5 per case; LoRA verified absent before and after every generation |
+| 50284467 | `pctrain` | 00:01:57 | 0.0325 | COMPLETED | the class-2/class-6 classifier, group-separated split, validation balanced accuracy 0.9849 on only 4 independent safe clips |
+| 50284823 | `pcdiag` | 00:03:37 | 0.0603 | COMPLETED | **region masking measured nothing**: a stale view lookup skipped all 37 clips. The VAE control in the same job was valid, 8 of 8 clips kept their prediction |
+| 50284824 | `pceval` | 00:01:10 | 0.0194 | COMPLETED | per-arm evaluation: the composite closes the panel (ncc 0.9997) while the classifier moves only 0.13 to 0.32 |
+| 50285088 | `pcdiag` | 00:06:27 | 0.1075 | COMPLETED | region masking rerun after the fix: panel 0.131 against controls 0.006 to 0.019, correct sign in both classes |
+| 50285379 | `pcprobe` | 00:00:03 | 0.0008 | FAILED | submitted without `CASE` exported; my error, not a code fault |
+| 50286103 | `pcprobe` | 00:09:25 | 0.1569 | COMPLETED | gradient gate passes: finite, non-zero, 36.9 GiB peak. Its one-step score was NaN from a 50x-norm step, a fault in the probe and not in the gradient (P11) |
+| 50286262 | `pcprobe` | 00:02:28 | 0.0411 | COMPLETED | step sweep replacing that single step: log p rises from -0.798 to -0.446 at 0.02 of the latent norm, no NaN anywhere |
+| 50286287 | `pcguided` | 00:13:11 | 0.2197 | COMPLETED | case 1 guided pair: guided P(closed) 0.99989 flips, unguided control 0.28348 does not |
+| 50286405 | `pceval` | 00:01:19 | 0.0219 | COMPLETED | rescored with the guidance arms: the guided output's panel is **still open**, ncc 0.109 against the closed reference |
+| 50286464 | `pcguided` | 00:13:05 | 0.2181 | COMPLETED | case 2 guided pair: 0.99992 flips, control 0.36108 does not |
+| 50286465 | `pcguided` | 00:18:12 | 0.3033 | COMPLETED | case 3 guided pair: 0.99990 flips, control 0.32542 does not |
+| 50287094 | `pceval` | 00:01:24 | 0.0233 | COMPLETED | final scoring, 10 arms per case: guided panel open in all three |
+
+**Three jobs that bought negative or void results, recorded rather than written off.**
+50282082 at 0.1817 SU disproved the panel identification of DECISIONS P5 and stopped three
+composites being built over a region already closed in the source. 50284823 at 0.0603 SU
+produced an empty main section through a code bug (P10) and had to be rerun. 50285379 at
+0.0008 SU failed on a missing environment variable. Together 0.2428 SU, 11% of what this
+experiment spent.
+
+**Nothing further is outstanding.** All 18 jobs have finished.
+
+**Budget position, final.** 4.1380 SU had been spent before this experiment; **2.1686 SU**
+was spent inside it across 18 jobs, so **6.3066 SU spent and 3.6934 remaining** of the
+approved 10. Nothing is outstanding, so spent equals committed. The ceiling was never
+approached: the highest the running total of spent plus outstanding worst case ever reached
+was 9.900 SU, before the early stages reported their real elapsed times and the worst-case
+figures were replaced by actuals.

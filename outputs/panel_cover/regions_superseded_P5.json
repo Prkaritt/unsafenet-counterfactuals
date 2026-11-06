@@ -1,0 +1,17 @@
+{
+  "_what": "The panel region, identified by eye from the audit's difference maps and frozen before any clip was selected.",
+  "_identification": "Full-resolution medians of 2_tr89 (class 2) and 6_tr16 (class 6) differ at the front of the eccentric press: a yellow-framed wire-mesh guard is in place in the class-6 clip and swung away in the class-2 clip. That guard is the object the two labels describe on this camera.",
+  "bg_scale": [480, 270],
+  "alignment_min_ncc": 0.90,
+  "views": {
+    "press_front": {
+      "panel_box_full_res": [265, 770, 180, 210],
+      "panel_box_note": "x, y, w, h in the source 1920x1080 frame. Covers the yellow frame and the mesh inside it, with a small margin.",
+      "alignment_patch_full_res": [900, 150, 500, 400],
+      "alignment_patch_note": "Static scene well away from the press: the far wall, the coil stock and the orange machine. Used only to check that a clip is from this camera and pose.",
+      "closed_reference_clip": "6_tr16",
+      "open_reference_clip": "2_tr89",
+      "_reference_caveat": "2_tr89 has a worker standing in front of the guard, so its region is 'open and occluded'. It is usable as an open reference because the guard is absent in it, but it is NOT usable as a source for the same reason."
+    }
+  }
+}

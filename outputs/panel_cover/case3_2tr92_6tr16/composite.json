@@ -1,0 +1,552 @@
+{
+ "case_id": "case3_2tr92_6tr16",
+ "source_clip": "2_tr92",
+ "donor_clip": "6_tr16",
+ "donor_provenance": {
+  "clip": "6_tr16",
+  "dataset_class": 6,
+  "class_name": "Closed Panel Cover",
+  "official_split": "tr",
+  "path": "data/raw/class6_train/6_tr16.mp4",
+  "sha256": "c93b9abf7e03ec6bf0f2320072c39b5a6db83746f61abd47bc785d6f3ccb3251",
+  "frame_policy": "median",
+  "_note": "Donor pixels come from this training-split clip only. The official test split was not read."
+ },
+ "source_provenance": {
+  "path": "data/raw/class2_train/2_tr92.mp4",
+  "sha256": "f64c2a4b300868e48ece05977044451a3c59bd8ddc1b29ac1b5c7e4e480a31f9",
+  "dataset_class": 2,
+  "class_name": "Opened Panel Cover"
+ },
+ "preprocess_source": {
+  "spec": {
+   "source": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class2_train/2_tr92.mp4",
+   "crop": {
+    "width": 1080,
+    "height": 720,
+    "x": 0,
+    "y": 360
+   },
+   "start_frame": 0,
+   "frame_step": 3,
+   "num_frames": 49,
+   "width": 720,
+   "height": 480,
+   "out_fps": 8,
+   "crf": 8,
+   "latent_frames": 13,
+   "latent_height": 60,
+   "latent_width": 90,
+   "selected_frame_indices": [
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    78,
+    81,
+    84,
+    87,
+    90,
+    93,
+    96,
+    99,
+    102,
+    105,
+    108,
+    111,
+    114,
+    117,
+    120,
+    123,
+    126,
+    129,
+    132,
+    135,
+    138,
+    141,
+    144
+   ]
+  },
+  "ffmpeg_command": [
+   "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/lib/python3.12/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v9.0.2",
+   "-hide_banner",
+   "-loglevel",
+   "error",
+   "-i",
+   "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class2_train/2_tr92.mp4",
+   "-vf",
+   "select='gte(n\\,0)*lte(n\\,144)*not(mod(n-0\\,3))',crop=1080:720:0:360,scale=720:480:flags=lanczos,setpts=N/8/TB",
+   "-frames:v",
+   "49",
+   "-r",
+   "8",
+   "-an",
+   "-c:v",
+   "libx264",
+   "-crf",
+   "8",
+   "-preset",
+   "slow",
+   "-pix_fmt",
+   "yuv420p",
+   "-y",
+   "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_source.mp4"
+  ],
+  "source_probe": {
+   "width": 1920,
+   "height": 1080,
+   "fps": 25.02,
+   "frames": 175,
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "duration_s": 6.99,
+   "source": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class2_train/2_tr92.mp4"
+  },
+  "output_probe": {
+   "width": 720,
+   "height": 480,
+   "fps": 8.0,
+   "frames": 49,
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "duration_s": 6.12,
+   "source": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_source.mp4"
+  },
+  "output_path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_source.mp4",
+  "effective_source_fps": 8.34
+ },
+ "preprocess_donor": {
+  "spec": {
+   "source": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class6_train/6_tr16.mp4",
+   "crop": {
+    "width": 1080,
+    "height": 720,
+    "x": 0,
+    "y": 360
+   },
+   "start_frame": 0,
+   "frame_step": 3,
+   "num_frames": 49,
+   "width": 720,
+   "height": 480,
+   "out_fps": 8,
+   "crf": 8,
+   "latent_frames": 13,
+   "latent_height": 60,
+   "latent_width": 90,
+   "selected_frame_indices": [
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    78,
+    81,
+    84,
+    87,
+    90,
+    93,
+    96,
+    99,
+    102,
+    105,
+    108,
+    111,
+    114,
+    117,
+    120,
+    123,
+    126,
+    129,
+    132,
+    135,
+    138,
+    141,
+    144
+   ]
+  },
+  "ffmpeg_command": [
+   "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/lib/python3.12/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v9.0.2",
+   "-hide_banner",
+   "-loglevel",
+   "error",
+   "-i",
+   "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class6_train/6_tr16.mp4",
+   "-vf",
+   "select='gte(n\\,0)*lte(n\\,144)*not(mod(n-0\\,3))',crop=1080:720:0:360,scale=720:480:flags=lanczos,setpts=N/8/TB",
+   "-frames:v",
+   "49",
+   "-r",
+   "8",
+   "-an",
+   "-c:v",
+   "libx264",
+   "-crf",
+   "8",
+   "-preset",
+   "slow",
+   "-pix_fmt",
+   "yuv420p",
+   "-y",
+   "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_donor.mp4"
+  ],
+  "source_probe": {
+   "width": 1920,
+   "height": 1080,
+   "fps": 24.87,
+   "frames": 260,
+   "codec": "h264",
+   "pix_fmt": "yuvj420p",
+   "duration_s": 10.44,
+   "source": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/data/raw/class6_train/6_tr16.mp4"
+  },
+  "output_probe": {
+   "width": 720,
+   "height": 480,
+   "fps": 8.0,
+   "frames": 49,
+   "codec": "h264",
+   "pix_fmt": "yuvj420p",
+   "duration_s": 6.12,
+   "source": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_donor.mp4"
+  },
+  "output_path": "/ocean/projects/cis260288p/puprety/unsafenet-counterfactuals/outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_donor.mp4",
+  "effective_source_fps": 8.290000000000001
+ },
+ "region": {
+  "polygon": [
+   [
+    138.6,
+    172.4
+   ],
+   [
+    140.0,
+    171.0
+   ],
+   [
+    148.4,
+    170.8
+   ],
+   [
+    156.8,
+    172.1
+   ],
+   [
+    194.9,
+    179.2
+   ],
+   [
+    200.5,
+    180.7
+   ],
+   [
+    203.3,
+    183.5
+   ],
+   [
+    235.4,
+    272.3
+   ],
+   [
+    179.2,
+    281.3
+   ],
+   [
+    176.4,
+    281.3
+   ],
+   [
+    161.1,
+    272.0
+   ],
+   [
+    158.3,
+    269.3
+   ],
+   [
+    143.6,
+    244.7
+   ],
+   [
+    140.6,
+    239.0
+   ],
+   [
+    138.7,
+    223.2
+   ],
+   [
+    138.6,
+    175.1
+   ]
+  ],
+  "mask_px": 7667,
+  "feather_px": 2,
+  "blended_px": 8515,
+  "fraction_of_frame": 0.02218
+ },
+ "registration": {
+  "transform": "translation",
+  "landmarks": [
+   {
+    "patch": [
+     238,
+     186,
+     52,
+     70
+    ],
+    "ok": true,
+    "offset_xy": [
+     0,
+     0
+    ],
+    "ncc": 0.99647,
+    "margin_over_second": 0.11924,
+    "centre_src_xy": [
+     264.0,
+     221.0
+    ],
+    "centre_dst_xy": [
+     264.0,
+     221.0
+    ]
+   },
+   {
+    "patch": [
+     286,
+     136,
+     52,
+     30
+    ],
+    "ok": true,
+    "offset_xy": [
+     0,
+     0
+    ],
+    "ncc": 0.99711,
+    "margin_over_second": 0.10995,
+    "centre_src_xy": [
+     312.0,
+     151.0
+    ],
+    "centre_dst_xy": [
+     312.0,
+     151.0
+    ]
+   },
+   {
+    "patch": [
+     78,
+     38,
+     78,
+     56
+    ],
+    "ok": true,
+    "offset_xy": [
+     0,
+     0
+    ],
+    "ncc": 0.99315,
+    "margin_over_second": 0.04568,
+    "centre_src_xy": [
+     117.0,
+     66.0
+    ],
+    "centre_dst_xy": [
+     117.0,
+     66.0
+    ]
+   },
+   {
+    "patch": [
+     40,
+     250,
+     60,
+     34
+    ],
+    "ok": true,
+    "offset_xy": [
+     0,
+     0
+    ],
+    "ncc": 0.99717,
+    "margin_over_second": 0.02788,
+    "centre_src_xy": [
+     70.0,
+     267.0
+    ],
+    "centre_dst_xy": [
+     70.0,
+     267.0
+    ]
+   },
+   {
+    "patch": [
+     236,
+     120,
+     46,
+     36
+    ],
+    "ok": true,
+    "offset_xy": [
+     0,
+     0
+    ],
+    "ncc": 0.99608,
+    "margin_over_second": 0.25331,
+    "centre_src_xy": [
+     259.0,
+     138.0
+    ],
+    "centre_dst_xy": [
+     259.0,
+     138.0
+    ]
+   },
+   {
+    "patch": [
+     240,
+     262,
+     44,
+     40
+    ],
+    "ok": true,
+    "offset_xy": [
+     0,
+     0
+    ],
+    "ncc": 0.98576,
+    "margin_over_second": 0.01015,
+    "centre_src_xy": [
+     262.0,
+     282.0
+    ],
+    "centre_dst_xy": [
+     262.0,
+     282.0
+    ]
+   }
+  ],
+  "landmarks_used": 6,
+  "fit": {
+   "kind": "translation",
+   "matrix": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "n_points": 6,
+   "min_points": 1,
+   "degrees_of_freedom": 5,
+   "residual_px": {
+    "per_point": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "max": 0.0,
+    "rms": 0.0
+   }
+  },
+  "donor_coverage_of_region": 1.0
+ },
+ "checks": {
+  "unchanged_outside_blended_region": {
+   "pixels_outside_mask": 1011255,
+   "pixels_changed_outside_mask": 0,
+   "max_abs_change_outside_mask": 0,
+   "clean": true
+  },
+  "seam_source": {
+   "usable": true,
+   "band_width_px": 3,
+   "boundary_step": 17.938,
+   "control_step": 1.333,
+   "control_shift_px": 192,
+   "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+  },
+  "seam_composite": {
+   "usable": true,
+   "band_width_px": 3,
+   "boundary_step": 22.323,
+   "control_step": 1.333,
+   "control_shift_px": 192,
+   "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+  },
+  "region_stability_source": {
+   "frames": 49,
+   "mask_px": 7667,
+   "mad_in_mask": 4.9369,
+   "mad_whole_frame": 3.5682,
+   "max_mad_in_mask": 71.0
+  },
+  "region_stability_composite": {
+   "frames": 49,
+   "mask_px": 7667,
+   "mad_in_mask": 0.1459,
+   "mad_whole_frame": 3.4588,
+   "max_mad_in_mask": 19.6667
+  }
+ },
+ "intervention_description": "The panel region of the source was replaced with registered donor pixels showing the same panel closed. The cover is closed in all 49 frames. No closing motion was generated and no model was used at this stage.",
+ "seconds": 10.8
+}

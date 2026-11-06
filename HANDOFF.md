@@ -197,3 +197,43 @@ is still untouched. The human review form is still unsigned, so every clip remai
 candidate counterfactual. No safety claim is made anywhere.
 
 Budget: 4.1380 of 10 SU spent, 5.8620 remaining.
+
+## Panel-cover counterfactual, 2026-11-05
+
+**A prediction flip and a scene change pointed in opposite directions in the same
+experiment.** Classifier-guided generation reached P(closed) 0.9999 in three independent
+cases while the panel stayed open, ncc 0.80 to 0.82 against the open reference. The
+mask-restricted composite that actually closed the panel, ncc 0.9997 against the closed
+reference, only moved the classifier from about 0.14 to about 0.32. The unguided control
+never flipped, so the flip is attributable to the classifier term and to nothing else. Treat
+any future flip on this dataset as a claim about the model until a region proxy agrees.
+
+**Controls moved as much as the real change.** A VAE round trip that changes no panel moves
+P(closed) by +0.07 to +0.11; a prompt-only edit that leaves the panel open moves it by +0.16
+to +0.27, more than the composite's +0.17 to +0.20. Any arm's movement inside that band is
+uninterpretable.
+
+**Find the labelled object from the class populations, never from a clip pair.** An
+identification from one pair named a press guard; measuring that box over the folder found it
+closed in 96 of 120 class-2 clips. Averaging per-clip medians within each class and
+differencing the averages suppresses the workers and leaves the fixture. The second method
+found an electrical cabinet door separating the classes clip by clip at balanced accuracy
+0.935.
+
+**Three ways a stage can look finished and have measured nothing.** A diagnostic exited 0,
+wrote its file and printed its heading while skipping all 37 clips on a stale key lookup. A
+probe reported a clean gate and a NaN in the same record, where the NaN was its own 50x step.
+An evaluation script and a review page both omitted the guided arm, so the only number the
+guided run would have carried was the one produced by the script being tested. In each case
+reading the output file, not the exit status, is what caught it.
+
+**19 class-6 training clips exist.** After recording-group separation, 4 independent safe
+clips reach validation. Validation balanced accuracy was identical at all 25 epochs because
+the metric can take few values. Do not read 0.9849 as a strong number.
+
+**What stays true.** The official test split is untouched. No safety claim is made anywhere.
+No door-closing action was generated, and the composite is compositing rather than
+mask-conditioned generation. The walkway classifier was not reused and the walkway LoRA was
+never loaded, verified before and after every generation.
+
+Budget: 6.3066 of 10 SU spent, 3.6934 remaining.

@@ -1,0 +1,2330 @@
+{
+ "_what": "VAE sensitivity and region-masking diagnostics for the panel classifier.",
+ "generated": "2026-11-06T00:40:25+00:00",
+ "classifier": {
+  "checkpoint": "outputs/panel_cover/classifier/panel_classifier.pt",
+  "epoch": 1,
+  "label_map": {
+   "dataset_class_to_binary_index": {
+    "2": 0,
+    "6": 1
+   },
+   "binary_index_to_name": {
+    "0": "opened_panel_cover",
+    "1": "closed_panel_cover"
+   },
+   "dataset_class_names": {
+    "2": "Opened Panel Cover",
+    "6": "Closed Panel Cover"
+   },
+   "target_binary_index": 1,
+   "excluded_dataset_classes": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    7
+   ],
+   "note": "Binary index 1 is Closed Panel Cover, the counterfactual target. Guidance maximises the log-probability at index 1. This map is NOT the walkway classifier's map and the two models are not interchangeable."
+  },
+  "validation_metrics": {
+   "n": 37,
+   "support": {
+    "opened_panel_cover": 33,
+    "closed_panel_cover": 4
+   },
+   "accuracy": 0.973,
+   "balanced_accuracy": 0.9849,
+   "per_class_recall": {
+    "opened_panel_cover": 0.9697,
+    "closed_panel_cover": 1.0
+   },
+   "confusion_matrix": [
+    [
+     32,
+     1
+    ],
+    [
+     0,
+     4
+    ]
+   ],
+   "confusion_matrix_layout": "rows are true classes [0, 1], columns predicted",
+   "mean_prob_target_class": 0.2119,
+   "_balanced_accuracy_note": "Mean of per-class recalls. With 19 class-6 clips in the whole published training folder, a validation split holds very few, so this number has a wide confidence interval that no amount of training fixes.",
+   "per_clip": [
+    {
+     "pred": 0,
+     "prob_closed": 0.0963
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0807
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0572
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.149
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.4548
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1439
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0882
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0647
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1594
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1963
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1982
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1138
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0722
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1244
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1334
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0736
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0797
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1113
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1226
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0787
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0908
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1129
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0606
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.7138
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1387
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1815
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0649
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.2063
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1004
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.047
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0829
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0889
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0704
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.8648
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.8485
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.7422
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.8286
+    }
+   ]
+  },
+  "preprocess": {
+   "frames": 16,
+   "height": 240,
+   "width": 320,
+   "function": "unsafenet_cf.classifier.prepare"
+  }
+ },
+ "vae_round_trip": {
+  "clips": [
+   {
+    "clip_id": "2_tr104",
+    "dataset_class": 2,
+    "true_binary": 0,
+    "original": {
+     "pred": 0,
+     "prob_closed": 0.10717
+    },
+    "reconstructed": {
+     "pred": 0,
+     "prob_closed": 0.19666
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.08949,
+    "roundtrip_seconds": 35.2
+   },
+   {
+    "clip_id": "2_tr105",
+    "dataset_class": 2,
+    "true_binary": 0,
+    "original": {
+     "pred": 0,
+     "prob_closed": 0.09044
+    },
+    "reconstructed": {
+     "pred": 0,
+     "prob_closed": 0.17799
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.08755,
+    "roundtrip_seconds": 23.2
+   },
+   {
+    "clip_id": "2_tr106",
+    "dataset_class": 2,
+    "true_binary": 0,
+    "original": {
+     "pred": 0,
+     "prob_closed": 0.07051
+    },
+    "reconstructed": {
+     "pred": 0,
+     "prob_closed": 0.11375
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.04324,
+    "roundtrip_seconds": 23.1
+   },
+   {
+    "clip_id": "2_tr111",
+    "dataset_class": 2,
+    "true_binary": 0,
+    "original": {
+     "pred": 0,
+     "prob_closed": 0.15714
+    },
+    "reconstructed": {
+     "pred": 0,
+     "prob_closed": 0.31268
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.15554,
+    "roundtrip_seconds": 23.1
+   },
+   {
+    "clip_id": "6_tr14",
+    "dataset_class": 6,
+    "true_binary": 1,
+    "original": {
+     "pred": 1,
+     "prob_closed": 0.8732
+    },
+    "reconstructed": {
+     "pred": 1,
+     "prob_closed": 0.91624
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.04304,
+    "roundtrip_seconds": 23.2
+   },
+   {
+    "clip_id": "6_tr2",
+    "dataset_class": 6,
+    "true_binary": 1,
+    "original": {
+     "pred": 1,
+     "prob_closed": 0.85778
+    },
+    "reconstructed": {
+     "pred": 1,
+     "prob_closed": 0.9046
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.04681,
+    "roundtrip_seconds": 23.2
+   },
+   {
+    "clip_id": "6_tr6",
+    "dataset_class": 6,
+    "true_binary": 1,
+    "original": {
+     "pred": 1,
+     "prob_closed": 0.76218
+    },
+    "reconstructed": {
+     "pred": 1,
+     "prob_closed": 0.83659
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.07442,
+    "roundtrip_seconds": 23.2
+   },
+   {
+    "clip_id": "6_tr8",
+    "dataset_class": 6,
+    "true_binary": 1,
+    "original": {
+     "pred": 1,
+     "prob_closed": 0.84531
+    },
+    "reconstructed": {
+     "pred": 1,
+     "prob_closed": 0.88591
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.0406,
+    "roundtrip_seconds": 23.1
+   }
+  ],
+  "n_flipped": 0,
+  "_control_meaning": "A flip here means the latent round trip alone changes the decision. Every generated arm passes through this round trip, so any flip measured on an edited clip is uninterpretable while this number is non-zero."
+ },
+ "region_masking": {
+  "per_clip": [
+   {
+    "clip_id": "2_tr104",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98795,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.09627
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.23077,
+      "delta_prob_closed": 0.1345,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.10399,
+      "delta_prob_closed": 0.00772,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.10799,
+      "delta_prob_closed": 0.01172,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.11693,
+      "delta_prob_closed": 0.02066,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr105",
+    "dataset_class": 2,
+    "alignment_ncc": 0.99307,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.08072
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.17755,
+      "delta_prob_closed": 0.09682,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08787,
+      "delta_prob_closed": 0.00715,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08814,
+      "delta_prob_closed": 0.00742,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09588,
+      "delta_prob_closed": 0.01515,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr106",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98559,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.05716
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09566,
+      "delta_prob_closed": 0.0385,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.06348,
+      "delta_prob_closed": 0.00632,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.06314,
+      "delta_prob_closed": 0.00598,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.06505,
+      "delta_prob_closed": 0.00789,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr111",
+    "alignment_ncc": 0.94185,
+    "skipped": "alignment 0.94185 below 0.95; the box is in one camera's coordinates and means nothing for a clip shot elsewhere"
+   },
+   {
+    "clip_id": "2_tr124",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98958,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.45481
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.342,
+      "delta_prob_closed": -0.11281,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.48133,
+      "delta_prob_closed": 0.02652,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.47793,
+      "delta_prob_closed": 0.02312,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.45692,
+      "delta_prob_closed": 0.00211,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr128",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98373,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.14391
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.33255,
+      "delta_prob_closed": 0.18863,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.16187,
+      "delta_prob_closed": 0.01795,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.16522,
+      "delta_prob_closed": 0.0213,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.16505,
+      "delta_prob_closed": 0.02113,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr129",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98408,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.08822
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.22039,
+      "delta_prob_closed": 0.13217,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.1006,
+      "delta_prob_closed": 0.01238,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.10284,
+      "delta_prob_closed": 0.01462,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.10192,
+      "delta_prob_closed": 0.0137,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr14",
+    "alignment_ncc": 0.94733,
+    "skipped": "alignment 0.94733 below 0.95; the box is in one camera's coordinates and means nothing for a clip shot elsewhere"
+   },
+   {
+    "clip_id": "2_tr15",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98371,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.15942
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.40851,
+      "delta_prob_closed": 0.24909,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.17349,
+      "delta_prob_closed": 0.01407,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.17899,
+      "delta_prob_closed": 0.01958,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.17085,
+      "delta_prob_closed": 0.01143,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr16",
+    "alignment_ncc": 0.94806,
+    "skipped": "alignment 0.94806 below 0.95; the box is in one camera's coordinates and means nothing for a clip shot elsewhere"
+   },
+   {
+    "clip_id": "2_tr17",
+    "alignment_ncc": 0.89674,
+    "skipped": "alignment 0.89674 below 0.95; the box is in one camera's coordinates and means nothing for a clip shot elsewhere"
+   },
+   {
+    "clip_id": "2_tr18",
+    "dataset_class": 2,
+    "alignment_ncc": 0.97327,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.11379
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.30647,
+      "delta_prob_closed": 0.19268,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12284,
+      "delta_prob_closed": 0.00905,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12926,
+      "delta_prob_closed": 0.01547,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12049,
+      "delta_prob_closed": 0.0067,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr19",
+    "alignment_ncc": 0.86249,
+    "skipped": "alignment 0.86249 below 0.95; the box is in one camera's coordinates and means nothing for a clip shot elsewhere"
+   },
+   {
+    "clip_id": "2_tr2",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98644,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.12443
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.18586,
+      "delta_prob_closed": 0.06144,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.13869,
+      "delta_prob_closed": 0.01427,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12992,
+      "delta_prob_closed": 0.00549,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.13693,
+      "delta_prob_closed": 0.01251,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr23",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98477,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.13344
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.36127,
+      "delta_prob_closed": 0.22783,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.14509,
+      "delta_prob_closed": 0.01165,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.15287,
+      "delta_prob_closed": 0.01943,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.15543,
+      "delta_prob_closed": 0.02199,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr24",
+    "dataset_class": 2,
+    "alignment_ncc": 0.9857,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.07359
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.23311,
+      "delta_prob_closed": 0.15952,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08023,
+      "delta_prob_closed": 0.00664,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08459,
+      "delta_prob_closed": 0.011,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08569,
+      "delta_prob_closed": 0.01209,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr25",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98569,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.07973
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.2416,
+      "delta_prob_closed": 0.16187,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08782,
+      "delta_prob_closed": 0.00809,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08953,
+      "delta_prob_closed": 0.0098,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09151,
+      "delta_prob_closed": 0.01178,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr26",
+    "dataset_class": 2,
+    "alignment_ncc": 0.9953,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.11129
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.31021,
+      "delta_prob_closed": 0.19892,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12165,
+      "delta_prob_closed": 0.01036,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12678,
+      "delta_prob_closed": 0.01549,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12837,
+      "delta_prob_closed": 0.01708,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr27",
+    "dataset_class": 2,
+    "alignment_ncc": 0.99609,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.12262
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.32505,
+      "delta_prob_closed": 0.20243,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.13151,
+      "delta_prob_closed": 0.00889,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.1366,
+      "delta_prob_closed": 0.01398,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.13582,
+      "delta_prob_closed": 0.0132,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr28",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98605,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.07872
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12456,
+      "delta_prob_closed": 0.04584,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08858,
+      "delta_prob_closed": 0.00986,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08645,
+      "delta_prob_closed": 0.00773,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09305,
+      "delta_prob_closed": 0.01433,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr29",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98955,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.09084
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.25759,
+      "delta_prob_closed": 0.16675,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09992,
+      "delta_prob_closed": 0.00908,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09939,
+      "delta_prob_closed": 0.00855,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.10493,
+      "delta_prob_closed": 0.01408,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr43",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98705,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.11295
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.26975,
+      "delta_prob_closed": 0.1568,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.134,
+      "delta_prob_closed": 0.02105,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12924,
+      "delta_prob_closed": 0.01629,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.11987,
+      "delta_prob_closed": 0.00692,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr45",
+    "alignment_ncc": 0.9326,
+    "skipped": "alignment 0.9326 below 0.95; the box is in one camera's coordinates and means nothing for a clip shot elsewhere"
+   },
+   {
+    "clip_id": "2_tr5",
+    "dataset_class": 2,
+    "alignment_ncc": 0.96579,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 1,
+     "prob_closed": 0.71379
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.50914,
+      "delta_prob_closed": -0.20464,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.73865,
+      "delta_prob_closed": 0.02486,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.72502,
+      "delta_prob_closed": 0.01123,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.70954,
+      "delta_prob_closed": -0.00424,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr6",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98812,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.13872
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.19743,
+      "delta_prob_closed": 0.05871,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.15049,
+      "delta_prob_closed": 0.01177,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.15475,
+      "delta_prob_closed": 0.01603,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.14723,
+      "delta_prob_closed": 0.00851,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr7",
+    "dataset_class": 2,
+    "alignment_ncc": 0.95276,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.18153
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.37976,
+      "delta_prob_closed": 0.19823,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.20265,
+      "delta_prob_closed": 0.02112,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.20369,
+      "delta_prob_closed": 0.02216,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.16351,
+      "delta_prob_closed": -0.01802,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr72",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98626,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.06489
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09607,
+      "delta_prob_closed": 0.03118,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.07128,
+      "delta_prob_closed": 0.0064,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.07258,
+      "delta_prob_closed": 0.00769,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.0756,
+      "delta_prob_closed": 0.01072,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr75",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98228,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.20632
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.2586,
+      "delta_prob_closed": 0.05227,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.22506,
+      "delta_prob_closed": 0.01873,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.22667,
+      "delta_prob_closed": 0.02034,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.23441,
+      "delta_prob_closed": 0.02809,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr81",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98546,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.10042
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.21295,
+      "delta_prob_closed": 0.11253,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.11124,
+      "delta_prob_closed": 0.01082,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.11045,
+      "delta_prob_closed": 0.01003,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.11294,
+      "delta_prob_closed": 0.01252,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr82",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98682,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.04698
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08327,
+      "delta_prob_closed": 0.03628,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.05235,
+      "delta_prob_closed": 0.00537,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.05443,
+      "delta_prob_closed": 0.00744,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.05716,
+      "delta_prob_closed": 0.01017,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr84",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98861,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.08295
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.12587,
+      "delta_prob_closed": 0.04292,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09039,
+      "delta_prob_closed": 0.00744,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09129,
+      "delta_prob_closed": 0.00834,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.08565,
+      "delta_prob_closed": 0.0027,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr9",
+    "dataset_class": 2,
+    "alignment_ncc": 0.98281,
+    "true_binary": 0,
+    "baseline": {
+     "pred": 0,
+     "prob_closed": 0.08889
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.23453,
+      "delta_prob_closed": 0.14565,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.09974,
+      "delta_prob_closed": 0.01085,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.10258,
+      "delta_prob_closed": 0.01369,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 0,
+      "prob_closed": 0.1017,
+      "delta_prob_closed": 0.01281,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "2_tr94",
+    "alignment_ncc": 0.93634,
+    "skipped": "alignment 0.93634 below 0.95; the box is in one camera's coordinates and means nothing for a clip shot elsewhere"
+   },
+   {
+    "clip_id": "6_tr14",
+    "dataset_class": 6,
+    "alignment_ncc": 0.98666,
+    "true_binary": 1,
+    "baseline": {
+     "pred": 1,
+     "prob_closed": 0.86483
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.76837,
+      "delta_prob_closed": -0.09645,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.87749,
+      "delta_prob_closed": 0.01266,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.87255,
+      "delta_prob_closed": 0.00772,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.88456,
+      "delta_prob_closed": 0.01973,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "6_tr2",
+    "dataset_class": 6,
+    "alignment_ncc": 0.98499,
+    "true_binary": 1,
+    "baseline": {
+     "pred": 1,
+     "prob_closed": 0.84846
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.71225,
+      "delta_prob_closed": -0.13622,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.87327,
+      "delta_prob_closed": 0.02481,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.85454,
+      "delta_prob_closed": 0.00607,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.86299,
+      "delta_prob_closed": 0.01453,
+      "prediction_changed": false
+     }
+    }
+   },
+   {
+    "clip_id": "6_tr6",
+    "alignment_ncc": 0.48147,
+    "skipped": "alignment 0.48147 below 0.95; the box is in one camera's coordinates and means nothing for a clip shot elsewhere"
+   },
+   {
+    "clip_id": "6_tr8",
+    "dataset_class": 6,
+    "alignment_ncc": 0.9892,
+    "true_binary": 1,
+    "baseline": {
+     "pred": 1,
+     "prob_closed": 0.82857
+    },
+    "masked": {
+     "panel": {
+      "box_xywh": [
+       35,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.66588,
+      "delta_prob_closed": -0.16269,
+      "prediction_changed": false
+     },
+     "mirror_x": {
+      "box_xywh": [
+       263,
+       136,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.8433,
+      "delta_prob_closed": 0.01474,
+      "prediction_changed": false
+     },
+     "mirror_y": {
+      "box_xywh": [
+       35,
+       68,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.83158,
+      "delta_prob_closed": 0.00302,
+      "prediction_changed": false
+     },
+     "centre": {
+      "box_xywh": [
+       149,
+       102,
+       22,
+       36
+      ],
+      "area_px": 792,
+      "pred": 1,
+      "prob_closed": 0.85064,
+      "delta_prob_closed": 0.02208,
+      "prediction_changed": false
+     }
+    }
+   }
+  ],
+  "_regions_config": "configs/panel_cover_regions.json",
+  "_panel_box_full_res": [
+   208,
+   614,
+   130,
+   164
+  ],
+  "_panel_box_classifier_frame": [
+   35,
+   136,
+   22,
+   36
+  ],
+  "_panel_box_area_fraction": 0.01031,
+  "_alignment_min_ncc": 0.95,
+  "summary_by_class": {
+   "class_2": {
+    "n": 26,
+    "mean_abs_delta_prob_closed": {
+     "panel": 0.13112,
+     "mirror_x": 0.01225,
+     "mirror_y": 0.01323,
+     "centre": 0.01271
+    },
+    "predictions_changed": {
+     "panel": 0,
+     "mirror_x": 0,
+     "mirror_y": 0,
+     "centre": 0
+    }
+   },
+   "class_6": {
+    "n": 3,
+    "mean_abs_delta_prob_closed": {
+     "panel": 0.13179,
+     "mirror_x": 0.0174,
+     "mirror_y": 0.0056,
+     "centre": 0.01878
+    },
+    "predictions_changed": {
+     "panel": 0,
+     "mirror_x": 0,
+     "mirror_y": 0,
+     "centre": 0
+    }
+   }
+  },
+  "_interpretation": "Compare the panel column against the three control columns within each class. A panel effect much larger than every control is evidence that the decision depends on the panel region. It is NOT proof of causal dependence on panel state: any region correlated with the panel, such as the machine it sits on, produces the same signature. Masking also moves an input off the training distribution, which changes predictions on its own; that is exactly why controls of identical area are measured rather than a single masked condition."
+ },
+ "environment": {
+  "captured_at": "2026-11-06T00:40:25+00:00",
+  "python": {
+   "python_version": "3.12.13",
+   "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+   "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+   "machine": "x86_64"
+  },
+  "packages": {
+   "torch": "2.9.1+cu128",
+   "torchvision": "0.24.1+cu128",
+   "diffusers": "0.36.0",
+   "transformers": "4.57.6",
+   "accelerate": "1.15.0",
+   "huggingface_hub": "0.36.2",
+   "safetensors": "0.8.0",
+   "numpy": "2.3.4",
+   "PIL": "11.3.0",
+   "imageio": "2.37.0",
+   "imageio_ffmpeg": "0.8.1",
+   "sentencepiece": "0.2.2"
+  },
+  "gpu": {
+   "available": true,
+   "name": "NVIDIA L40S",
+   "capability": "8.9",
+   "total_vram_gb": 44.42,
+   "free_vram_gb": 43.51,
+   "torch_cuda_version": "12.8",
+   "supports_bf16": true
+  },
+  "system_ram_gb": 1006.85,
+  "nvidia_smi": "Thu Nov  5 19:40:25 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000001:DA:00.0 Off |                    0 |\n| N/A   63C    P0            108W /  350W |     933MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           54441      C   ...y/envs/cogvx-cu128/bin/python        924MiB |\n+-----------------------------------------------------------------------------------------+"
+ }
+}

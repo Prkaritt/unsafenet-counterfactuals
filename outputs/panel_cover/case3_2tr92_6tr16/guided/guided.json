@@ -1,0 +1,483 @@
+{
+ "mode": "generate",
+ "case": "case3_2tr92_6tr16",
+ "input": "outputs/panel_cover/case3_2tr92_6tr16/videos/case3_2tr92_6tr16_source.mp4",
+ "input_arm": "source",
+ "matched_settings": {
+  "seed": 20261105,
+  "strength": 0.6,
+  "num_inference_steps": 50,
+  "guidance_scale": 6.0,
+  "scheduler": "CogVideoXDDIMScheduler",
+  "prompt": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting.",
+  "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+  "_matched": "Both runs share every setting above and the same generator seed, so they start from identical initial noise. The only difference is the classifier term."
+ },
+ "input_classifier_probs": {
+  "opened_panel_cover": 0.85132,
+  "closed_panel_cover": 0.14868
+ },
+ "runs": {
+  "unguided_control": {
+   "classifier_scale": 0.0,
+   "output": "outputs/panel_cover/case3_2tr92_6tr16/guided/case3_2tr92_6tr16_unguided_control.mp4",
+   "executed_steps": 30,
+   "generation_s": 48.8,
+   "peak_gpu_gib": 20.461,
+   "psnr_vs_input_db": 20.59492564286348,
+   "mean_abs_diff_vs_input": 15.647172382842026,
+   "classifier_probs": {
+    "opened_panel_cover": 0.67458,
+    "closed_panel_cover": 0.32542
+   },
+   "predicted_binary_index": 0,
+   "grad_log": []
+  },
+  "guided": {
+   "classifier_scale": 0.02,
+   "output": "outputs/panel_cover/case3_2tr92_6tr16/guided/case3_2tr92_6tr16_guided.mp4",
+   "executed_steps": 30,
+   "generation_s": 655.1,
+   "peak_gpu_gib": 33.795,
+   "psnr_vs_input_db": 20.37672979830933,
+   "mean_abs_diff_vs_input": 16.478983528596626,
+   "classifier_probs": {
+    "opened_panel_cover": 0.0001,
+    "closed_panel_cover": 0.9999
+   },
+   "predicted_binary_index": 1,
+   "grad_log": [
+    {
+     "step": 0,
+     "timestep": 599,
+     "grad_norm": 0.5267853140830994,
+     "log_p_target": -0.5655272603034973,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      0,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 1,
+     "timestep": 579,
+     "grad_norm": 0.2952018678188324,
+     "log_p_target": -0.2997162640094757,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      1,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 2,
+     "timestep": 559,
+     "grad_norm": 0.14337463676929474,
+     "log_p_target": -0.14470000565052032,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      2,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 3,
+     "timestep": 539,
+     "grad_norm": 0.06588472425937653,
+     "log_p_target": -0.07178317755460739,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      3,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 4,
+     "timestep": 519,
+     "grad_norm": 0.036353375762701035,
+     "log_p_target": -0.03897741436958313,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      4,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 5,
+     "timestep": 499,
+     "grad_norm": 0.016908008605241776,
+     "log_p_target": -0.017480358481407166,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      5,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 6,
+     "timestep": 479,
+     "grad_norm": 0.010262401774525642,
+     "log_p_target": -0.009720374830067158,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      6,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 7,
+     "timestep": 459,
+     "grad_norm": 0.007171812001615763,
+     "log_p_target": -0.0070569077506661415,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      7,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 8,
+     "timestep": 439,
+     "grad_norm": 0.004517241846770048,
+     "log_p_target": -0.004174923058599234,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      8,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 9,
+     "timestep": 419,
+     "grad_norm": 0.0032142517156898975,
+     "log_p_target": -0.0031155638862401247,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      0,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 10,
+     "timestep": 399,
+     "grad_norm": 0.0014114551013335586,
+     "log_p_target": -0.001434250851161778,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      1,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 11,
+     "timestep": 379,
+     "grad_norm": 0.0006321785622276366,
+     "log_p_target": -0.0006367324967868626,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      2,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 12,
+     "timestep": 359,
+     "grad_norm": 0.00028527184622362256,
+     "log_p_target": -0.00030179237364791334,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      3,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 13,
+     "timestep": 339,
+     "grad_norm": 0.0001463224325561896,
+     "log_p_target": -0.00015853578224778175,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      4,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 14,
+     "timestep": 319,
+     "grad_norm": 6.563548231497407e-05,
+     "log_p_target": -7.188061863416806e-05,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      5,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 15,
+     "timestep": 299,
+     "grad_norm": 3.5324745113030076e-05,
+     "log_p_target": -3.659658250398934e-05,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      6,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 16,
+     "timestep": 279,
+     "grad_norm": 3.6118493881076574e-05,
+     "log_p_target": -3.814624506048858e-05,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      7,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 17,
+     "timestep": 259,
+     "grad_norm": 2.54381557169836e-05,
+     "log_p_target": -2.539125671319198e-05,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      8,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 18,
+     "timestep": 239,
+     "grad_norm": 2.520139969419688e-05,
+     "log_p_target": -2.407998726994265e-05,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      0,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 19,
+     "timestep": 219,
+     "grad_norm": 1.2556137335195672e-05,
+     "log_p_target": -9.65590606938349e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      1,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 20,
+     "timestep": 199,
+     "grad_norm": 8.254231033788528e-06,
+     "log_p_target": -6.198863957251888e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      2,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 21,
+     "timestep": 179,
+     "grad_norm": 4.583259396895301e-06,
+     "log_p_target": -3.576272320060525e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      3,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 22,
+     "timestep": 159,
+     "grad_norm": 3.6410692700883374e-06,
+     "log_p_target": -2.9802276912960224e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      4,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 23,
+     "timestep": 139,
+     "grad_norm": 2.4925025172706228e-06,
+     "log_p_target": -2.0265558760002023e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      5,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 24,
+     "timestep": 119,
+     "grad_norm": 1.8005443962465506e-06,
+     "log_p_target": -1.6689286894688848e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      6,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 25,
+     "timestep": 99,
+     "grad_norm": 3.331707830511732e-06,
+     "log_p_target": -2.622600959512056e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      7,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 26,
+     "timestep": 79,
+     "grad_norm": 2.886935135393287e-06,
+     "log_p_target": -2.3841830625315197e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      8,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 27,
+     "timestep": 59,
+     "grad_norm": 7.497482329199556e-06,
+     "log_p_target": -5.006777428206988e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      0,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 28,
+     "timestep": 39,
+     "grad_norm": 3.4697018236329313e-06,
+     "log_p_target": -2.3841830625315197e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      1,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    },
+    {
+     "step": 29,
+     "timestep": 19,
+     "grad_norm": 2.9287282359291567e-06,
+     "log_p_target": -2.0265558760002023e-06,
+     "grad_scale_used": 1024.0,
+     "latent_window": [
+      2,
+      5
+     ],
+     "finite": true,
+     "applied": true
+    }
+   ]
+  }
+ },
+ "label_flip": {
+  "input_prediction": 0,
+  "unguided_prediction": 0,
+  "guided_prediction": 1,
+  "_attribution_rule": "A guided flip counts as evidence about guidance only if the unguided control did NOT flip. Panel state is a separate question measured in outputs/panel_cover/evaluation.json and by eye."
+ },
+ "environment": {
+  "captured_at": "2026-11-06T02:17:58+00:00",
+  "python": {
+   "python_version": "3.12.13",
+   "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+   "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+   "machine": "x86_64"
+  },
+  "packages": {
+   "torch": "2.9.1+cu128",
+   "torchvision": "0.24.1+cu128",
+   "diffusers": "0.36.0",
+   "transformers": "4.57.6",
+   "accelerate": "1.15.0",
+   "huggingface_hub": "0.36.2",
+   "safetensors": "0.8.0",
+   "numpy": "2.3.4",
+   "PIL": "11.3.0",
+   "imageio": "2.37.0",
+   "imageio_ffmpeg": "0.8.1",
+   "sentencepiece": "0.2.2"
+  },
+  "gpu": {
+   "available": true,
+   "name": "NVIDIA L40S",
+   "capability": "8.9",
+   "total_vram_gb": 44.42,
+   "free_vram_gb": 10.53,
+   "torch_cuda_version": "12.8",
+   "supports_bf16": true
+  },
+  "system_ram_gb": 1006.85,
+  "nvidia_smi": "Thu Nov  5 21:17:58 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000000:D8:00.0 Off |                    0 |\n| N/A   60C    P0            110W /  350W |   34707MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           81185      C   ...y/envs/cogvx-cu128/bin/python      34698MiB |\n+-----------------------------------------------------------------------------------------+"
+ }
+}

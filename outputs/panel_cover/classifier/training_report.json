@@ -1,0 +1,1033 @@
+{
+ "_what": "Binary R3D-18 for dataset class 2 (Opened Panel Cover) against class 6 (Closed Panel Cover). A new model: the walkway classifier is not reused or relabelled.",
+ "label_map": {
+  "dataset_class_to_binary_index": {
+   "2": 0,
+   "6": 1
+  },
+  "binary_index_to_name": {
+   "0": "opened_panel_cover",
+   "1": "closed_panel_cover"
+  },
+  "dataset_class_names": {
+   "2": "Opened Panel Cover",
+   "6": "Closed Panel Cover"
+  },
+  "target_binary_index": 1,
+  "excluded_dataset_classes": [
+   0,
+   1,
+   3,
+   4,
+   5,
+   7
+  ],
+  "note": "Binary index 1 is Closed Panel Cover, the counterfactual target. Guidance maximises the log-probability at index 1. This map is NOT the walkway classifier's map and the two models are not interchangeable."
+ },
+ "generated": "2026-11-05T23:47:11+00:00",
+ "settings": {
+  "audit": "outputs/panel_cover/audit/audit.json",
+  "plan": "configs/panel_cover_plan.json",
+  "out": "outputs/panel_cover/classifier",
+  "cache": "/ocean/projects/cis260288p/puprety/scratch/pc_cache",
+  "frames": 16,
+  "height": 240,
+  "width": 320,
+  "batch_size": 8,
+  "epochs": 25,
+  "lr": 0.0001,
+  "weight_decay": 0.0001,
+  "seed": 20261105,
+  "val_fraction": 0.25,
+  "mode": "train"
+ },
+ "preprocess": {
+  "function": "unsafenet_cf.classifier.prepare",
+  "frames": 16,
+  "height": 240,
+  "width": 320,
+  "_note": "Identical in training, evaluation and guidance."
+ },
+ "exclusions": {
+  "held_out_evaluation_clips": [
+   "2_tr108",
+   "2_tr118",
+   "2_tr92",
+   "6_tr16",
+   "6_tr17",
+   "6_tr18"
+  ],
+  "excluded_with_recording_groups": [
+   "2_tr108",
+   "2_tr113",
+   "2_tr116",
+   "2_tr117",
+   "2_tr118",
+   "2_tr119",
+   "2_tr66",
+   "2_tr92",
+   "2_tr93",
+   "6_tr13",
+   "6_tr16",
+   "6_tr17",
+   "6_tr18"
+  ],
+  "_why": "Selected sources, their donors and every clip sharing a recording group with them are out of training and validation alike."
+ },
+ "split": {
+  "train_clips": [
+   "2_tr1",
+   "2_tr10",
+   "2_tr100",
+   "2_tr101",
+   "2_tr102",
+   "2_tr103",
+   "2_tr107",
+   "2_tr109",
+   "2_tr11",
+   "2_tr110",
+   "2_tr112",
+   "2_tr114",
+   "2_tr115",
+   "2_tr12",
+   "2_tr120",
+   "2_tr121",
+   "2_tr122",
+   "2_tr123",
+   "2_tr125",
+   "2_tr126",
+   "2_tr127",
+   "2_tr13",
+   "2_tr20",
+   "2_tr21",
+   "2_tr22",
+   "2_tr3",
+   "2_tr30",
+   "2_tr31",
+   "2_tr32",
+   "2_tr33",
+   "2_tr34",
+   "2_tr35",
+   "2_tr36",
+   "2_tr37",
+   "2_tr38",
+   "2_tr39",
+   "2_tr4",
+   "2_tr40",
+   "2_tr41",
+   "2_tr42",
+   "2_tr44",
+   "2_tr46",
+   "2_tr47",
+   "2_tr48",
+   "2_tr49",
+   "2_tr50",
+   "2_tr51",
+   "2_tr52",
+   "2_tr53",
+   "2_tr54",
+   "2_tr55",
+   "2_tr56",
+   "2_tr57",
+   "2_tr58",
+   "2_tr59",
+   "2_tr60",
+   "2_tr61",
+   "2_tr62",
+   "2_tr63",
+   "2_tr64",
+   "2_tr65",
+   "2_tr67",
+   "2_tr68",
+   "2_tr69",
+   "2_tr70",
+   "2_tr71",
+   "2_tr73",
+   "2_tr74",
+   "2_tr76",
+   "2_tr77",
+   "2_tr78",
+   "2_tr79",
+   "2_tr8",
+   "2_tr80",
+   "2_tr83",
+   "2_tr85",
+   "2_tr86",
+   "2_tr87",
+   "2_tr88",
+   "2_tr89",
+   "2_tr90",
+   "2_tr91",
+   "2_tr95",
+   "2_tr96",
+   "2_tr97",
+   "2_tr98",
+   "2_tr99",
+   "6_tr1",
+   "6_tr10",
+   "6_tr11",
+   "6_tr12",
+   "6_tr15",
+   "6_tr19",
+   "6_tr3",
+   "6_tr4",
+   "6_tr5",
+   "6_tr7",
+   "6_tr9"
+  ],
+  "val_clips": [
+   "2_tr104",
+   "2_tr105",
+   "2_tr106",
+   "2_tr111",
+   "2_tr124",
+   "2_tr128",
+   "2_tr129",
+   "2_tr14",
+   "2_tr15",
+   "2_tr16",
+   "2_tr17",
+   "2_tr18",
+   "2_tr19",
+   "2_tr2",
+   "2_tr23",
+   "2_tr24",
+   "2_tr25",
+   "2_tr26",
+   "2_tr27",
+   "2_tr28",
+   "2_tr29",
+   "2_tr43",
+   "2_tr45",
+   "2_tr5",
+   "2_tr6",
+   "2_tr7",
+   "2_tr72",
+   "2_tr75",
+   "2_tr81",
+   "2_tr82",
+   "2_tr84",
+   "2_tr9",
+   "2_tr94",
+   "6_tr14",
+   "6_tr2",
+   "6_tr6",
+   "6_tr8"
+  ],
+  "train_groups": 45,
+  "val_groups": 21,
+  "shared_groups": [],
+  "per_class": {
+   "2": {
+    "groups": 52,
+    "clips": 120,
+    "val_clips": 33,
+    "val_target": 30
+   },
+   "6": {
+    "groups": 14,
+    "clips": 15,
+    "val_clips": 4,
+    "val_target": 4
+   }
+  },
+  "_method": "Split by recording group from the audit's measured frame overlap, never by individual clip."
+ },
+ "class_balance": {
+  "train_counts": [
+   87.0,
+   11.0
+  ],
+  "loss_weights": [
+   0.563218,
+   4.454545
+  ]
+ },
+ "history": [
+  {
+   "epoch": 1,
+   "train_loss": 0.44458,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 2,
+   "train_loss": 0.14124,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 3,
+   "train_loss": 0.05417,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 4,
+   "train_loss": 0.02837,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 5,
+   "train_loss": 0.02978,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 6,
+   "train_loss": 0.02153,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 7,
+   "train_loss": 0.01395,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 8,
+   "train_loss": 0.0136,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 9,
+   "train_loss": 0.01044,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 10,
+   "train_loss": 0.00703,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 11,
+   "train_loss": 0.01087,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 12,
+   "train_loss": 0.00529,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 13,
+   "train_loss": 0.00385,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 14,
+   "train_loss": 0.00524,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 15,
+   "train_loss": 0.00805,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 16,
+   "train_loss": 0.00479,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 17,
+   "train_loss": 0.00697,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 18,
+   "train_loss": 0.00393,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 19,
+   "train_loss": 0.00372,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 20,
+   "train_loss": 0.00321,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 21,
+   "train_loss": 0.00196,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 22,
+   "train_loss": 0.00168,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 23,
+   "train_loss": 0.00289,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 24,
+   "train_loss": 0.00246,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  },
+  {
+   "epoch": 25,
+   "train_loss": 0.00262,
+   "val_balanced_accuracy": 0.9849,
+   "val_accuracy": 0.973
+  }
+ ],
+ "best_epoch": 1,
+ "validation_at_best": {
+  "n": 37,
+  "support": {
+   "opened_panel_cover": 33,
+   "closed_panel_cover": 4
+  },
+  "accuracy": 0.973,
+  "balanced_accuracy": 0.9849,
+  "per_class_recall": {
+   "opened_panel_cover": 0.9697,
+   "closed_panel_cover": 1.0
+  },
+  "confusion_matrix": [
+   [
+    32,
+    1
+   ],
+   [
+    0,
+    4
+   ]
+  ],
+  "confusion_matrix_layout": "rows are true classes [0, 1], columns predicted",
+  "mean_prob_target_class": 0.2119,
+  "_balanced_accuracy_note": "Mean of per-class recalls. With 19 class-6 clips in the whole published training folder, a validation split holds very few, so this number has a wide confidence interval that no amount of training fixes.",
+  "per_clip": [
+   {
+    "pred": 0,
+    "prob_closed": 0.0963
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0807
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0572
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.149
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.4548
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1439
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0882
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0647
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1594
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1963
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1982
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1138
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0722
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1244
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1334
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0736
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0797
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1113
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1226
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0787
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0908
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1129
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0606
+   },
+   {
+    "pred": 1,
+    "prob_closed": 0.7138
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1387
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1815
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0649
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.2063
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.1004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.047
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0829
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0889
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0704
+   },
+   {
+    "pred": 1,
+    "prob_closed": 0.8648
+   },
+   {
+    "pred": 1,
+    "prob_closed": 0.8485
+   },
+   {
+    "pred": 1,
+    "prob_closed": 0.7422
+   },
+   {
+    "pred": 1,
+    "prob_closed": 0.8286
+   }
+  ]
+ },
+ "training_set_metrics_at_final_epoch": {
+  "n": 98,
+  "support": {
+   "opened_panel_cover": 87,
+   "closed_panel_cover": 11
+  },
+  "accuracy": 1.0,
+  "balanced_accuracy": 1.0,
+  "per_class_recall": {
+   "opened_panel_cover": 1.0,
+   "closed_panel_cover": 1.0
+  },
+  "confusion_matrix": [
+   [
+    87,
+    0
+   ],
+   [
+    0,
+    11
+   ]
+  ],
+  "confusion_matrix_layout": "rows are true classes [0, 1], columns predicted",
+  "mean_prob_target_class": 0.1131,
+  "_balanced_accuracy_note": "Mean of per-class recalls. With 19 class-6 clips in the whole published training folder, a validation split holds very few, so this number has a wide confidence interval that no amount of training fixes.",
+  "per_clip": [
+   {
+    "pred": 0,
+    "prob_closed": 0.0014
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.001
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0015
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0013
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0003
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0005
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0011
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0003
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0005
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0012
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0003
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0002
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0005
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0009
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0007
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0019
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.001
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0015
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0012
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0012
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0009
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0007
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0015
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0011
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0012
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0015
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0018
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.001
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0008
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0009
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0007
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0007
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0022
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0008
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0012
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0009
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0005
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0009
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0018
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0009
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.001
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0016
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0014
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0007
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.001
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0016
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0013
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0033
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0025
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0014
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0012
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0009
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0013
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0002
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0016
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0019
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0007
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0019
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.001
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0007
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0011
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0011
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0008
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0001
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0008
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.001
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0004
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0012
+   },
+   {
+    "pred": 0,
+    "prob_closed": 0.0006
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   },
+   {
+    "pred": 1,
+    "prob_closed": 1.0
+   }
+  ]
+ },
+ "train_seconds": 57.1,
+ "peak_gpu_gib": 4.688,
+ "checkpoint": "outputs/panel_cover/classifier/panel_classifier.pt",
+ "environment": {
+  "captured_at": "2026-11-05T23:47:11+00:00",
+  "python": {
+   "python_version": "3.12.13",
+   "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+   "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+   "machine": "x86_64"
+  },
+  "packages": {
+   "torch": "2.9.1+cu128",
+   "torchvision": "0.24.1+cu128",
+   "diffusers": "0.36.0",
+   "transformers": "4.57.6",
+   "accelerate": "1.15.0",
+   "huggingface_hub": "0.36.2",
+   "safetensors": "0.8.0",
+   "numpy": "2.3.4",
+   "PIL": "11.3.0",
+   "imageio": "2.37.0",
+   "imageio_ffmpeg": "0.8.1",
+   "sentencepiece": "0.2.2"
+  },
+  "gpu": {
+   "available": true,
+   "name": "NVIDIA L40S",
+   "capability": "8.9",
+   "total_vram_gb": 44.42,
+   "free_vram_gb": 39.21,
+   "torch_cuda_version": "12.8",
+   "supports_bf16": true
+  },
+  "system_ram_gb": 1006.85,
+  "nvidia_smi": "Thu Nov  5 18:47:14 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000001:B2:00.0 Off |                    0 |\n| N/A   48C    P0             86W /  350W |    5337MiB /  46068MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           70559      C   ...y/envs/cogvx-cu128/bin/python       5328MiB |\n+-----------------------------------------------------------------------------------------+"
+ },
+ "_limitation": "The published dataset has 19 class-6 training clips in total. After recording-group separation the validation split holds only a handful of independent safe clips, so every validation number here is an estimate from very few samples. It is reported, not smoothed over, and it bounds what any later diagnostic can show."
+}

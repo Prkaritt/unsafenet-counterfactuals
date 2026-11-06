@@ -1,0 +1,18 @@
+{
+  "_what": "Settings for the classifier-guided generation and its matched unguided control.",
+  "_prerequisites": "This stage runs only if the panel classifier reaches usable validation performance, its region-masking diagnostics show a panel effect above the control regions, and the gradient probe returns a finite, non-zero gradient that fits in memory.",
+  "settings": {
+    "seed": 20261105,
+    "strength": 0.6,
+    "num_inference_steps": 50,
+    "guidance_scale": 6.0,
+    "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+    "_matched": "The guided run and the unguided control share every setting here and the same generator seed, so both start from identical initial noise. The only difference is the classifier term."
+  },
+  "prompts": {
+    "case1_2tr108_6tr17": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting.",
+    "case2_2tr118_6tr18": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting.",
+    "case3_2tr92_6tr16": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting."
+  },
+  "_prompts_note": "Frozen 2026-11-05 with the cases. Deliberately the same prompt as the base_edit arm in configs/panel_cover_generate.json, so that a difference between the guided run and the prompt-only baseline is attributable to the classifier term and not to a reworded prompt. The guided run and its unguided control share it as well."
+}

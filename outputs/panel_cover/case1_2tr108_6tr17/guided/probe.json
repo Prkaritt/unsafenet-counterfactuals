@@ -1,0 +1,84 @@
+{
+ "mode": "probe",
+ "case": "case1_2tr108_6tr17",
+ "input": "outputs/panel_cover/case1_2tr108_6tr17/videos/case1_2tr108_6tr17_source.mp4",
+ "target_index": 1,
+ "latent_shape": [
+  1,
+  16,
+  13,
+  60,
+  90
+ ],
+ "gradient": {
+  "finite": true,
+  "norm": 0.4086962044239044,
+  "nonzero": true,
+  "max_abs": 0.015411376953125,
+  "fraction_nonzero": 0.38460204005241394,
+  "shape": [
+   1,
+   16,
+   13,
+   60,
+   90
+  ],
+  "dtype": "torch.float32"
+ },
+ "grad_scale_used": 1024.0,
+ "latent_window": [
+  0,
+  5
+ ],
+ "log_p_target_before": -0.7981628179550171,
+ "log_p_target_after_smallest_step": -0.6183419227600098,
+ "step_sweep": [
+  {
+   "step_fraction_of_latent_norm": 0.01,
+   "log_p_target": -0.6183419227600098,
+   "finite": true
+  },
+  {
+   "step_fraction_of_latent_norm": 0.02,
+   "log_p_target": -0.4459603428840637,
+   "finite": true
+  },
+  {
+   "step_fraction_of_latent_norm": 0.05,
+   "log_p_target": -0.622138261795044,
+   "finite": true
+  },
+  {
+   "step_fraction_of_latent_norm": 0.1,
+   "log_p_target": -1.1982879638671875,
+   "finite": true
+  },
+  {
+   "step_fraction_of_latent_norm": 0.2,
+   "log_p_target": -1.6124581098556519,
+   "finite": true
+  },
+  {
+   "step_fraction_of_latent_norm": 0.5,
+   "log_p_target": -1.6140638589859009,
+   "finite": true
+  }
+ ],
+ "_step_sweep_meaning": "Each row moves the latent along the gradient by that fraction of the latent's own norm, decodes it and scores it. A rising log p(target) means the gradient points somewhere the classifier likes; it does not mean the panel closed. A NaN row means the decode overflowed at that magnitude, which bounds the step a guided loop may take, and is a property of the step size rather than of the gradient.",
+ "step_fractions": [
+  0.01,
+  0.02,
+  0.05,
+  0.1,
+  0.2,
+  0.5
+ ],
+ "seconds": 18.8,
+ "peak_gpu_gib": 36.902,
+ "gate": {
+  "finite": true,
+  "nonzero": true,
+  "fits_in_memory": true,
+  "_meaning": "All three must hold before a guided generation is worth its allocation. A finite, non-zero gradient says the path from latent to classifier carries a derivative; it says nothing about whether following it closes a panel."
+ }
+}

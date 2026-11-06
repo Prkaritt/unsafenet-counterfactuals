@@ -1,0 +1,35 @@
+job_id	name	stage	submitted	max_su	purpose
+50280101	pcaudit	1 audit	2026-11-05T15:06:30	0.833	audit 148 class-2 and class-6 clips: camera views, recording groups, panel-candidate regions, contact sheets
+50282082	pcsel	2 selection scoring	2026-11-05T16:29:42-05:00	0.583	score all 148 clips against the identified panel region: alignment, closed/open correlation, region activity
+50282082	pcsel	2 selection scoring	2026-11-05T16:30	0.583	scored 148 clips against the press guard; COMPLETED 00:10:54 = 0.1817 SU
+50282294	pcpop	2b population difference	2026-11-05T16:43:26-05:00	0.500	mean-of-medians per class, difference, per-clip separability of each strong region
+50283251	pcsel	2 selection scoring (rerun, corrected box)	2026-11-05T17:43:39-05:00	0.583	rescore all 148 clips against the population-derived cabinet-door box; contact sheets
+50282294	pcpop	2b population difference	2026-11-05T17:43:39-05:00	0.500	COMPLETED 00:03:41 = 0.0614 SU; found cabinet door, sep acc 0.935
+50283251	pcsel	2 selection scoring (rerun)	2026-11-05T18:24:28-05:00	0.583	COMPLETED 00:13:20 = 0.2222 SU; class2 open 0.81/closed 0.09, class6 closed 0.998; 12/100 class-2 read closed
+50284349	pccomp	3a compositing	2026-11-05T18:24:28-05:00	0.417	mask-restricted closed-panel composites for the three frozen cases
+50284349	pccomp	3a compositing	2026-11-05T18:28:54-05:00	0.417	COMPLETED 00:00:44 = 0.0122 SU; 3/3 cases, coverage 1.0000, 0 px changed outside region
+50284466	pcgen	3b CogVideoX arms	2026-11-05T18:28:54-05:00	1.000	five arms per case: vae_source, vae_composite, base_edit, refined, refined_restricted
+50284467	pctrain	4 classifier	2026-11-05T18:28:54-05:00	1.167	R3D-18 class-2 vs class-6 binary, recording-group separated split, plan clips held out
+50284466	pcgen	3b CogVideoX arms	2026-11-05T18:48:46-05:00	1.000	COMPLETED 00:13:07 = 0.2185 SU; 15 arms, VAE PSNR 32.3-34.0 dB, LoRA never loaded
+50284467	pctrain	4 classifier	2026-11-05T18:48:46-05:00	1.167	COMPLETED 00:01:57 = 0.0325 SU; val balanced acc 0.9849, only 4 independent safe val clips
+50284823	pcdiag	4b diagnostics	2026-11-05T18:48:46-05:00	0.667	VAE round-trip flip control plus panel masking against three equal-area control regions
+50284824	pceval	6 evaluation	2026-11-05T18:48:46-05:00	0.333	per-arm panel-state proxy, preservation outside region, seam, stability, classifier last
+50284823	pcdiag	4b diagnostics	2026-11-05T19:04:11-05:00	0.667	COMPLETED 00:03:37 = 0.0603 SU; VAE control clean 8/8, but region masking SKIPPED EVERY CLIP (view-key bug)
+50284824	pceval	6 evaluation	2026-11-05T19:04:11-05:00	0.333	COMPLETED 00:01:10 = 0.0194 SU; composite closes panel (ncc 0.9997) but classifier only 0.13->0.32
+50285088	pcdiag	4b diagnostics (rerun)	2026-11-05T19:04:11-05:00	0.667	region masking with the frozen box, gated on measured alignment
+50285088	pcdiag	4b diagnostics (rerun)	2026-11-05T19:41:45-05:00	0.667	COMPLETED 00:06:27 = 0.1075 SU; panel masking 0.131 vs controls 0.006-0.019, right sign in both classes
+50285379	pcprobe	5a gradient probe	2026-11-05T19:41:45-05:00	0.417	one guided denoising step: finite, non-zero gradient reaching the latent, memory and timing
+50285379	pcprobe	5a gradient probe	2026-11-05T20:04:52-05:00	0.417	FAILED 00:00:03 = 0.0008 SU; CASE not exported
+50286103	pcprobe	5a gradient probe (rerun)	2026-11-05T20:04:52-05:00	0.417	CASE=case1_2tr108_6tr17; finite non-zero gradient check, memory, timing
+50286103	pcprobe	5a gradient probe (rerun)	2026-11-05T20:18:58-05:00	0.417	COMPLETED 00:09:25 = 0.1569 SU; gradient finite nonzero norm 0.409, peak 36.9 GiB; one-step score NaN from a 50x-norm step
+50286262	pcprobe	5a gradient probe (sweep)	2026-11-05T20:18:58-05:00	0.417	step fractions 0.01 to 0.5 of the latent norm, each decoded and scored
+50286262	pcprobe	5a gradient probe (sweep)	2026-11-05T20:22:30-05:00	0.417	COMPLETED 00:02:28 = 0.0411 SU; log p -0.798 to -0.446 at 0.02x norm, no NaN; all three gates pass
+50286287	pcguided	5b guided pair	2026-11-05T20:22:30-05:00	1.000	CASE=case1_2tr108_6tr17, matched guided and unguided runs at the same seed and settings
+50286287	pcguided	5b guided pair	2026-11-05T20:40:36-05:00	1.000	COMPLETED 00:13:11 = 0.2197 SU; guided P(closed) 0.99989 flips, unguided control 0.28348 does not
+50286405	pceval	6 evaluation (with guidance arms)	2026-11-05T20:40:36-05:00	0.333	score the guided and unguided arms on the same panel-state proxy as every other arm
+50286405	pceval	6 evaluation (with guidance)	2026-11-05T20:43:23-05:00	0.333	COMPLETED 00:01:19 = 0.0219 SU; guided arm ncc closed 0.109 = PANEL STILL OPEN while P(closed) 0.9999
+50286464	pcguided	5b guided pair case2	2026-11-05T20:43:23-05:00	1.000	replicate the guided/unguided pair on an independent case
+50286465	pcguided	5b guided pair case3	2026-11-05T20:43:23-05:00	1.000	replicate the guided/unguided pair on an independent case
+50286464	pcguided	5b guided pair case2	2026-11-05T21:19:17-05:00	1.000	COMPLETED 00:13:05 = 0.2181 SU; guided 0.99992 flips, unguided 0.36108 does not
+50286465	pcguided	5b guided pair case3	2026-11-05T21:19:17-05:00	1.000	COMPLETED 00:18:12 = 0.3033 SU; guided 0.99990 flips, unguided 0.32542 does not
+50287094	pceval	6 evaluation (all cases, all arms)	2026-11-05T21:19:17-05:00	0.333	final scoring of 10 arms per case including both guidance arms

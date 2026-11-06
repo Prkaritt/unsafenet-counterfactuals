@@ -1,0 +1,574 @@
+{
+ "_what": "VAE sensitivity and region-masking diagnostics for the panel classifier.",
+ "generated": "2026-11-05T23:52:51+00:00",
+ "classifier": {
+  "checkpoint": "outputs/panel_cover/classifier/panel_classifier.pt",
+  "epoch": 1,
+  "label_map": {
+   "dataset_class_to_binary_index": {
+    "2": 0,
+    "6": 1
+   },
+   "binary_index_to_name": {
+    "0": "opened_panel_cover",
+    "1": "closed_panel_cover"
+   },
+   "dataset_class_names": {
+    "2": "Opened Panel Cover",
+    "6": "Closed Panel Cover"
+   },
+   "target_binary_index": 1,
+   "excluded_dataset_classes": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    7
+   ],
+   "note": "Binary index 1 is Closed Panel Cover, the counterfactual target. Guidance maximises the log-probability at index 1. This map is NOT the walkway classifier's map and the two models are not interchangeable."
+  },
+  "validation_metrics": {
+   "n": 37,
+   "support": {
+    "opened_panel_cover": 33,
+    "closed_panel_cover": 4
+   },
+   "accuracy": 0.973,
+   "balanced_accuracy": 0.9849,
+   "per_class_recall": {
+    "opened_panel_cover": 0.9697,
+    "closed_panel_cover": 1.0
+   },
+   "confusion_matrix": [
+    [
+     32,
+     1
+    ],
+    [
+     0,
+     4
+    ]
+   ],
+   "confusion_matrix_layout": "rows are true classes [0, 1], columns predicted",
+   "mean_prob_target_class": 0.2119,
+   "_balanced_accuracy_note": "Mean of per-class recalls. With 19 class-6 clips in the whole published training folder, a validation split holds very few, so this number has a wide confidence interval that no amount of training fixes.",
+   "per_clip": [
+    {
+     "pred": 0,
+     "prob_closed": 0.0963
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0807
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0572
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.149
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.4548
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1439
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0882
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0647
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1594
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1963
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1982
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1138
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0722
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1244
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1334
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0736
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0797
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1113
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1226
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0787
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0908
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1129
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0606
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.7138
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1387
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1815
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0649
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.2063
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.1004
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.047
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0829
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0889
+    },
+    {
+     "pred": 0,
+     "prob_closed": 0.0704
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.8648
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.8485
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.7422
+    },
+    {
+     "pred": 1,
+     "prob_closed": 0.8286
+    }
+   ]
+  },
+  "preprocess": {
+   "frames": 16,
+   "height": 240,
+   "width": 320,
+   "function": "unsafenet_cf.classifier.prepare"
+  }
+ },
+ "vae_round_trip": {
+  "clips": [
+   {
+    "clip_id": "2_tr104",
+    "dataset_class": 2,
+    "true_binary": 0,
+    "original": {
+     "pred": 0,
+     "prob_closed": 0.10717
+    },
+    "reconstructed": {
+     "pred": 0,
+     "prob_closed": 0.19666
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.08949,
+    "roundtrip_seconds": 24.7
+   },
+   {
+    "clip_id": "2_tr105",
+    "dataset_class": 2,
+    "true_binary": 0,
+    "original": {
+     "pred": 0,
+     "prob_closed": 0.09044
+    },
+    "reconstructed": {
+     "pred": 0,
+     "prob_closed": 0.17799
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.08755,
+    "roundtrip_seconds": 23.9
+   },
+   {
+    "clip_id": "2_tr106",
+    "dataset_class": 2,
+    "true_binary": 0,
+    "original": {
+     "pred": 0,
+     "prob_closed": 0.07051
+    },
+    "reconstructed": {
+     "pred": 0,
+     "prob_closed": 0.11375
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.04324,
+    "roundtrip_seconds": 23.9
+   },
+   {
+    "clip_id": "2_tr111",
+    "dataset_class": 2,
+    "true_binary": 0,
+    "original": {
+     "pred": 0,
+     "prob_closed": 0.15714
+    },
+    "reconstructed": {
+     "pred": 0,
+     "prob_closed": 0.31268
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.15554,
+    "roundtrip_seconds": 24.0
+   },
+   {
+    "clip_id": "6_tr14",
+    "dataset_class": 6,
+    "true_binary": 1,
+    "original": {
+     "pred": 1,
+     "prob_closed": 0.8732
+    },
+    "reconstructed": {
+     "pred": 1,
+     "prob_closed": 0.91624
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.04304,
+    "roundtrip_seconds": 24.0
+   },
+   {
+    "clip_id": "6_tr2",
+    "dataset_class": 6,
+    "true_binary": 1,
+    "original": {
+     "pred": 1,
+     "prob_closed": 0.85778
+    },
+    "reconstructed": {
+     "pred": 1,
+     "prob_closed": 0.9046
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.04681,
+    "roundtrip_seconds": 23.9
+   },
+   {
+    "clip_id": "6_tr6",
+    "dataset_class": 6,
+    "true_binary": 1,
+    "original": {
+     "pred": 1,
+     "prob_closed": 0.76218
+    },
+    "reconstructed": {
+     "pred": 1,
+     "prob_closed": 0.83659
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.07442,
+    "roundtrip_seconds": 23.9
+   },
+   {
+    "clip_id": "6_tr8",
+    "dataset_class": 6,
+    "true_binary": 1,
+    "original": {
+     "pred": 1,
+     "prob_closed": 0.84531
+    },
+    "reconstructed": {
+     "pred": 1,
+     "prob_closed": 0.88591
+    },
+    "prediction_flipped": false,
+    "delta_prob_closed": 0.0406,
+    "roundtrip_seconds": 23.9
+   }
+  ],
+  "n_flipped": 0,
+  "_control_meaning": "A flip here means the latent round trip alone changes the decision. Every generated arm passes through this round trip, so any flip measured on an edited clip is uninterpretable while this number is non-zero."
+ },
+ "region_masking": {
+  "per_clip": [
+   {
+    "clip_id": "2_tr104",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr105",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr106",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr111",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr124",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr128",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr129",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr14",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr15",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr16",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr17",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr18",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr19",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr2",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr23",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr24",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr25",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr26",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr27",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr28",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr29",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr43",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr45",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr5",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr6",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr7",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr72",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr75",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr81",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr82",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr84",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr9",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "2_tr94",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "6_tr14",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "6_tr2",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "6_tr6",
+    "view": "6_tr6",
+    "skipped": "no frozen panel box for this view"
+   },
+   {
+    "clip_id": "6_tr8",
+    "view": "2_tr1",
+    "skipped": "no frozen panel box for this view"
+   }
+  ],
+  "_regions_config": "configs/panel_cover_regions.json",
+  "summary_by_class": {},
+  "_interpretation": "Compare the panel column against the three control columns within each class. A panel effect much larger than every control is evidence that the decision depends on the panel region. It is NOT proof of causal dependence on panel state: any region correlated with the panel, such as the machine it sits on, produces the same signature. Masking also moves an input off the training distribution, which changes predictions on its own; that is exactly why controls of identical area are measured rather than a single masked condition."
+ },
+ "environment": {
+  "captured_at": "2026-11-05T23:52:51+00:00",
+  "python": {
+   "python_version": "3.12.13",
+   "python_executable": "/ocean/projects/cis260288p/puprety/envs/cogvx-cu128/bin/python",
+   "platform": "Linux-4.18.0-553.74.1.el8_10.x86_64-x86_64-with-glibc2.28",
+   "machine": "x86_64"
+  },
+  "packages": {
+   "torch": "2.9.1+cu128",
+   "torchvision": "0.24.1+cu128",
+   "diffusers": "0.36.0",
+   "transformers": "4.57.6",
+   "accelerate": "1.15.0",
+   "huggingface_hub": "0.36.2",
+   "safetensors": "0.8.0",
+   "numpy": "2.3.4",
+   "PIL": "11.3.0",
+   "imageio": "2.37.0",
+   "imageio_ffmpeg": "0.8.1",
+   "sentencepiece": "0.2.2"
+  },
+  "gpu": {
+   "available": true,
+   "name": "NVIDIA L40S",
+   "capability": "8.9",
+   "total_vram_gb": 44.42,
+   "free_vram_gb": 43.51,
+   "torch_cuda_version": "12.8",
+   "supports_bf16": true
+  },
+  "system_ram_gb": 1006.85,
+  "nvidia_smi": "Thu Nov  5 18:52:52 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.57.04              KMD Version: 610.57.04     CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA L40S                    On  |   00000001:B2:00.0 Off |                    0 |\n| N/A   59C    P0            113W /  350W |     935MiB /  46068MiB |     36%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           82958      C   ...y/envs/cogvx-cu128/bin/python        926MiB |\n+-----------------------------------------------------------------------------------------+"
+ }
+}

@@ -1,0 +1,122 @@
+{
+  "folder_id": "dca5cd74-fbb9-4226-aaac-3021d67d8a6f",
+  "file_count": 19,
+  "verified": 19,
+  "failed": [],
+  "files": [
+    {
+      "filename": "6_tr1.mp4",
+      "id": "844e6a6e-e811-4b6f-8b26-e50d92a28fe2",
+      "sha256": "7540b01edad66702b46f1d728500bb119193dfae1c9ef9402ee8d2c19cfdccdc",
+      "size": 16011336
+    },
+    {
+      "filename": "6_tr10.mp4",
+      "id": "47601eb8-866b-4eb2-8288-e5c9f741b5ab",
+      "sha256": "bb34832745e2eb8d2259323350695495bdf0ef9dd324f5b5751b1fd85778ad3b",
+      "size": 4863146
+    },
+    {
+      "filename": "6_tr11.mp4",
+      "id": "3a12a1ca-b675-4a9c-b253-d86d931e8b37",
+      "sha256": "49ebe826359681f356ee9b77455c8580dde91df257dd75e4855037c2bf353e44",
+      "size": 6901494
+    },
+    {
+      "filename": "6_tr12.mp4",
+      "id": "e4a19e48-b7c8-4075-ba6f-f7bd994f24a7",
+      "sha256": "3a537d9a358de52ba8c36b63ee0f9404a1e458a7a3da2e4742db610b76446e41",
+      "size": 8639069
+    },
+    {
+      "filename": "6_tr13.mp4",
+      "id": "7a2a2d8d-1513-448b-bb42-837cf702eaaa",
+      "sha256": "772fa2d3a9d4e7e6849abbc81132e3f337cc37fa80105a824ef537df03e306dc",
+      "size": 5165040
+    },
+    {
+      "filename": "6_tr14.mp4",
+      "id": "6d0248c4-3938-4384-b56f-530b5b8a1918",
+      "sha256": "a614d435bd7f0cdf285ee561ac920dfe9549b95ef3ba5f7ee8119f5270a5f3cb",
+      "size": 4208404
+    },
+    {
+      "filename": "6_tr15.mp4",
+      "id": "772d5fc2-387c-43be-a23d-b3a4f5b4e41a",
+      "sha256": "dccf83f75e0caff79c3ecd2493288bd45f100ef29070ba844b73cbaf963da6ca",
+      "size": 4165557
+    },
+    {
+      "filename": "6_tr16.mp4",
+      "id": "26978f8d-d4ec-42d4-bf91-22ca79bb3587",
+      "sha256": "c93b9abf7e03ec6bf0f2320072c39b5a6db83746f61abd47bc785d6f3ccb3251",
+      "size": 5180128
+    },
+    {
+      "filename": "6_tr17.mp4",
+      "id": "15e0d56b-404b-47d6-bcca-c10482a281d0",
+      "sha256": "cf7ac1e2e7a614166ddc904821eaa68d5cb889cfeee5a6e4a2b0a276649b7dd6",
+      "size": 5921280
+    },
+    {
+      "filename": "6_tr18.mp4",
+      "id": "ba288f1b-d10e-41e7-9f4e-a66696df4e80",
+      "sha256": "c762143bdd15baf3afc92511e6bf299322f32bb6c4c9593e68db99fc506e7533",
+      "size": 13329703
+    },
+    {
+      "filename": "6_tr19.mp4",
+      "id": "fa8a82c1-f886-42cd-8be7-d17526f68aeb",
+      "sha256": "17b952378e6b5652af603eeb7455721ad77f2f85f968db107b82d4c4232a7bd1",
+      "size": 13377791
+    },
+    {
+      "filename": "6_tr2.mp4",
+      "id": "04467593-3f64-4d14-8051-f5ed68c2afe8",
+      "sha256": "c4fac5a4a1d43b197e398260f0c1d508628ba0a210bf64ccd19d34aac4d43799",
+      "size": 13348973
+    },
+    {
+      "filename": "6_tr3.mp4",
+      "id": "5973be24-bd7b-44aa-ac04-b45e79716a9f",
+      "sha256": "561e7dc1ff63b8b502afb475e5de0ab29e77041e3e8273f80e1bf43cbdd5f88d",
+      "size": 8560542
+    },
+    {
+      "filename": "6_tr4.mp4",
+      "id": "76545031-9826-42cb-9591-64ac82abef41",
+      "sha256": "e66345781b3e0e53928c407ffd68944ac970571dfadc76d0cf6da0c5992e472d",
+      "size": 8299651
+    },
+    {
+      "filename": "6_tr5.mp4",
+      "id": "fcdc3849-4362-4d48-af86-0a2572e9995c",
+      "sha256": "6e47ce0c699a3b937df1732ba26ffd9d8f2b98ff12e5e2ccd501454c5b6c1cd8",
+      "size": 7895219
+    },
+    {
+      "filename": "6_tr6.mp4",
+      "id": "0fffba3c-7841-4486-8d2b-b39808be0b85",
+      "sha256": "318fd5be7a7d58c324e3243fc7d41ebf9b4955fde336792cf14758a7c8b9dad3",
+      "size": 11819798
+    },
+    {
+      "filename": "6_tr7.mp4",
+      "id": "4f9adaff-b1b9-46bb-9f12-af2aaff30f71",
+      "sha256": "434b733320c1bd562fd8564d8ca650a16b6e3d3db8a9ba8acc9578c71fa0220b",
+      "size": 6930046
+    },
+    {
+      "filename": "6_tr8.mp4",
+      "id": "d4a1d025-c5b2-45e4-a04c-d627a7cd1142",
+      "sha256": "78ca6e53156d3944497e8299b2fe2d65fa5079e777f0ae1b028f80326423870a",
+      "size": 7245164
+    },
+    {
+      "filename": "6_tr9.mp4",
+      "id": "4c1cd2b2-0458-4545-b698-5c9cf61c1caf",
+      "sha256": "a4c3c6dc80d04594844dfca0cc10171f5e3342a9d5c45d0bf4ad5da7b1801aaa",
+      "size": 7759505
+    }
+  ]
+}

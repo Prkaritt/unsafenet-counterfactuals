@@ -1,0 +1,1459 @@
+{
+ "_what": "Measurements of every panel-cover arm against the source and the donor.",
+ "_judgement_basis": "Every number here is computed from decoded frames. None of it replaces playback review, and the panel-state figure is a correlation proxy rather than a detector.",
+ "generated": "2026-11-06T00:01:42+00:00",
+ "cases": {
+  "case1_2tr108_6tr17": {
+   "case_id": "case1_2tr108_6tr17",
+   "source_clip": "2_tr108",
+   "donor_clip": "6_tr17",
+   "region_px": 7667,
+   "region_fraction_of_frame": 0.02218,
+   "arms": {
+    "source": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.98777,
+      "ncc_vs_closed_reference": 0.11261,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 9.9746,
+     "preservation": {
+      "psnr_outside_region_db": null,
+      "mean_abs_diff_outside_region": 0.0,
+      "psnr_whole_frame_db": Infinity,
+      "mean_abs_diff_whole_frame": 0.0
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 17.476,
+      "control_step": 1.312,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 4.1751,
+      "mad_whole_frame": 4.1351,
+      "max_mad_in_mask": 125.6667
+     }
+    },
+    "composite": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.12213,
+      "ncc_vs_closed_reference": 0.9997,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 7.3721,
+     "preservation": {
+      "psnr_outside_region_db": 35.031,
+      "mean_abs_diff_outside_region": 3.1249,
+      "psnr_whole_frame_db": 24.461783931505177,
+      "mean_abs_diff_whole_frame": 4.760098871724616
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 23.572,
+      "control_step": 1.148,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 0.277,
+      "mad_whole_frame": 3.5962,
+      "max_mad_in_mask": 75.6667
+     }
+    },
+    "vae_source": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.98922,
+      "ncc_vs_closed_reference": 0.10809,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 8.3812,
+     "preservation": {
+      "psnr_outside_region_db": 31.507,
+      "mean_abs_diff_outside_region": 4.5084,
+      "psnr_whole_frame_db": 31.480725799511603,
+      "mean_abs_diff_whole_frame": 4.526431897990678
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 17.017,
+      "control_step": 1.308,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 2.7422,
+      "mad_whole_frame": 3.1893,
+      "max_mad_in_mask": 115.3333
+     }
+    },
+    "vae_composite": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.12007,
+      "ncc_vs_closed_reference": 0.99816,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.8169,
+     "preservation": {
+      "psnr_outside_region_db": 30.903,
+      "mean_abs_diff_outside_region": 5.1262,
+      "psnr_whole_frame_db": 24.036830070442285,
+      "mean_abs_diff_whole_frame": 6.682892534328547
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 23.089,
+      "control_step": 1.252,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 0.7985,
+      "mad_whole_frame": 3.0816,
+      "max_mad_in_mask": 79.0
+     }
+    },
+    "base_edit": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.85688,
+      "ncc_vs_closed_reference": 0.06294,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 8.3807,
+     "preservation": {
+      "psnr_outside_region_db": 20.334,
+      "mean_abs_diff_outside_region": 15.8608,
+      "psnr_whole_frame_db": 20.2924336167511,
+      "mean_abs_diff_whole_frame": 15.971934110449736
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 15.056,
+      "control_step": 0.517,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 3.1224,
+      "mad_whole_frame": 3.4975,
+      "max_mad_in_mask": 124.6667
+     }
+    },
+    "refined": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.11752,
+      "ncc_vs_closed_reference": 0.98561,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.6793,
+     "preservation": {
+      "psnr_outside_region_db": 26.913,
+      "mean_abs_diff_outside_region": 7.3223,
+      "psnr_whole_frame_db": 22.891902415395478,
+      "mean_abs_diff_whole_frame": 8.836502602198287
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 23.418,
+      "control_step": 0.444,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 1.0471,
+      "mad_whole_frame": 2.9351,
+      "max_mad_in_mask": 113.3333
+     }
+    },
+    "refined_restricted": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.11892,
+      "ncc_vs_closed_reference": 0.9868,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.5967,
+     "preservation": {
+      "psnr_outside_region_db": 33.486,
+      "mean_abs_diff_outside_region": 3.9126,
+      "psnr_whole_frame_db": 24.456346464815265,
+      "mean_abs_diff_whole_frame": 5.497978276958932
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 23.636,
+      "control_step": 1.392,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 1.0077,
+      "mad_whole_frame": 3.4429,
+      "max_mad_in_mask": 85.6667
+     }
+    }
+   },
+   "region_texture_references": {
+    "source_region_gradient": 9.9746,
+    "donor_region_gradient": 7.3758,
+    "_note": "Donor gradient is measured in the SOURCE's region coordinates, so it is only comparable where registration placed donor content there. It is a scale for the composite's value, not a target."
+   },
+   "registration_residual_px": {
+    "per_point": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "max": 0.0,
+    "rms": 0.0
+   },
+   "classifier": {
+    "_label_map": {
+     "dataset_class_to_binary_index": {
+      "2": 0,
+      "6": 1
+     },
+     "binary_index_to_name": {
+      "0": "opened_panel_cover",
+      "1": "closed_panel_cover"
+     },
+     "dataset_class_names": {
+      "2": "Opened Panel Cover",
+      "6": "Closed Panel Cover"
+     },
+     "target_binary_index": 1,
+     "excluded_dataset_classes": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      7
+     ],
+     "note": "Binary index 1 is Closed Panel Cover, the counterfactual target. Guidance maximises the log-probability at index 1. This map is NOT the walkway classifier's map and the two models are not interchangeable."
+    },
+    "_validation_at_checkpoint": {
+     "n": 37,
+     "support": {
+      "opened_panel_cover": 33,
+      "closed_panel_cover": 4
+     },
+     "accuracy": 0.973,
+     "balanced_accuracy": 0.9849,
+     "per_class_recall": {
+      "opened_panel_cover": 0.9697,
+      "closed_panel_cover": 1.0
+     },
+     "confusion_matrix": [
+      [
+       32,
+       1
+      ],
+      [
+       0,
+       4
+      ]
+     ],
+     "confusion_matrix_layout": "rows are true classes [0, 1], columns predicted",
+     "mean_prob_target_class": 0.2119,
+     "_balanced_accuracy_note": "Mean of per-class recalls. With 19 class-6 clips in the whole published training folder, a validation split holds very few, so this number has a wide confidence interval that no amount of training fixes.",
+     "per_clip": [
+      {
+       "pred": 0,
+       "prob_closed": 0.0963
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0807
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0572
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.149
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.4548
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1439
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0882
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0647
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1594
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1963
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1982
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1138
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0722
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1244
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1334
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0736
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0797
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1113
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1226
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0787
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0908
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1129
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0606
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.7138
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1387
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1815
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0649
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.2063
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1004
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.047
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0829
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0889
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0704
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.8648
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.8485
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.7422
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.8286
+      }
+     ]
+    },
+    "_warning": "A prediction flip is not evidence that a panel closed. Read the vae_source row first: if the round trip alone flips the label, every later flip is uninterpretable.",
+    "arms": {
+     "source": {
+      "prob_opened_panel_cover": 0.8675,
+      "prob_closed_panel_cover": 0.1325,
+      "predicted_binary_index": 0
+     },
+     "composite": {
+      "prob_opened_panel_cover": 0.67953,
+      "prob_closed_panel_cover": 0.32047,
+      "predicted_binary_index": 0
+     },
+     "vae_source": {
+      "prob_opened_panel_cover": 0.77688,
+      "prob_closed_panel_cover": 0.22312,
+      "predicted_binary_index": 0
+     },
+     "vae_composite": {
+      "prob_opened_panel_cover": 0.60006,
+      "prob_closed_panel_cover": 0.39994,
+      "predicted_binary_index": 0
+     },
+     "base_edit": {
+      "prob_opened_panel_cover": 0.70338,
+      "prob_closed_panel_cover": 0.29662,
+      "predicted_binary_index": 0
+     },
+     "refined": {
+      "prob_opened_panel_cover": 0.53051,
+      "prob_closed_panel_cover": 0.46949,
+      "predicted_binary_index": 0
+     },
+     "refined_restricted": {
+      "prob_opened_panel_cover": 0.66347,
+      "prob_closed_panel_cover": 0.33653,
+      "predicted_binary_index": 0
+     }
+    }
+   }
+  },
+  "case2_2tr118_6tr18": {
+   "case_id": "case2_2tr118_6tr18",
+   "source_clip": "2_tr118",
+   "donor_clip": "6_tr18",
+   "region_px": 7667,
+   "region_fraction_of_frame": 0.02218,
+   "arms": {
+    "source": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.98973,
+      "ncc_vs_closed_reference": 0.18561,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 9.7101,
+     "preservation": {
+      "psnr_outside_region_db": null,
+      "mean_abs_diff_outside_region": 0.0,
+      "psnr_whole_frame_db": Infinity,
+      "mean_abs_diff_whole_frame": 0.0
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 17.526,
+      "control_step": 0.109,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 3.7089,
+      "mad_whole_frame": 3.8209,
+      "max_mad_in_mask": 72.0
+     }
+    },
+    "composite": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.18336,
+      "ncc_vs_closed_reference": 0.99967,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.8062,
+     "preservation": {
+      "psnr_outside_region_db": 35.578,
+      "mean_abs_diff_outside_region": 2.9133,
+      "psnr_whole_frame_db": 25.483570864099747,
+      "mean_abs_diff_whole_frame": 4.35597373787478
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 12.728,
+      "control_step": 0.203,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 0.2673,
+      "mad_whole_frame": 3.4102,
+      "max_mad_in_mask": 19.3333
+     }
+    },
+    "vae_source": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.99145,
+      "ncc_vs_closed_reference": 0.18578,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 8.42,
+     "preservation": {
+      "psnr_outside_region_db": 31.846,
+      "mean_abs_diff_outside_region": 4.3379,
+      "psnr_whole_frame_db": 31.815719177846795,
+      "mean_abs_diff_whole_frame": 4.3553162202380955
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 17.831,
+      "control_step": 0.617,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 2.3974,
+      "mad_whole_frame": 3.0509,
+      "max_mad_in_mask": 56.6667
+     }
+    },
+    "vae_composite": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.18366,
+      "ncc_vs_closed_reference": 0.99804,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.2787,
+     "preservation": {
+      "psnr_outside_region_db": 31.164,
+      "mean_abs_diff_outside_region": 5.0117,
+      "psnr_whole_frame_db": 24.93302666814515,
+      "mean_abs_diff_whole_frame": 6.385035096214412
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 12.733,
+      "control_step": 0.364,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 0.682,
+      "mad_whole_frame": 2.9361,
+      "max_mad_in_mask": 36.6667
+     }
+    },
+    "base_edit": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.85362,
+      "ncc_vs_closed_reference": 0.09087,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 7.8588,
+     "preservation": {
+      "psnr_outside_region_db": 20.474,
+      "mean_abs_diff_outside_region": 15.6577,
+      "psnr_whole_frame_db": 20.423216242938263,
+      "mean_abs_diff_whole_frame": 15.769426217246158
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 19.242,
+      "control_step": 2.956,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 2.4179,
+      "mad_whole_frame": 2.626,
+      "max_mad_in_mask": 59.0
+     }
+    },
+    "refined": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.18857,
+      "ncc_vs_closed_reference": 0.98437,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.1686,
+     "preservation": {
+      "psnr_outside_region_db": 27.097,
+      "mean_abs_diff_outside_region": 7.1779,
+      "psnr_whole_frame_db": 23.588831794776837,
+      "mean_abs_diff_whole_frame": 8.510974210285966
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 15.921,
+      "control_step": 1.601,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 1.0283,
+      "mad_whole_frame": 2.5869,
+      "max_mad_in_mask": 30.3333
+     }
+    },
+    "refined_restricted": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.18694,
+      "ncc_vs_closed_reference": 0.98576,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.0705,
+     "preservation": {
+      "psnr_outside_region_db": 33.744,
+      "mean_abs_diff_outside_region": 3.7898,
+      "psnr_whole_frame_db": 25.405948661608363,
+      "mean_abs_diff_whole_frame": 5.196045406588562
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 13.97,
+      "control_step": 0.335,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 0.9628,
+      "mad_whole_frame": 3.2201,
+      "max_mad_in_mask": 39.6667
+     }
+    }
+   },
+   "region_texture_references": {
+    "source_region_gradient": 9.7101,
+    "donor_region_gradient": 6.8699,
+    "_note": "Donor gradient is measured in the SOURCE's region coordinates, so it is only comparable where registration placed donor content there. It is a scale for the composite's value, not a target."
+   },
+   "registration_residual_px": {
+    "per_point": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "max": 0.0,
+    "rms": 0.0
+   },
+   "classifier": {
+    "_label_map": {
+     "dataset_class_to_binary_index": {
+      "2": 0,
+      "6": 1
+     },
+     "binary_index_to_name": {
+      "0": "opened_panel_cover",
+      "1": "closed_panel_cover"
+     },
+     "dataset_class_names": {
+      "2": "Opened Panel Cover",
+      "6": "Closed Panel Cover"
+     },
+     "target_binary_index": 1,
+     "excluded_dataset_classes": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      7
+     ],
+     "note": "Binary index 1 is Closed Panel Cover, the counterfactual target. Guidance maximises the log-probability at index 1. This map is NOT the walkway classifier's map and the two models are not interchangeable."
+    },
+    "_validation_at_checkpoint": {
+     "n": 37,
+     "support": {
+      "opened_panel_cover": 33,
+      "closed_panel_cover": 4
+     },
+     "accuracy": 0.973,
+     "balanced_accuracy": 0.9849,
+     "per_class_recall": {
+      "opened_panel_cover": 0.9697,
+      "closed_panel_cover": 1.0
+     },
+     "confusion_matrix": [
+      [
+       32,
+       1
+      ],
+      [
+       0,
+       4
+      ]
+     ],
+     "confusion_matrix_layout": "rows are true classes [0, 1], columns predicted",
+     "mean_prob_target_class": 0.2119,
+     "_balanced_accuracy_note": "Mean of per-class recalls. With 19 class-6 clips in the whole published training folder, a validation split holds very few, so this number has a wide confidence interval that no amount of training fixes.",
+     "per_clip": [
+      {
+       "pred": 0,
+       "prob_closed": 0.0963
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0807
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0572
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.149
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.4548
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1439
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0882
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0647
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1594
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1963
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1982
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1138
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0722
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1244
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1334
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0736
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0797
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1113
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1226
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0787
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0908
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1129
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0606
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.7138
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1387
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1815
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0649
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.2063
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1004
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.047
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0829
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0889
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0704
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.8648
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.8485
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.7422
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.8286
+      }
+     ]
+    },
+    "_warning": "A prediction flip is not evidence that a panel closed. Read the vae_source row first: if the round trip alone flips the label, every later flip is uninterpretable.",
+    "arms": {
+     "source": {
+      "prob_opened_panel_cover": 0.85797,
+      "prob_closed_panel_cover": 0.14203,
+      "predicted_binary_index": 0
+     },
+     "composite": {
+      "prob_opened_panel_cover": 0.65834,
+      "prob_closed_panel_cover": 0.34166,
+      "predicted_binary_index": 0
+     },
+     "vae_source": {
+      "prob_opened_panel_cover": 0.7496,
+      "prob_closed_panel_cover": 0.2504,
+      "predicted_binary_index": 0
+     },
+     "vae_composite": {
+      "prob_opened_panel_cover": 0.53187,
+      "prob_closed_panel_cover": 0.46813,
+      "predicted_binary_index": 0
+     },
+     "base_edit": {
+      "prob_opened_panel_cover": 0.58849,
+      "prob_closed_panel_cover": 0.41151,
+      "predicted_binary_index": 0
+     },
+     "refined": {
+      "prob_opened_panel_cover": 0.45702,
+      "prob_closed_panel_cover": 0.54298,
+      "predicted_binary_index": 1
+     },
+     "refined_restricted": {
+      "prob_opened_panel_cover": 0.64665,
+      "prob_closed_panel_cover": 0.35335,
+      "predicted_binary_index": 0
+     }
+    }
+   }
+  },
+  "case3_2tr92_6tr16": {
+   "case_id": "case3_2tr92_6tr16",
+   "source_clip": "2_tr92",
+   "donor_clip": "6_tr16",
+   "region_px": 7667,
+   "region_fraction_of_frame": 0.02218,
+   "arms": {
+    "source": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.98974,
+      "ncc_vs_closed_reference": 0.11996,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 8.4308,
+     "preservation": {
+      "psnr_outside_region_db": null,
+      "mean_abs_diff_outside_region": 0.0,
+      "psnr_whole_frame_db": Infinity,
+      "mean_abs_diff_whole_frame": 0.0
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 15.166,
+      "control_step": 1.731,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 4.9369,
+      "mad_whole_frame": 3.5682,
+      "max_mad_in_mask": 71.0
+     }
+    },
+    "composite": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.11516,
+      "ncc_vs_closed_reference": 0.99966,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 7.1545,
+     "preservation": {
+      "psnr_outside_region_db": 35.406,
+      "mean_abs_diff_outside_region": 2.9904,
+      "psnr_whole_frame_db": 24.672538464434886,
+      "mean_abs_diff_whole_frame": 4.580404403659612
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 18.914,
+      "control_step": 1.584,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 0.2952,
+      "mad_whole_frame": 3.1056,
+      "max_mad_in_mask": 18.3333
+     }
+    },
+    "vae_source": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.99088,
+      "ncc_vs_closed_reference": 0.12192,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 7.4678,
+     "preservation": {
+      "psnr_outside_region_db": 31.849,
+      "mean_abs_diff_outside_region": 4.3881,
+      "psnr_whole_frame_db": 31.82124758710238,
+      "mean_abs_diff_whole_frame": 4.405493157911312
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 15.294,
+      "control_step": 1.558,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 3.5572,
+      "mad_whole_frame": 2.6921,
+      "max_mad_in_mask": 44.3333
+     }
+    },
+    "vae_composite": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.11568,
+      "ncc_vs_closed_reference": 0.99816,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.7488,
+     "preservation": {
+      "psnr_outside_region_db": 31.177,
+      "mean_abs_diff_outside_region": 5.046,
+      "psnr_whole_frame_db": 24.246132514246,
+      "mean_abs_diff_whole_frame": 6.556686252047115
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 19.439,
+      "control_step": 1.514,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 0.8811,
+      "mad_whole_frame": 2.6065,
+      "max_mad_in_mask": 38.0
+     }
+    },
+    "base_edit": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.86305,
+      "ncc_vs_closed_reference": 0.06311,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 7.2744,
+     "preservation": {
+      "psnr_outside_region_db": 20.63,
+      "mean_abs_diff_outside_region": 15.5844,
+      "psnr_whole_frame_db": 20.58517078730059,
+      "mean_abs_diff_whole_frame": 15.695395427847064
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 17.18,
+      "control_step": 1.248,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 4.2521,
+      "mad_whole_frame": 2.782,
+      "max_mad_in_mask": 72.0
+     }
+    },
+    "refined": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.10294,
+      "ncc_vs_closed_reference": 0.98541,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.2571,
+     "preservation": {
+      "psnr_outside_region_db": 27.23,
+      "mean_abs_diff_outside_region": 7.2328,
+      "psnr_whole_frame_db": 23.14025454591328,
+      "mean_abs_diff_whole_frame": 8.698464329018645
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 20.187,
+      "control_step": 0.379,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 1.2907,
+      "mad_whole_frame": 2.4721,
+      "max_mad_in_mask": 42.0
+     }
+    },
+    "refined_restricted": {
+     "frames": 49,
+     "panel_state_proxy": {
+      "ncc_vs_open_reference": 0.10498,
+      "ncc_vs_closed_reference": 0.98671,
+      "_reference_note": "Open reference is the source's own first frame. Closed reference is the composite's first frame, whose region holds registered donor pixels.",
+      "_proxy_warning": "Correlation of a region, not a panel-state detector. Higher correlation with the closed reference is evidence, not proof, and the human review form decides."
+     },
+     "gradient_energy_in_region": 6.2215,
+     "preservation": {
+      "psnr_outside_region_db": 33.609,
+      "mean_abs_diff_outside_region": 3.8553,
+      "psnr_whole_frame_db": 24.65678223546862,
+      "mean_abs_diff_whole_frame": 5.391535336356765
+     },
+     "seam": {
+      "usable": true,
+      "band_width_px": 3,
+      "boundary_step": 19.204,
+      "control_step": 1.471,
+      "control_shift_px": 192,
+      "_note": "Both numbers are mean grey levels out of 255. The control band is the same boundary shape shifted sideways into untouched scene, so it gives the step an ordinary scene edge produces on this footage."
+     },
+     "region_stability": {
+      "frames": 49,
+      "mask_px": 7667,
+      "mad_in_mask": 1.2052,
+      "mad_whole_frame": 2.9497,
+      "max_mad_in_mask": 38.0
+     }
+    }
+   },
+   "region_texture_references": {
+    "source_region_gradient": 8.4308,
+    "donor_region_gradient": 7.0995,
+    "_note": "Donor gradient is measured in the SOURCE's region coordinates, so it is only comparable where registration placed donor content there. It is a scale for the composite's value, not a target."
+   },
+   "registration_residual_px": {
+    "per_point": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "mean": 0.0,
+    "max": 0.0,
+    "rms": 0.0
+   },
+   "classifier": {
+    "_label_map": {
+     "dataset_class_to_binary_index": {
+      "2": 0,
+      "6": 1
+     },
+     "binary_index_to_name": {
+      "0": "opened_panel_cover",
+      "1": "closed_panel_cover"
+     },
+     "dataset_class_names": {
+      "2": "Opened Panel Cover",
+      "6": "Closed Panel Cover"
+     },
+     "target_binary_index": 1,
+     "excluded_dataset_classes": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      7
+     ],
+     "note": "Binary index 1 is Closed Panel Cover, the counterfactual target. Guidance maximises the log-probability at index 1. This map is NOT the walkway classifier's map and the two models are not interchangeable."
+    },
+    "_validation_at_checkpoint": {
+     "n": 37,
+     "support": {
+      "opened_panel_cover": 33,
+      "closed_panel_cover": 4
+     },
+     "accuracy": 0.973,
+     "balanced_accuracy": 0.9849,
+     "per_class_recall": {
+      "opened_panel_cover": 0.9697,
+      "closed_panel_cover": 1.0
+     },
+     "confusion_matrix": [
+      [
+       32,
+       1
+      ],
+      [
+       0,
+       4
+      ]
+     ],
+     "confusion_matrix_layout": "rows are true classes [0, 1], columns predicted",
+     "mean_prob_target_class": 0.2119,
+     "_balanced_accuracy_note": "Mean of per-class recalls. With 19 class-6 clips in the whole published training folder, a validation split holds very few, so this number has a wide confidence interval that no amount of training fixes.",
+     "per_clip": [
+      {
+       "pred": 0,
+       "prob_closed": 0.0963
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0807
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0572
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.149
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.4548
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1439
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0882
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0647
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1594
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1963
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1982
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1138
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0722
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1244
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1334
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0736
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0797
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1113
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1226
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0787
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0908
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1129
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0606
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.7138
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1387
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1815
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0649
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.2063
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.1004
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.047
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0829
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0889
+      },
+      {
+       "pred": 0,
+       "prob_closed": 0.0704
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.8648
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.8485
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.7422
+      },
+      {
+       "pred": 1,
+       "prob_closed": 0.8286
+      }
+     ]
+    },
+    "_warning": "A prediction flip is not evidence that a panel closed. Read the vae_source row first: if the round trip alone flips the label, every later flip is uninterpretable.",
+    "arms": {
+     "source": {
+      "prob_opened_panel_cover": 0.85132,
+      "prob_closed_panel_cover": 0.14868,
+      "predicted_binary_index": 0
+     },
+     "composite": {
+      "prob_opened_panel_cover": 0.6908,
+      "prob_closed_panel_cover": 0.3092,
+      "predicted_binary_index": 0
+     },
+     "vae_source": {
+      "prob_opened_panel_cover": 0.79334,
+      "prob_closed_panel_cover": 0.20666,
+      "predicted_binary_index": 0
+     },
+     "vae_composite": {
+      "prob_opened_panel_cover": 0.59629,
+      "prob_closed_panel_cover": 0.40371,
+      "predicted_binary_index": 0
+     },
+     "base_edit": {
+      "prob_opened_panel_cover": 0.64034,
+      "prob_closed_panel_cover": 0.35966,
+      "predicted_binary_index": 0
+     },
+     "refined": {
+      "prob_opened_panel_cover": 0.54696,
+      "prob_closed_panel_cover": 0.45304,
+      "predicted_binary_index": 0
+     },
+     "refined_restricted": {
+      "prob_opened_panel_cover": 0.67326,
+      "prob_closed_panel_cover": 0.32674,
+      "predicted_binary_index": 0
+     }
+    }
+   }
+  }
+ }
+}

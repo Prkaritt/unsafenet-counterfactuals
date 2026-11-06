@@ -1,0 +1,37 @@
+{
+  "_what": "Settings for the CogVideoX arms of the panel-cover experiment.",
+  "_frozen": "Frozen before any arm was generated. Prompts are per case and per arm.",
+  "settings": {
+    "base_edit": {
+      "seed": 20261105,
+      "strength": 0.6,
+      "num_inference_steps": 50,
+      "guidance_scale": 6.0,
+      "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+      "_why_strength": "0.6 is the strength at which this project's earlier prompt-only edits actually changed scene content. A weaker pass cannot be read as a fair test of whether a prompt alone can close a panel.",
+      "_executed_steps": "strength truncates the schedule, so 50 requested steps execute 30."
+    },
+    "refined": {
+      "seed": 20261105,
+      "strength": 0.2,
+      "num_inference_steps": 50,
+      "guidance_scale": 6.0,
+      "negative_prompt": "blurry, distorted, warped geometry, duplicated objects, flicker, text, watermark",
+      "_why_strength": "0.2 matches the manual-path experiment, where it preserved an existing composited intervention instead of undoing it. The panel is already closed in the composite; this pass is asked only to make it look like footage.",
+      "_executed_steps": "strength truncates the schedule, so 50 requested steps execute 10."
+    }
+  },
+  "prompts": {
+    "base_edit": {
+      "case1_2tr108_6tr17": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting.",
+      "case2_2tr118_6tr18": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting.",
+      "case3_2tr92_6tr16": "A fixed overhead security camera view of a metal workshop. A large eccentric press stands on the left with a worker beside it. The grey electrical cabinet low on the press column has its door shut flat against the frame, with the keypad on the face of the closed door. Static camera, unchanged factory lighting."
+    },
+    "refined": {
+      "case1_2tr108_6tr17": "Fixed overhead security camera footage of a metal workshop. An eccentric press with a worker beside it, and the grey electrical cabinet on the press column with its door shut flat against the frame. Natural surveillance video, static camera, consistent lighting, no motion in the cabinet door.",
+      "case2_2tr118_6tr18": "Fixed overhead security camera footage of a metal workshop. An eccentric press with a worker beside it, and the grey electrical cabinet on the press column with its door shut flat against the frame. Natural surveillance video, static camera, consistent lighting, no motion in the cabinet door.",
+      "case3_2tr92_6tr16": "Fixed overhead security camera footage of a metal workshop. An eccentric press with a worker beside it, and the grey electrical cabinet on the press column with its door shut flat against the frame. Natural surveillance video, static camera, consistent lighting, no motion in the cabinet door."
+    }
+  },
+  "_prompts_note": "Frozen 2026-11-05 with the cases. One prompt per arm, identical across the three cases, because the three cases show the same machine from the same camera and a per-case prompt would be a free parameter tuned per result. The base_edit prompt names the scene and the intended door state and nothing else: it never calls the scene safe, never names a class, and never describes a closing action, because no closing action is generated."
+}

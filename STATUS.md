@@ -418,3 +418,50 @@ Cost 0.2497 SU across six jobs; 4.1380 of 10 SU spent, 5.8620 remaining. Full wr
 `outputs/manual_path/FINDINGS.md`, decisions in `DECISIONS.md`, review package at
 `/ocean/projects/cis260288p/puprety/transfer/manual-path-review/` (59 files, 30 MB, checksums
 verified).
+
+## Panel-cover counterfactual, class 2 against class 6, 2026-11-05
+
+Branch `experiment/panel-cover-counterfactual`, uncommitted. 18 Slurm jobs, **2.1686 SU**.
+Full write-up in `outputs/panel_cover/FINDINGS.md`, decisions and corrections in
+`DECISIONS.md` P1 to P13, review package at
+`/ocean/projects/cis260288p/puprety/transfer/panel-cover-review/` (2401 files, 1.1 GB,
+`SHA256SUMS.txt` written).
+
+**GPU-executed, with measured results.** Dataset access and verification of the two class
+definitions against the paper; a folder audit of all 148 clips; two rounds of per-clip
+scoring; the population difference that identified the labelled object; three
+mask-restricted composites; 15 CogVideoX arms; a class-2/class-6 classifier; VAE and
+region-masking diagnostics; a gradient probe with a step sweep; three matched guided and
+unguided pairs; and a final evaluation of 10 arms per case.
+
+**The main result is negative and it replicates.** Classifier-guided generation flipped the
+label in all three independent cases, to P(closed) 0.9999 every time, while the panel region
+stayed correlated 0.80 to 0.82 with the **open** reference. The unguided control, identical
+in seed and settings, never flipped. Meanwhile the composite that genuinely closed the panel,
+ncc 0.9997 against the closed reference, moved the same classifier only from about 0.14 to
+about 0.32. **The classifier's confidence runs opposite to the physical change it is supposed
+to track.** The prompt-only baseline never closed the panel either, leaving it at ncc 0.86
+against the open reference while degrading the frame to 20 dB.
+
+**The intervention that worked had no model in it.** Mask-restricted compositing closed the
+panel in all three cases with donor coverage 1.0000, zero pixels changed outside the region,
+and landmark residuals of 0.0 px. It is compositing, not mask-conditioned generation, and
+**no closing motion was generated**.
+
+**The classifier is not blind to the panel**, which is what makes the above a problem rather
+than a curiosity: masking the panel region, 1.03% of its frame, moves P(closed) about ten
+times more than three equal-area controls, with the correct sign in both classes.
+
+**Corrections made during the run, all recorded.** A panel identified from one clip pair was
+disproved by measuring it over the folder, 96 of 120 class-2 clips having that part closed
+(P5, P6). The region-masking diagnostic silently measured nothing through a stale lookup and
+had to be rerun (P10). The gradient probe's NaN came from its own 50x step, not from the
+gradient (P11). The evaluation and the review page would both have skipped the guided arm
+entirely, leaving its only number the classifier's own 0.9999 (P13).
+
+**Hard limits.** 19 class-6 training clips exist in total; after recording-group separation
+the validation split holds **4** independent safe clips, and 3 reached the masking table. One
+camera, one machine. No safety claim is made, no door-closing action was generated, and this
+is not a reproduction of LD-ViCE. The official test split remains untouched.
+
+Cost to date: **6.3066 of 10 SU spent, 3.6934 remaining.**
